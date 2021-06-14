@@ -1,0 +1,379 @@
+1234567890
+==================================
+Rajesh Kumar
+===============================
+Start Time - 9:30 AM
+End time - 5:30
+============================
+1 Lunch - 1 - 2 PM IST
+2 BREAK - 
+		15 mins
+		11.00 AM 
+		3.30 PM
+===============================
+Demo + Lab === AZURE
+======================================================
+
+
+What is Ansible?
+-----------------------
+	Config mgmt tool
+	Written in Python
+	From Redhat
+	Ansible release
+		- Ansible	- CMD - FREE - OS
+		- Ansible Tower - CMD+GUI - FREE for 10 Servers - PAID - Enterprise
+		- Ansible AWX	- CMD+GUI - FREE for N Servers - FREE - NO SUPPORT - MOST RECENT
+
+	Tool
+	- Save cost
+		= What? Managing a SERVER(S)
+	- Save time
+		= What? Deploying a App(S) @ SERVER(S)		
+	- Impro* QUALITY & Eff*
+		= Consitent Change DONE ALL SERVER(S)
+
+	Mgmt
+
+
+	Configuration
+	- Config of SERVER(S)
+
+	What is there in each SERVER?
+				So we manage their Config?
+
+	Resources
+	------------------------------------------------------------------
+				     --------STATE--------------
+	- file				C | E | D | 
+	- directory			C | E | D |
+	- package			I | U | U
+	- services			E D S S R
+	- user				A E D 
+	- group				A E D
+	- policy			A E D
+
+Ansible Can manage
+	HARDWARE
+		HYPERVISOR
+			ANSIBLE
+
+	SOFTWARE
+	- file
+	- directory
+	- package
+	- services
+
+	PEOPLE
+	- user
+	- group
+
+	PROCESS
+	- policy
+===================================================================
+Why Ansible?
+===============================
+	Ansible is EASY to 
+	- Learn - Test - Debug - Share - Extend
+	Comparing 
+		PERL
+		PYTHON
+		BASH
+		PS
+		JAVA
+		
+	Ansible is PLATFORM INDEPENDENT
+		WORKS ON ALL PLATFORM
+
+	Ansible is IDEOMPOTENT
+	
+	1 RUN - 10 STEPS - 10 STEPS		= 10 mins
+	2 RUN - 10 STEPS - O CHANGE - 0 STEPS	= 0 mins
+	3 RUN - 10 STEPS - 2 CHANGE - 2 STEPS   = 2 mins
+
+	CONSITENT SERVER CHANGE MGMT 
+
+	Save time COz of it has PARRELL DEPLOYMENT
+		- LINEAR - 1 Server DEP - 10 mins - 20 Server DEP - 200 mins
+		- PARRELL - 1 Server DEP - 10 mins - 20 Server DEP - 10 mins
+
+	Save cost
+===================================================================================
+Other Tool - 
+	CMD - Ansible - Puppet - Chef - Salt - cfegine - Terraform
+	GUI - UDeploy - Octopus Deploy
+
+
+	Ansible 	Puppet 		Chef
+	=================================================
+	Python		Ruby		Ruby
+	CMD  - FREE	FREE		FREE
+	Enterprise	YES		YES
+	SUPPORT - 5*	4*		3*
+	COMMUNITY - 5*	3.5*		3*
+	---------------------------------------------------
+	AgentLESS	Agent		Agent
+	SSH		TCP		TCP
+	WINRM		TCP		TCP	
+	-------------------------------------------------
+	PLAYBOOK	PUPPET PROGRAM	Recipe
+	- Module	- Resources	- Resources
+	ROlE		Module		Cookbook
+	
+==========================================================================
+How Ansible works? AKa Ansible Architecture?
+===========================================================================
+
+Human -> Ansible Control Server(ACS)	-> Ansible Remote Server(S)(ARS)
+
+	-> Ansible + 10+ tools
+	-> Ansible Configuration file
+	-> Ansible Playbook(Role)
+	-> Ansible Inventory
+	
+
+	LINUX 64 BIT			-> ANY (LINUX oR WINDOWS)
+	
+	LINUX			SSH	-> LINUX
+	- PYTHON			   - PYTHON
+	- 2.7X				   - 2.7 & 3.0
+	LINUX			WINRM(HTTP)	-> WINDOWS
+					   - PS3.0
+					   - DOTNET 4.5X
+					   - WINRM 
+==========================================================================
+Components of Ansible Control Server (ACS)
+
+-> Ansible + 10+ tools
+
+	Module
+		- Unit of Code which would execute in ARS
+			e.g copy,file, service, package
+				Promot parameters
+					 - Required
+					 - Optional
+		 1000s of Core Module is in-built
+		https://docs.ansible.com/ansible/2.9/modules/modules_by_category.html
+
+	Plugins
+	 	- Code which EMPOWERS various functionality of Ansible
+		https://docs.ansible.com/ansible/latest/plugins/plugins.html
+
+	ansible
+	ansible-playbook
+	ansible-vault
+	ansible-doc
+	XXXXXXXXXX
+
+[azureuser@master ~]$ which ansible
+/usr/bin/ansible
+[azureuser@master ~]$ ansible --version
+ansible 2.9.21
+  config file = /etc/ansible/ansible.cfg
+  configured module search path = [u'/home/azureuser/.ansible/plugins/modules', u'/usr/share/ansibl                       e/plugins/modules']
+  ansible python module location = /usr/lib/python2.7/site-packages/ansible
+  executable location = /usr/bin/ansible
+  python version = 2.7.5 (default, Nov 16 2020, 22:23:17) [GCC 4.8.5 20150623 (Red Hat 4.8.5-44)]
+[azureuser@master ~]$ ls /usr/bin/ansible*
+/usr/bin/ansible              /usr/bin/ansible-doc         /usr/bin/ansible-playbook-2
+/usr/bin/ansible-2            /usr/bin/ansible-doc-2       /usr/bin/ansible-playbook-2.7
+/usr/bin/ansible-2.7          /usr/bin/ansible-doc-2.7     /usr/bin/ansible-pull
+/usr/bin/ansible-config       /usr/bin/ansible-galaxy      /usr/bin/ansible-pull-2
+/usr/bin/ansible-connection   /usr/bin/ansible-galaxy-2    /usr/bin/ansible-pull-2.7
+/usr/bin/ansible-console      /usr/bin/ansible-galaxy-2.7  /usr/bin/ansible-vault
+/usr/bin/ansible-console-2    /usr/bin/ansible-inventory   /usr/bin/ansible-vault-2
+/usr/bin/ansible-console-2.7  /usr/bin/ansible-playbook    /usr/bin/ansible-vault-2.7
+[azureuser@master ~]$
+
+
+
+
+-> Ansible Configuration file
+	DEFAULT PATH - /etc/ansible/ansible.cfg
+	ENV
+-> Ansible Playbook(Role)
+	- Yaml file
+	- Script which would execute in ARS
+-> Ansible Inventory
+	- its a file contains of collection of IP add of ARS.
+	
+
+==================================================================
+	using ADHOC command 
+		Do one task in ONE MACHINE(localhost)										
+		Do one task in ONE REMOTE MACHINE																
+		Do one task in MULTIPLE REMOTE MACHINES using Inventory					  
+		Do one task in MULTIPLE REMOTE MACHINES using group in Inventory	 
+		
+	using Playbook(Program)
+		Do Multiple tasks(Playbook) in ONE MACHINE(localhost) DONE
+		Do Multiple tasks(Playbook) in ONE REMOTE MACHINE		DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using Inventory DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group in Inventory DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using group of group in Inventory DONE
+		Do Multiple tasks(Playbook) in MULTIPLE REMOTE MACHINE using environment directory Inventory 
+		
+	using Role(Program)
+		Do One Role in in ONE MACHINE(localhost)
+		Do Multiple Roles in ONE REMOTE MACHINE
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using group of group in Inventory
+		Do Multiple Roles in MULTIPLE REMOTE MACHINE using environment directory Inventory
+
+============================================================================================
+How to get started?
+Step 1 - Get a VM			DONE
+Step 2 - Install a Ansible		DONE
+Step 3 - Decide what do you want? - TASK to be performed in SERVER
+Step 4 - Using Ansible run it.
+
+
+ACS - 52.146.89.226
+User name - azureuser
+Pass - centos123
+====================================
+Centos 7
+https://www.devopsschool.com/blog/how-to-install-ansible-in-centos-7-rhel-7/
+
+
+Which ONE task you want to Perform in Server?
+
+ONE TASK === Ansible Module
+
+==================Psucode=====================================
+Setup a webserver
+============================================================
+Step 1 - Install http server - 				yum		name & 	installed
+Step 2 - Copy index.html into /var/www/html		copy		dest & src
+Step 3 - Start a http server				service		name & restarted 
+
+sudo ansible localhost -m yum -a "name=httpd state=installed"
+sudo ansible localhost -m copy -a "src=index.html dest=/var/www/html/index.html"
+sudo ansible localhost -m service -a "name=httpd state=started"
+
+
+
+[azureuser@master ~]$ ansible -h
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD]
+               [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts]
+               [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER]
+               [-c CONNECTION] [-T TIMEOUT]
+               [--ssh-common-args SSH_COMMON_ARGS]
+               [--sftp-extra-args SFTP_EXTRA_ARGS]
+               [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D]
+               [-e EXTRA_VARS] [--vault-id VAULT_IDS]
+               [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES]
+               [-f FORKS] [-M MODULE_PATH] [--playbook-dir BASEDIR]
+               [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+
+Define and run a single task 'playbook' against a set of hosts
+
+positional arguments:
+  pattern               host pattern
+
+optional arguments:
+  --ask-vault-pass      ask for vault password
+  --list-hosts          outputs a list of matching hosts; does not execute
+                        anything else
+  --playbook-dir BASEDIR
+                        Since this tool does not use playbooks, use this as a
+                        substitute playbook directory.This sets the relative
+                        path for many features including roles/ group_vars/
+                        etc.
+  --syntax-check        perform a syntax check on the playbook, but do not
+                        execute it
+  --vault-id VAULT_IDS  the vault identity to use
+  --vault-password-file VAULT_PASSWORD_FILES
+                        vault password file
+  --version             show program's version number, config file location,
+                        configured module search path, module location,
+                        executable location and exit
+  -B SECONDS, --background SECONDS
+                        run asynchronously, failing after X seconds
+                        (default=N/A)
+  -C, --check           don't make any changes; instead, try to predict some
+                        of the changes that may occur
+  -D, --diff            when changing (small) files and templates, show the
+                        differences in those files; works great with --check
+  -M MODULE_PATH, --module-path MODULE_PATH
+                        prepend colon-separated path(s) to module library (def
+                        ault=~/.ansible/plugins/modules:/usr/share/ansible/plu
+                        gins/modules)
+  -P POLL_INTERVAL, --poll POLL_INTERVAL
+                        set the poll interval if using -B (default=15)
+  -a MODULE_ARGS, --args MODULE_ARGS
+                        module arguments
+  -e EXTRA_VARS, --extra-vars EXTRA_VARS
+                        set additional variables as key=value or YAML/JSON, if
+                        filename prepend with @
+  -f FORKS, --forks FORKS
+                        specify number of parallel processes to use
+                        (default=5)
+  -h, --help            show this help message and exit
+  -i INVENTORY, --inventory INVENTORY, --inventory-file INVENTORY
+                        specify inventory host path or comma separated host
+                        list. --inventory-file is deprecated
+  -l SUBSET, --limit SUBSET
+                        further limit selected hosts to an additional pattern
+  -m MODULE_NAME, --module-name MODULE_NAME
+                        module name to execute (default=command)
+  -o, --one-line        condense output
+  -t TREE, --tree TREE  log output to this directory
+  -v, --verbose         verbose mode (-vvv for more, -vvvv to enable
+                        connection debugging)
+
+Privilege Escalation Options:
+  control how and which user you become as on target hosts
+
+  --become-method BECOME_METHOD
+                        privilege escalation method to use (default=sudo), use
+                        `ansible-doc -t become -l` to list valid choices.
+  --become-user BECOME_USER
+                        run operations as this user (default=root)
+  -K, --ask-become-pass
+                        ask for privilege escalation password
+  -b, --become          run operations with become (does not imply password
+                        prompting)
+
+Connection Options:
+  control as whom and how to connect to hosts
+
+  --private-key PRIVATE_KEY_FILE, --key-file PRIVATE_KEY_FILE
+                        use this file to authenticate the connection
+  --scp-extra-args SCP_EXTRA_ARGS
+                        specify extra arguments to pass to scp only (e.g. -l)
+  --sftp-extra-args SFTP_EXTRA_ARGS
+                        specify extra arguments to pass to sftp only (e.g. -f,
+                        -l)
+  --ssh-common-args SSH_COMMON_ARGS
+                        specify common arguments to pass to sftp/scp/ssh (e.g.
+                        ProxyCommand)
+  --ssh-extra-args SSH_EXTRA_ARGS
+                        specify extra arguments to pass to ssh only (e.g. -R)
+  -T TIMEOUT, --timeout TIMEOUT
+                        override the connection timeout in seconds
+                        (default=10)
+  -c CONNECTION, --connection CONNECTION
+                        connection type to use (default=smart)
+  -k, --ask-pass        ask for connection password
+  -u REMOTE_USER, --user REMOTE_USER
+                        connect as this user (default=None)
+
+Some modules do not make sense in Ad-Hoc (include, meta, etc)
+
+============================================================================
+
+
+
+
+
+
+
+
+
+
+
