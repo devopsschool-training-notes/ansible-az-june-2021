@@ -366,6 +366,145 @@ Connection Options:
 Some modules do not make sense in Ad-Hoc (include, meta, etc)
 
 ============================================================================
+User name - centos
+Key - 
+
+Mano Selvamani		15.207.51.132
+Yogadharini		65.0.89.221
+Ganesh NV		13.126.48.27
+Roopesh			13.233.173.142
+Arockia joseph pradeep	15.206.69.38
+Baskar Manoharan	13.126.56.73
+Azharuddin Shaik	15.207.72.77
+Chandu Babu Mannava	35.154.250.188
+Venkatesh.G		52.66.131.158
+Karthick Selvaraj	15.207.87.1
+R K Sathish Kumar	52.66.210.6
+Raghavendra		13.234.112.19
+Selvasankar L		13.232.13.160
+GOKULNATH PL		13.232.214.17
+Navin Nandakumar	65.2.129.225	
+G.K.Bhavaani Shankar	15.206.70.5
+RAJAMURUGAN R		13.127.242.86
+Rajeshwaran K
+============================================================================
+
+How Authentication and Auth model in Ansible?
+==============================================
+Authentication - How to login to remote machine?
+		SSH
+		Paramiko
+		Docker
+		Winrm
+
+How Authorization works in SSH?
+-------------------------------------------
+How to login?
+		UserName - Password
+		-u 	   -k 
+
+		UserName - Key
+		-u 	  --key-file	
+
+
+How to gain more priv in remote machine?
+		sudo without password	= -b
+		sudo with password	= -b -K
+
+		sudo with DIFF userid&Pass	= -b --become-user -K 
+		sudo with DIFF userid&key	= -b --become-user --key-file 
+================================================================================
+
+What is inventory?
+	List of IP Address of ARS	
+		12.3.4.4		NO
+		12.3.4.4,		YES
+		12.3.4.4,12.3.4.5	YES
+
+USED @
+		COMMAND LINE			12.3.4.4,12.3.4.5,12.3.4.6,12.3.4.7,
+		file which is in INI format
+						12.3.4.4
+						12.3.4.5
+						12.3.4.6
+						12.3.4.7
+		Script which return a list
+		Directory
+		
+		CAN be GROUP
+		Default - all(All IPs) & ungroup(Ip add part of no group)
+
+		GROUP OF GROUP
+
+		BEHAVIORUAL PARAM
+
+		Variables
+	
+		
+
+ansible all -i 15.207.51.132,15.207.87.1 -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible all -i 15.207.51.132,15.207.87.1 -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible all -i 15.207.51.132,15.207.87.1 -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+
+
+inventory
+--------------
+15.207.51.132
+15.207.87.1 
+
+
+
+ansible all -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible all -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible all -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+
+
+
+inventory
+--------------
+
+[web]
+15.207.51.132
+
+[db]
+15.207.87.1 
+
+[app]
+3.4.5.6
+5.6.7.8
+6.7.8.9
+
+
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
