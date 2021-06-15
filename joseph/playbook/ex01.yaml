@@ -1,0 +1,8 @@
+- name: Create a group
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Group Name deploy
+    ansible.builtin.group:
+      name: deploy
+      state: present

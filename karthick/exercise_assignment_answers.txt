@@ -1,0 +1,22 @@
+Exercise 1
+1.ansible web -i inventory -m group -a "name=deploy state=present" -u centos --key-file node.pem -b
+2.ansible web -i inventory -m user -a "name=deploy-user group=deploy shell=/bin/bash  state=present" -u centos --key-file node.pem -b
+3.ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --private-key node.pem -b
+4.ansible web -i inventory -m service -a "name=httpd enabled=yes state=started" -u centos --private-key node.pem -b
+5.ansible web -i inventory -m lineinfile -a 'dest=/var/www/html/index.html line="welcome to AZ karthick html index created by using ansible"' -u centos --key-file node.pem -b
+6.ansible web -i inventory -m copy -a 'dest=/var/www/html/second.html content="welcome to AZ karthick html index created by using ansible"' -u centos --key-file node.pem -b
+7.ansible web -i inventory -m yum -a "name=wget state=installed" -a "name=git state=installed" -u centos --private-key node.pem -b
+8.ansible web -i inventory -m git -a "repo='https://github.com/scmgalaxy/ansible-role-template' dest=/home/centos/ansibletest" -u centos --private-key node.pem -b
+9.ansible web -i inventory -m reboot -a "msg=test" -u centos --private-key node.pem -b
+10.ansible web -i inventory -m file -a "path=/opt/devopsschool.txt state=touch"  -a "path=/opt/devopsschool.txt state=absent" -u centos --private-key node.pem -b
+
+
+
+Exercise 2
+assignment 1:
+1. ansible web -i inventory -m lineinfile -a 'dest=/etc/ssh/sshd_config regexp="^#?PasswordAuthentication" line="PasswordAuthentication" yes"' -m service -a "name=sshd state=restarted" -u centos -k -b
+1.ansible gog -i inventory -m copy -a"src=index.html dest=/var/www/html" -u centos -k -b
+assignment 2:
+1.  ansible-inventory -i test.ini -y --list > test.yml
+2. mail.example.com is ungrouped; ansible ungrouped -i test.yml -m copy -a"src=index.html dest=/var/www/html" -u centos --private-key node.pem -b
+3. Yes, pattern method we can use and it is working

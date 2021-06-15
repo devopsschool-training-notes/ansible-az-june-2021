@@ -1,0 +1,12 @@
+- name: Install Package git & wget
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Install Package git
+    ansible.builtin.yum:
+      name: git
+      state: latests
+  - name: Install Package wget
+    ansible.builtin.yum:
+      name: wget
+      state: latests

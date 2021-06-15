@@ -1,0 +1,91 @@
+-------------------------- Assignment 1 -----------------------------------
+1. ---
+- name: Create group deploy
+  hosts: localhost
+
+  tasks:
+  - name: Create user in centos7
+    ansible.builtin.groupadd:
+      name: deploy
+      state: present
+
+2. ---
+- name: Create user deploy-user
+  hosts: localhost
+
+  tasks:
+  - name: Create deploy-user in centos7
+    ansible.builtin.user:
+      name: deploy-user
+	  group: deploy
+      shell: /bin/bash
+
+
+3. ---
+- name: Install Apache
+  hosts: localhost
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+
+4. ---
+- name: Start Apache
+  hosts: localhost
+
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+5. ---
+- name: Create file index.html
+  hosts: localhost
+
+  tasks:
+  - name: Create index.html in centos7
+    ansible.builtin.file:
+      path: /var/www/html/index.html
+      content: Welcome to Ansible Training
+
+6. ---
+- name: To reboot localhost
+  hosts: localhost
+
+  tasks:
+  - name: To reboot localhost
+    ansible.builtin.reboot:
+
+7. ---
+- name: To install git
+  hosts: localhost
+
+  tasks:
+  - name: To install git
+    ansible.builtin.yum:
+      name: git
+      state: installed
+
+---
+- name: To install wget
+  hosts: localhost
+
+  tasks:
+  - name: To install wget
+    ansible.builtin.yum:
+      name: wget
+      state: installed
+
+8. ---
+- name: To clone git
+  hosts: localhost
+
+  tasks:
+  - name: To clone git
+    ansible.builtin.git:
+      path: https://github.com/scmgalaxy/ansible-role-template
+      clone: yes
+
+

@@ -1,0 +1,51 @@
+---
+-
+  hosts: localhost
+  tasks:
+    - name: "Creating a group name \"deploy\""
+      group:
+        name: deploy
+        state: present
+  tasks:
+    - name: "Creating a user name \"deploy-user\""
+      user:
+        name: deploy-user
+        state: present
+        group: deploy
+        shell: /bin/bash
+
+ 
+
+  tasks:
+    - name: "Installing httpd"
+      yum:
+        name: httpd
+        state: present
+
+ 
+
+  tasks:
+    - name: "start the service"
+      service:
+        name: httpd
+        state: started
+        enabled: yes
+  tasks:
+    - name: "Creating a file index.html with dummy contents"
+      lineinfile:
+        dest: /var/www/html/index.html
+        line: "welcome to AZ roopesh html index created by using ansible"
+
+ 
+
+  tasks:
+    - name: "Install git and wget"
+      yum:
+        name: git,wget
+        state: installed
+  tasks:
+    - name: "Cloning a repo"
+      git:
+        repo: 'https://github.com/scmgalaxy/ansible-role-template'
+        dest: /home/azureuser/roopesh/ansibletest
+

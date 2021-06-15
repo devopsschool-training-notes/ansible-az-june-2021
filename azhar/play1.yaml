@@ -1,0 +1,37 @@
+---
+- name: multiple plays
+  hosts: localhost
+
+  tasks:
+  - name: create a group
+    ansible.builtin.group:
+      name: deploy
+  - name: create a user
+    ansible.builtin.user:
+      name: deploy-user
+      shell: /bin/bash
+      groups: deploy      
+  - name: Install httpd in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Starting a httpd Server
+    ansible.builtin.service:
+      name: httpd
+      state: started 
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Install package git
+    ansible.builtin.yum:
+      name: git
+      state: latest
+  - name: Install package wget
+    ansible.builtin.yum:
+      name: wget
+      state: latest
+  - name: Clone a git repo 
+    ansible.builtin.git:
+      repo: https://github.com/scmgalaxy/ansible-role-template
+      dest: /home/azureuser/azhar/

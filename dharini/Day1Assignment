@@ -1,0 +1,16 @@
+Assignment 1:
+------------
+1) ansible web -i inventory -m group -a "name=deploy state=present" -u centos --key-file=node.pem -b
+2) ansible web -i inventory -m user -a "name=deploy-user state=present group=deploy shell=/bin/bash" -u centos --key-file=node.pem -b
+3) ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+4) ansible web -i inventory -m service -a "name=httpd state=started enabled=yes" -u centos --key-file=node.pem -b
+5) ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+6) ansible web -i inventory -m copy -a "src=second.html dest=/var/www/html/second.html content=<<< HELLO >>>"  -u centos --key-file=node.pem -b
+7) ansible web -i inventory -m yum -a "name=git,wget state=installed" -u centos --key-file=node.pem -b
+8) ansible web -i inventory -m -a git "repo=https://github.com/scmgalaxy/ansible-role-template dest=/home/centos/test" -u centos --key-file=node.pem -b
+9) ansible web -i inventory -a "/sbin/reboot" -u centos --key-file=node.pem -b
+10)ansible web -i inventory -m file -a "path=/opt/devopsschool.txt state=touch state=absent" -u centos --key-file=node.pem -b
+
+Assignment 2:
+-------------
+1) ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html" -K --become-user centos

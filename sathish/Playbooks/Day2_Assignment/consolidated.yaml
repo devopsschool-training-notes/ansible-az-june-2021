@@ -1,0 +1,57 @@
+--- # Consolidate Playbook 
+- hosts: localhost
+  
+  tasks:
+      - name: Group Creation 
+        ansible.builtin.group:
+              state: present 
+              name: deploy
+              gid: 1751 
+
+      - name: create group 
+        user:
+          name: deploy_user
+          state: present 
+          shell: /bin/bash
+          group: deploy 
+ 
+      - name: install httpd 
+        yum:
+          name: httpd 
+          state: present 
+
+      - name: start and enable service 
+        ansible.builtin.service:
+                  name: httpd 
+                  state: started 
+
+      - name: create file with content 
+        copy:
+           dest: /var/www/html/index_sat.html
+           content: 
+              <html>
+              <header> Ansible Training</title></header>
+              <body>
+              Hope it creates 
+              </body>
+              </html>             
+
+      - name: install git 
+        yum:
+         name: git
+         state: present 
+
+      - name: install wget 
+        yum: 
+         name: wget 
+         state: present 
+ 
+      - name: clone git repo git repo. https://github.com/scmgalaxy/ansible-role-template
+        git: 
+         repo: https://github.com/scmgalaxy/ansible-role-template
+         dest: /home/azureuser/sathish/repo
+         clone: yes
+
+           
+      
+       

@@ -1,0 +1,8 @@
+---
+-
+  hosts: localhost
+  tasks:
+    - name: "Install git and wget"
+      yum:
+        name: git,wget
+        state: installed

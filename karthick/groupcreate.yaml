@@ -1,0 +1,7 @@
+--- 
+- hosts: localhost
+  tasks: 
+    - name: "Creating a group name \"deploy\""
+      group: 
+        name: deploy
+        state: present

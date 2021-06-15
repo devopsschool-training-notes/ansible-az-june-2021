@@ -1,0 +1,6 @@
+- name: Reboot Server
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Reboot a server
+    reboot:

@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello-pod-1
+  labels:
+     app: deb
+spec:
+  containers:
+  - name: hello-ctr
+    image: scmgalaxy/nginx-devopsschoolv1
+    ports:
+    - containerPort: 80
+

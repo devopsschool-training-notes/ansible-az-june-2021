@@ -1,0 +1,39 @@
+- name: All top playbooks
+  hosts: web
+  tasks:
+  - name: Group Name deploy
+    ansible.builtin.group:
+      name: deploy
+      state: present
+  - name: user Name deploy-user
+    ansible.builtin.user:
+      name: deploy-user
+      group: deploy
+      createhome: yes
+  - name: install httpd package
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Starting httpd Service
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: Copy index.html file to server
+    ansible.builtin.copy:
+      src: ~/joseph/index.html
+      dest: /var/www/html/index.html
+  - name: Reboot a server
+    reboot:
+  - name: Install Package git
+    ansible.builtin.yum:
+      name: git
+      state: latests
+  - name: Install Package wget
+    ansible.builtin.yum:
+      name: wget
+      state: latests
+  - name: clone git repo
+    ansible.builtin.git:
+      repo: 'https://github.com/scmgalaxy/ansible-role-template'
+      dest: ~/joseph/gitclone
+      clone: yes

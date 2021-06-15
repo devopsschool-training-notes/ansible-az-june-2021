@@ -1,0 +1,8 @@
+---
+
+- hosts: web
+  tasks:
+  - name: Group creation
+    ansible.builtin.group:
+      name: deploy
+      state: present

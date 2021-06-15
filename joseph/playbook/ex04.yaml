@@ -1,0 +1,8 @@
+- name: Start httpd Service
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Starting httpd Service
+    ansible.builtin.service:
+      name: httpd
+      state: started

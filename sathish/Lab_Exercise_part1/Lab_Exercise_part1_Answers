@@ -1,0 +1,287 @@
+Program 1 – Write a Ansible Adhoc Commands to create a group called “deploy
+
+ansible web -i inventory -m  group -a " name=deploy state=present" -u centos --key-file=node.pem -b
+
+[azureuser@master sathish]$ sudo ansible web -i inventory -m ansible.builtin.group -a "name=deploy state=present" -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "gid": 1001,
+    "name": "deploy",
+    "state": "present",
+    "system": false
+
+
+[centos@ip-172-31-21-44 ~]$ more /etc/group | grep deploy
+deploy:x:1001:
+----------------------------------------------------------------------------------------------------------------------
+
+Program 2 – Write a Ansible Adhoc Commands to create a user called “deploy-user” which is part of group called “deploy” and with /bin/bash shell
+
+ansible web -i inventory -m ansible.builtin.use  user  -a " name=deploy-user state=present group=deploy " -u centos --key-file=node.pem -b
+
+[azureuser@master sathish]$ ansible web -i inventory -m ansible.builtin.user -a " name=deploy-user state=present group=deploy " -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "comment": "",
+    "create_home": true,
+    "group": 1001,
+    "home": "/home/deploy-user",
+    "name": "deploy-user",
+    "shell": "/bin/bash",
+    "state": "present",
+    "system": false,
+    "uid": 1001
+
+[centos@ip-172-31-21-44 ~]$ more /etc/passwd | grep deploy-user
+deploy-user:x:1001:1001::/home/deploy-user:/bin/bash
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+Program 3 – Write a Ansible Adhoc commands install package named “httpd” in RHEL/centos.
+
+[azureuser@master sathish]$ ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "changes": {
+        "installed": [
+            "httpd"
+        ]
+    },
+    "msg": "warning: /var/cache/yum/x86_64/7/base/packages/apr-1.4.8-7.el7.x86_64.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY\nImporting GPG key 0xF4A80EB5:\n Userid     : \"CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>\"\n Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5\n Package    : centos-release-7-7.1908.0.el7.centos.x86_64 (installed)\n From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7\n",
+    "rc": 0,
+
+
+[centos@ip-172-31-21-44 ~]$ which httpd
+/usr/sbin/httpd
+---------------------------------------------------------------------------------------------------------------------------------
+
+
+Program 4 – Write a Ansible Adhoc commands to start and enable the service named “httpd”
+
+Stopped the service and started it 
+
+ansible web -i inventory -m  ansible.builtin.service -a " name=httpd state=stopped " -u centos --key-file=node.pem -b
+
+[azureuser@master sathish]$ ansible web -i inventory -m  ansible.builtin.service -a " name=httpd state=stopped " -u centos --key-file=node.pem -b
+
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "name": "httpd",
+    "state": "stopped",
+    "status": {
+        "ActiveEnterTimestamp": "Mon 2021-06-14 10:08:26 UTC",
+
+
+[centos@ip-172-31-21-44 ~]$ ps -f | grep -i httpd
+centos   10202  9780  0 11:28 pts/1    00:00:00 grep --color=auto -i httpd
+
+Started 
+
+ansible web -i inventory -m  ansible.builtin.service -a " name=httpd state=started " -u centos --key-file=node.pem -b
+
+[azureuser@master sathish]$ ansible web -i inventory -m  ansible.builtin.service -a " name=httpd state=started " -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "name": "httpd",
+    "state": "started",
+    "status": {
+
+[centos@ip-172-31-21-44 ~]$ ps -eaf | grep httpd
+root     10635     1  0 11:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache   10636 10635  0 11:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache   10637 10635  0 11:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache   10638 10635  0 11:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache   10639 10635  0 11:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+apache   10640 10635  0 11:31 ?        00:00:00 /usr/sbin/httpd -DFOREGROUND
+centos   10652  9780  0 11:31 pts/1    00:00:00 grep --color=auto httpd
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+Program 5 – Write a Ansible commands to create a file called “index.html” in /var/www/html with some dummy html contents.
+
+Source: ACS 
+
+[azureuser@master sathish]$ more index.html
+<html>
+<header> Ansible Training</title></header>
+<body>
+Answer to Program 5 Module
+</body>
+</html>
+
+[azureuser@master sathish]$ ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "checksum": "05c71e51d4d78b6818fc9d477dd583915aabacfa",
+    "dest": "/var/www/html/index.html",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "791a801b3c44b1e91269091e7394960a",
+    "mode": "0644",
+    "owner": "root",
+    "secontext": "system_u:object_r:httpd_sys_content_t:s0",
+    "size": 101,
+    "src": "/home/centos/.ansible/tmp/ansible-tmp-1623670523.69-6769-35324445804062/source",
+    "state": "file",
+    "uid": 0
+
+
+Remote: ACS 
+
+[centos@ip-172-31-21-44 ~]$ more /var/www/html/index.html
+<html>
+<header> Ansible Training</title></header>
+<body>
+Answer to Program 5 Module
+</body>
+</html>
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Program 6 – Write a Ansible commands to copy a file called “second.html” in /var/www/html/second.html with some dummy html contents.
+
+Source: 
+
+[azureuser@master sathish]$ more second.html
+<html>
+<header> Ansible Training</title></header>
+<body>
+Answer to Program 6 second html file
+</body>
+</html>
+
+
+[azureuser@master sathish]$ ansible web -i inventory -m copy -a "src=second.html dest=/var/www/html/"  -u centos --key-file=node.pem -b
+
+[azureuser@master sathish]$ ansible web -i inventory -m copy -a "src=second.html dest=/var/www/html/"  -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "checksum": "c97b8b930532adae60622d233140e3083991446e",
+    "dest": "/var/www/html/second.html",
+    "gid": 0,
+    "group": "root",
+    "md5sum": "6f6dd65fc8a96a5777567432a5ce6c57",
+    "mode": "0644",
+    "owner": "root",
+    "secontext": "system_u:object_r:httpd_sys_content_t:s0",
+    "size": 111,
+    "src": "/home/centos/.ansible/tmp/ansible-tmp-1623670790.39-9169-254336324451096/source",
+    "state": "file",
+    "uid": 0
+
+Destination 
+
+[centos@ip-172-31-21-44 ~]$  more /var/www/html/second.html
+<html>
+<header> Ansible Training</title></header>
+<body>
+Answer to Program 6 second html file
+</body>
+</html>
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+Program 7 – Write a Ansible commands to install a package called “git”, “wget”.
+
+Source 
+
+[azureuser@master sathish]$ ansible web -i inventory -m ansible.builtin.yum -a "name=git,wget state=present"  -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "changed": true,
+    "changes": {
+        "installed": [
+            "git",
+            "wget"
+
+
+Destination
+[centos@ip-172-31-21-44 ~]$ which wget
+/usr/bin/wget
+[centos@ip-172-31-21-44 ~]$ which git
+/usr/bin/git
+
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+Program 8 – Write a Ansible Adhoc commands to clone git repo. https://github.com/scmgalaxy/ansible-role-template.
+
+ansible web -i inventory -m ansible.builtin.git -a " repo= https://github.com/scmgalaxy/ansible-role-template  dest= /home/centos/clone " -u centos --key-file=node.pem -b
+
+Source 
+
+[azureuser@master sathish]$ ansible web -i inventory -m ansible.builtin.git -a "clone=yes repo=https://github.com/scmgalaxy/ansible-role-template  dest=/home/centos/clone " -u centos --key-file=node.pem -b
+52.66.210.6 | CHANGED => {
+    "after": "d3eefe03c1bb6c9b0e1574347523174a26d015ff",
+    "ansible_facts": {
+        "discovered_interpreter_python": "/usr/bin/python"
+    },
+    "before": null,
+    "changed": true
+
+
+Destination: 
+
+[centos@ip-172-31-21-44 clone]$ ls
+bennojoy.mysql  inventory  node.pem  rajesh.role1  README.md  site.retry  site.yaml
+
+----------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Program 9 – Write a Ansible commands to reboot a self machine.
+
+ansible localhost -m reboot 
+
+Destination
+
+[azureuser@master sathish]$ ansible web -i inventory -m reboot -u centos --key-file=node.pem -b
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Program 10 – Write a Ansible commands to touch a file called “devopsschool.txt” in /opt/ and delete after using ansible adhoc command.
+
+ansible web -i inventory -m  ansible.builtin.file -a " path=/opt/devopsschool.txt state=touch "  -u centos --key-file=node.pem -b
+
+ansible web -i inventory -m  ansible.builtin.file -a  " path=/opt/devopsschool.txt state=absent "  -u centos --key-file=node.pem -b
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-

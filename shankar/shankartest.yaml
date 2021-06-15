@@ -1,0 +1,9 @@
+---
+- name: Perform Tasks
+  hosts: web
+
+  tasks:
+  -name: Create a group shankar
+   group:
+     name: shankar
+     state: present

@@ -1,0 +1,9 @@
+- name: Create a user
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: user Name deploy-user
+    ansible.builtin.user:
+      name: deploy-user
+      group: deploy
+      createhome: yes

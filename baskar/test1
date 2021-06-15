@@ -1,0 +1,80 @@
+Program 1 – Write a Ansible Adhoc Commands to create a group called “deploy
+
+sudo ansible localhost -m groupadd -a "name=deploy state=present"
+
+How to verify?
+$ more /etc/group | grep deploy
+
+
+Program 2 – Write a Ansible Adhoc Commands to create a user called “deploy-user” which is part of group called “deploy” and with /bin/bash shell.
+
+sudo ansible localhost -m user -a "name=deploy-user group=deploy shell=/bin/bash"
+
+How to verify?
+$ more /etc/passwd | grep deploy-user
+
+
+
+Program 3 – Write a Ansible Adhoc commands install package named “httpd” in RHEL/centos.
+
+sudo ansible localhost -m yum -a "name=httpd state=installed"
+
+How to verify?
+$ which httpd
+
+
+
+Program 4 – Write a Ansible Adhoc commands to start and enable the service named “httpd”
+
+sudo ansible localhost -m service -a "name=httpd state=started"
+
+How to verify?
+$ ps -eaf | grep httpd
+
+
+
+Program 5 – Write a Ansible commands to create a file called “index.html” in /var/www/html with some dummy html contents.
+
+sudo ansible localhost -m copy -a "src=index.html dest=/var/www/html/index.html"
+
+How to verify?
+Browse http://x.x.x.x:80
+
+
+
+Program 6 – Write a Ansible commands to copy a file called “second.html” in /var/www/html/second.html with some dummy html contents.
+
+sudo ansible localhost -m copy -a "src=second.html dest=/var/www/html/second.html"
+
+How to verify?
+Browse http://x.x.x.x/second.html
+
+
+
+Program 7 – Write a Ansible commands to install a package called “git”, “wget”.
+
+sudo ansible localhost -m yum -a "name=git state=installed"
+
+How to verify?
+$ which git
+$ which wget
+
+
+Program 8 – Write a Ansible Adhoc commands to clone git repo. https://github.com/scmgalaxy/ansible-role-template.
+
+sudo ansible localhost -m git -a "clone=yes dest=https://github.com/scmgalaxy/ansible-role-template repo=git"
+
+How to verify?
+$ ls
+
+
+Program 9 – Write a Ansible commands to reboot a self machine.
+
+sudo ansible localhost -m reboot
+
+
+
+Program 10 – Write a Ansible commands to touch a file called “devopsschool.txt” in /opt/ and delete after using ansible adhoc command.
+
+sudo ansible loclhost -m file -a "path=/opt/devopsschool.txt state=touch mode=0755"
+

@@ -1,0 +1,37 @@
+---
+- name: update
+  hosts: localhost
+
+  tasks:
+  - name: add group
+    group:
+     name: deploy
+     state: present
+
+  - name: create user 
+    user:
+     name: deploy-user
+     state: present
+     shell: /bin/bash
+     group: deploy
+
+  - name: install httpd
+    yum:
+     name: httpd
+     state: present
+
+  - name: copy index.html
+    copy:
+     src: index.html
+     dest: /var/www/html/index.html
+
+  - name: install git and wget
+    yum:
+     name: git,wget
+     state: present
+
+  - name: clone repo
+    git:
+     repo: https://github.com/scmgalaxy/ansible-role-template
+     dest: /home/azureuser/selva 
+...

@@ -1,0 +1,9 @@
+---
+-
+  hosts: localhost
+  tasks:
+    - name: "Creating a file index.html with dummy contents"
+      lineinfile:
+        dest: /var/www/html/index.html
+        line: "welcome to AZ karthick html index created by using ansible"
+

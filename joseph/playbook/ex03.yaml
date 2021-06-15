@@ -1,0 +1,8 @@
+- name: Deploy a httpd package
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: install httpd package
+    ansible.builtin.yum:
+      name: httpd
+      state: latest

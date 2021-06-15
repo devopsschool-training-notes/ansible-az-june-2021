@@ -1,0 +1,7 @@
+---
+- hosts: web
+  tasks:
+  - name: install git and wget
+    yum:
+      name: git, wget
+      state: latest

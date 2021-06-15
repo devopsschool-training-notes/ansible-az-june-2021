@@ -1,0 +1,11 @@
+Write a Ansible Adhoc Commands to create a group called “deploy
+
+ansible all -i inventory -m ansible.builtin.group -a "name=deploy" -u centos --key-file=node.pem -b
+
+Write a Ansible Adhoc Commands to create a user called “deploy-user” which is part of group called “deploy” and with /bin/bash shell.
+
+ansible all -i inventory -m ansible.builtin.user -a "name=deploy-user groups=deploy shell=/bin/bash password=" -u centos --key-file=node.pem -b
+
+Write a Ansible Adhoc commands install package named “httpd” in RHEL/centos.
+ansible all -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+

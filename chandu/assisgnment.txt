@@ -1,0 +1,21 @@
+ansible all -i inventory -m group -a "name=test state=present" -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m user -a "name=deploy-user group=test createhome=yes" -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m service -a 'name=httpd state=reloaded' -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m copy -a "src=test.html dest=/var/www/html/"  -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m yum -a "name=wget state=installed" -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m yum -a "name=git state=installed" -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m shell -a "reboot" -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m file -a "path=/opt/devopsschool.txt state=touch" -u centos --key-file=node.pem -b
+
+ansible all -i inventory -m file -a "path=/opt/devopsschool.txt state=absent" -u centos --key-file=node.pem -b
+
+
