@@ -167,19 +167,33 @@ Where to declare variables in Ansible?
 ---------------------------------------
 22 PLACES
 -----------------------
-Playbook
-	- Embed variables in playbook
-	- Embed external variables files
-	- Embed using include vars into task
-	- User Prompt
-	- register
-	
-	
+Ansible Variable in Playbook with following ways:
+ 
+	- Use variables in playbook directly
+	- Use variables using external var files in playbook
+	- Use variables using include_vars into task in playbook
+	- Use variables using User Prompt in playbook
+	- Use variables using outout of task using register
 	
 Inventory
+========================
+- Behavioural Param
+- Vars in inventory file
+
+- variable using Host Var
+	
+- variable using Group Var
 	
 Tools(ansible, ansible-playbook)
+=======================================
+Command Line 
+  -e EXTRA_VARS, --extra-vars EXTRA_VARS
+                        set additional variables as key=value or YAML/JSON, if
+                        filename prepend with @
 
+
+ansible-playbook var1.yaml -i inventory -e mynameinv=ramukaka
+ansible-playbook var1.yaml -i inventory -e @last.yaml
 
 ========================================
 ---
@@ -328,6 +342,109 @@ https://www.devopsschool.com/blog/ansible-variable-lab-excercise-part-1/
 https://www.devopsschool.com/blog/ansible-variable-lab-excercise-part-2/
 - Assigment 2
 - Assigment 3
+
+
+inventory
+=====================================
+
+[web]			user & passowd & sudo without password
+1.2.3.4
+1.2.3.5
+1.2.3.6
+1.2.3.7
+
+[app]			user & key & sudo with password
+2.2.3.4
+3.2.3.5
+4.2.3.6
+5.2.3.7
+
+
+[log]			user & key & sudo with Diff user and password
+6.2.3.4
+7.2.3.5
+8.2.3.6
+9.2.3.7
+
+[db]			user & pass & sudo with Diff user and key
+6.2.3.1
+7.2.3.2
+8.2.3.3
+9.2.3.4
+
+=====================================
+[web]			user & passowd & sudo without password
+1.2.3.4		ansible_user=user1 ansible_ssh_pass=pass1 ansible_become=yes
+1.2.3.5		ansible_user=user2 ansible_ssh_pass=pass2 ansible_become=yes
+1.2.3.6		ansible_user=user3 ansible_ssh_pass=pass3 ansible_become=yes
+1.2.3.7
+
+[app]			user & key & sudo with password
+2.2.3.4			ansible_user=user1 ansible_ssh_private_key_file=node.pem ansible_become=yes ansible_become_pass=pass123
+3.2.3.5		ansible_user=user2 ansible_ssh_private_key_file=node.pem ansible_become=yes ansible_become_pass=pass123
+4.2.3.6
+5.2.3.7
+
+
+[log]			user & key & sudo with Diff user and password
+6.2.3.4			ansible_user=user1 ansible_ssh_private_key_file=node.pem ansible_become=yes ansible_become_user=user2 ansible_become_pass=pas122
+7.2.3.5
+8.2.3.6
+9.2.3.7
+
+[db]			user & pass & sudo with Diff user and password
+6.2.3.1		ansible_user=user1 ansible_ssh_pass=pass1 ansible_become=yes ansible_become_user=user2 ansible_become_pass=pass2
+7.2.3.2
+8.2.3.3
+9.2.3.4
+
+
+some_host         ansible_port=2222     ansible_user=manager
+aws_host          ansible_ssh_private_key_file=/home/example/.ssh/aws.pem
+freebsd_host      ansible_python_interpreter=/usr/local/bin/python
+ruby_module_host  ansible_ruby_interpreter=/usr/bin/ruby.1.9.3
+
+=============================================================================================
+=====================================
+[web]			user & passowd & sudo without password
+1.2.3.4		
+1.2.3.5		
+1.2.3.6		
+1.2.3.7
+
+[web:vars]
+ansible_user=user1 
+ansible_ssh_pass=pass1 
+ansible_become=yes
+
+
+[app]			user & key & sudo with password
+2.2.3.4			
+3.2.3.5		
+4.2.3.6
+5.2.3.7
+
+[app:vars]
+ansible_user=user1 
+ansible_ssh_private_key_file=node.pem 
+ansible_become=yes 
+ansible_become_pass=pass123
+
+
+
+[log]			user & key & sudo with Diff user and password
+6.2.3.4			ansible_user=user1 ansible_ssh_private_key_file=node.pem ansible_become=yes ansible_become_user=user2 ansible_become_pass=pas122
+7.2.3.5
+8.2.3.6
+9.2.3.7
+
+[db]			user & pass & sudo with Diff user and password
+6.2.3.1		ansible_user=user1 ansible_ssh_pass=pass1 ansible_become=yes ansible_become_user=user2 ansible_become_pass=pass2
+7.2.3.2
+8.2.3.3
+9.2.3.4
+
+
 
 
 
