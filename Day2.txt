@@ -1,0 +1,335 @@
+What is the PRB?
+============================
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -bansible
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+
+SHELL SCRIPT
+ - variables
+ - conditioning 
+ - looping
+ - template config work
+ - Handlers
+ ========================================================================
+ 
+ Solution - Playbook
+ ------------------------------------------
+ What is Playbook?
+ - YAML FILE
+ - Collection of PLAY
+ 
+ What is PLAY?
+ 
+ Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param
+ -----------------PLAYBOOK---------------------------
+ 
+ Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param
+		
+ Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param 
+		
+ Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param
+
+ Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param		
+ =============================================================
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node.pem -b
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node.pem -b
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node.pem -b
+ 
+ ---
+  Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param
+...
+
+---		
+ Hosts: all OR <Custom Group>
+ Tasks: List of Module with its param
+		- module & param
+		- module & param
+		- module & param
+		- module & param
+ ...
+ 
+ 
+ ==========================================================
+ 
+---
+- name: Update web servers
+  hosts: web
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started  
+ 
+Basic workflow of PLAYBOOK---------------------------====
+==================================================
+Step 1- Write a Yaml file
+
+Step 2 - Check a Syntax 
+
+[azureuser@master rajesh]$ ansible-playbook --syntax-check web.yaml
+[WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match
+'all'
+[WARNING]: Could not match supplied host pattern, ignoring: web
+
+playbook: web.yaml
+[azureuser@master rajesh]$ ansible-playbook --syntax-check web.yaml -i inventory
+
+playbook: web.yaml
+[azureuser@master rajesh]$
+
+
+Step 3 - DRY run
+ansible-playbook -C web.yaml -i inventory -u azureuser -k -b
+
+Step 4 - run 
+ansible-playbook web.yaml -i inventory -u azureuser -k -b 
+ansible-playbook localhost web.yaml 
+ 
+ 
+ 
+ 
+Assignment 
+- https://www.devopsschool.com/blog/ansible-playbook-lab-excercise-part-2/
+ 
+======================================================================================
+======================================================================================
+https://devopsschool.com/tutorial/ansible/variables/index.html
+
+Ansible Variables
+======================
+What is Variable?
+- a pointer to value
+
+Where to declare variables in Ansible?
+---------------------------------------
+22 PLACES
+-----------------------
+Playbook
+	- Embed variables in playbook
+	- Embed external variables files
+	- Embed using include vars into task
+	- User Prompt
+	- register
+	
+	
+	
+Inventory
+	
+Tools(ansible, ansible-playbook)
+
+
+========================================
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajeshkumar"
+    age: "18"
+    packagename: "httpd"
+	servicename: "httpd"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name={{ packagename }}
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name={{ servicename }}
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ myname }} and My age is {{ age }}"
+
+=============================================
+
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajeshkumar"
+    age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_files:
+    - "vars.yaml"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: include default step variables
+    include_vars: tasks_var.yaml
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ myname }} and My age is {{ age }}"
+
+
+
+
+ vars_prompt:
+    - name: "myname"
+      prompt: "Which version Do you want to install?"
+
+
+
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: "/home/azureuser/rajesh"
+    register: find_output
+
+  - debug:
+      var: find_output
+
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajeshkumar"
+    age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_files:
+    - "vars.yaml"
+  vars_prompt:
+    - name: "version"
+      prompt: "Which version Do you want to install?"
+      private: no
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: include default step variables
+    include_vars: tasks_var.yaml
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ myname }} and My age is {{ age }}"
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: version
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: "/home/azureuser/rajesh"
+    register: find_output
+  - debug:
+      var: find_output
+  - debug:
+      var: find_output.stdout_lines
+  - debug:
+      var: find_output.stdout_lines[0]
+
+
+
+https://www.devopsschool.com/blog/ansible-variable-lab-excercise-part-1/
+- Assigment 2 
+- Assigment 3
+
+https://www.devopsschool.com/blog/ansible-variable-lab-excercise-part-2/
+- Assigment 2
+- Assigment 3
+
+
+
+ 
+ 
