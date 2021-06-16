@@ -1,0 +1,18 @@
+---
+- name: assignment
+  hosts: localhost
+
+  tasks:
+  - name: Install webserver
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+    when: ansible_facts['os_family'] == "Ubuntu" and when: ansible_facts['os_family'] == "RHEL"
+
+  - name: Install webserver
+    ansible.builtin.yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - Ubuntu
+      - RHEL

@@ -1,0 +1,12 @@
+- name: Update web servers
+  hosts: localhost
+  vars_files:
+  - "ext_var.yaml"
+   
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+

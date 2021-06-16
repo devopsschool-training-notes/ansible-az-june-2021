@@ -1,0 +1,31 @@
+- name: Update web servers
+  hosts: localhost
+  vars:
+    myname: "Venkatesh"
+
+  tasks:
+  - name: Install Apache in RHEL
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+      when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  -name: Install Apache in Ubuntu
+  ansible.builtin.APT:
+      name: httpd
+      state: latest
+      when: ( ansible_os_family == "Ubuntu" and ansible_system == "Linux")
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+    when: 
+      - ansible_os_family == "RedHat"
+      - ansible_distribution_major_version == "7"
+      - ansible_system == "Linux"
+          - ansible_os_family == "Ubuntu"
+      - ansible_distribution_major_version == "16.04 LTS"
+      - ansible_system == "Linux"

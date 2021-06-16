@@ -1,0 +1,11 @@
+--- # register 
+- hosts: localhost
+  
+  tasks:
+      - name: Ansible register  
+        shell: " find *.txt"
+        args: 
+          chdir: '/home/azureuser/sathish/Playbooks/Variables'
+        register: my_output
+      - debug: 
+          var: my_output 

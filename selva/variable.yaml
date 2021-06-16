@@ -1,0 +1,19 @@
+---
+- name: Testing variable
+  hosts: localhost
+  vars:
+   package: "httpd"
+   service: "httpd"
+  vars_files:
+   - "vars.yaml"
+  tasks:
+  - name: Install httpd
+    yum:
+     name: "{{package}}"
+     state: present
+
+  - name: restart httpd
+    service:
+     name: "{{service1}}"
+     state: restarted
+ 

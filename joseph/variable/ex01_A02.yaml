@@ -1,0 +1,14 @@
+- name: Update web servers
+  hosts: web
+  vars:
+    packagename: "httpd"
+    servicename: "httpd"
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started

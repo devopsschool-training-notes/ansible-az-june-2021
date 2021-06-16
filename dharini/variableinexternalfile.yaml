@@ -1,0 +1,9 @@
+---
+- hosts: web
+  vars_files:
+    - "vars.yaml"
+  tasks:
+  - name: install httpd
+    yum:
+      name: "{{ packagename }}"
+      state: latest

@@ -1,0 +1,12 @@
+---
+- name: Azhar yaml
+  hosts: localhost
+  vars_files:
+    /home/azureuser/azhar/test.yml
+    
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest

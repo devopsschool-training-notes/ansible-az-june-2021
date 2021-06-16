@@ -1,0 +1,14 @@
+--- # include_Vars 
+- hosts: localhost
+  
+  tasks:   
+   - name: test with including variables within task 
+      
+     include_vars: sat_var.yml 
+   
+   - name: Install httpd 
+  
+     yum:
+        name: "{{ packagename }}"
+        state: present 
+

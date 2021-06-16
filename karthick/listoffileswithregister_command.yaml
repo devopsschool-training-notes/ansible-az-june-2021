@@ -1,0 +1,14 @@
+---
+- name: To find the list files
+  hosts: localhost
+  tasks:
+    - name: Starting the command to find the files
+      shell: "find *.txt"
+      args:
+        chdir: "/home/azureuser/karthick/"
+      register: find_output
+    - debug:
+        var: find_output
+    - debug:
+        var: find_output.stdout_lines
+  

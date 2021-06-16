@@ -7,25 +7,41 @@
 
 # hlsearch on (H) or off (h):
 ~H
+# Last Search Pattern:
+~Msle0~/\<name\>
+
+# Last Substitute String:
+$
+
 # Command Line History (newest to oldest):
 :wq
-:quit
+:q
+:WQ
 :wq!
 :q!
-:q
-:yes
 :x
-:quict
-:w
-:x!
-:sh
+:q1
+:wQ!
 :Q!
+:Wq
+:sh
+:X
+:j
+:%d
+:wwq
+:w
+:quit
+:quik
+:Wq!
+:yes
+:quict
+:x!
 :.!q
 :wq1
-:Wq!
-:q1
 
 # Search String History (newest to oldest):
+? \<include_vars\>
+? \<name\>
 
 # Expression History (newest to oldest):
 
@@ -34,365 +50,359 @@
 # Input Line History (newest to oldest):
 
 # Registers:
+"0	CHAR	0
+	 
 "1	LINE	0
-	- hosts : local host
+	
 "2	LINE	0
-	         
+	sts: all
 "3	LINE	0
-	         tasks:
+	  tasks:
 "4	LINE	0
-	         -  name :create a group name 
+	    - debug:
 "5	LINE	0
-	         group:
+	        msg: task1
 "6	LINE	0
-	         name : deploy
+	
 "7	LINE	0
-	         state:present
+	- include: stuff.yaml
 "8	LINE	0
-	        msg: test
+	      include: stuff.yaml
 "9	LINE	0
-	      reboot:
+	    - name: Include task list in play
+"u	CHAR	0
+	it€kb€kbq€kbi€kbi€K4
 "w	CHAR	0
 	ww
 ""-	CHAR	0
-	 
+	S
 
 # File marks:
-'0  38  0  ~/azhar/play1.yaml
-'1  1  0  ~/chandu/reboot.yaml
-'2  37  24  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
-'3  1  0  ~/azhar/inventory
-'4  7  21  ~/kraj/creategroup.yaml
-'5  1  0  ~/karthick/installhttpd.yaml
-'6  4  2  ~/karthick/installgitwget.yaml
-'7  53  8  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
-'8  1  25  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
-'9  1  2  ~/azhar/play1.yaml
+'0  6  21  ~/rajesh/site.yaml
+'1  36  2  ~/joseph/q2.yaml
+'2  31  33  ~/joseph/q2.yaml
+'3  32  1  ~/joseph/q2.yaml
+'4  33  35  ~/joseph/q2.yaml
+'5  8  0  ~/rajesh/site.yaml
+'6  7  21  ~/rajesh/web/handlers/main.yml
+'7  21  33  ~/rajesh/web/tasks/main.yml
+'8  5  31  ~/rajesh/web/vars/main.yml
+'9  5  17  ~/rajesh/web/defaults/main.yml
 
 # Jumplist (newest first):
+-'  6  21  ~/rajesh/site.yaml
+-'  8  0  ~/rajesh/site.yaml
+-'  36  2  ~/joseph/q2.yaml
+-'  31  6  ~/joseph/q2.yaml
+-'  32  2  ~/joseph/q2.yaml
+-'  33  6  ~/joseph/q2.yaml
+-'  34  24  ~/joseph/q2.yaml
+-'  1  0  ~/rajesh/site.yaml
+-'  7  21  ~/rajesh/web/handlers/main.yml
+-'  1  0  ~/rajesh/web/handlers/main.yml
+-'  21  33  ~/rajesh/web/tasks/main.yml
+-'  1  0  ~/rajesh/web/tasks/main.yml
+-'  5  31  ~/rajesh/web/vars/main.yml
+-'  1  0  ~/rajesh/web/vars/main.yml
+-'  5  17  ~/rajesh/web/defaults/main.yml
+-'  1  0  ~/rajesh/web/defaults/main.yml
+-'  2  2  ~/joseph/q2.yaml
+-'  1  0  ~/joseph/group_vars/DEV
+-'  1  11  ~/rajesh/main.yaml
+-'  6  0  ~/rajesh/main.yaml
+-'  6  5  ~/rajesh/stuff.yaml
+-'  1  6  ~/rajesh/stuff.yaml
+-'  12  3  ~/joseph/inventory
+-'  1  0  ~/joseph/inventory
+-'  1  0  ~/joseph/q2.yaml
+-'  1  0  ~/joseph/group_vars/dev
+-'  2  12  ~/karthick/inventory
+-'  31  32  ~/venkat/weserver2OS.yaml
+-'  1  0  ~/venkat/weserver2OS.yaml
+-'  1  0  ~/karthick/inventory
+-'  63  21  ~/chandu/twoconfs.yaml
+-'  1  0  ~/chandu/twoconfs.yaml
+-'  32  18  ~/joseph/q1.yaml
+-'  33  0  ~/joseph/q1.yaml
+-'  12  5  ~/karthick/assignmenttest.yaml
+-'  10  4  ~/karthick/assignmenttest.yaml
+-'  15  8  ~/karthick/assignmenttest.yaml
+-'  1  0  ~/karthick/assignmenttest.yaml
+-'  6  25  ~/sathish/Playbooks/template/index.html.j2
+-'  5  0  ~/sathish/Playbooks/template/index.html.j2
+-'  42  20  ~/azhar/httpd.conf.j2
+-'  1  0  ~/azhar/httpd.conf.j2
+-'  9  17  ~/sathish/Playbooks/template/inc_handlers.yml
+-'  12  4  ~/sathish/Playbooks/template/inc_handlers.yml
+-'  1  0  ~/sathish/Playbooks/template/in
+-'  5  17  ~/azhar/temp2.yaml
+-'  1  0  ~/azhar/temp2.yaml
+-'  9  6  ~/sathish/Playbooks/template/index.html.j2
+-'  7  50  ~/sathish/Playbooks/template/index.html.j2
+-'  10  0  ~/sathish/Playbooks/template/index.html.j2
+-'  15  8  ~/sathish/Playbooks/template/inc_handlers.yml
+-'  1  0  ~/sathish/Playbooks/template/inc_handlers.yml
+-'  1  0  ~/sathish/Playbooks/template/include_handlers.yml
+-'  1  0  /var/www/html/sat.html
+-'  1  0  /var/www/html/sat.htmel
+-'  8  36  ~/sathish/Playbooks/template/using_template.yml
+-'  7  7  ~/venkat/template.yaml
+-'  1  0  ~/venkat/template.yaml
+-'  6  2  ~/selva/condition.yaml
+-'  14  5  ~/karthick/condbased.yaml
+-'  13  8  ~/karthick/condbased.yaml
+-'  7  2  ~/selva/condition.yaml
+-'  11  17  ~/karthick/condbased.yaml
+-'  9  8  ~/karthick/condbased.yaml
+-'  15  8  ~/karthick/condbased.yaml
+-'  49  0  ~/kraj/loop.yml
+-'  1  0  ~/kraj/loop.yml
+-'  11  0  ~/selva/condition.yaml
+-'  12  0  ~/selva/condition.yaml
+-'  1  0  ~/selva/condition.yaml
+-'  1  0  ~/joseph/abc
+-'  49  2  ~/chandu/loop.yaml
+-'  36  21  ~/azhar/cond.yaml
+-'  1  0  ~/azhar/cond.yaml
+-'  9  8  ~/joseph/cond.yaml
+-'  1  0  ~/joseph/cond.yaml
+-'  41  19  ~/Rag/Day2
+-'  1  0  ~/Rag/Day2
+-'  1  0  ~/mano/Assignment_Day2
+-'  48  17  ~/rajesh/loop.yaml
+-'  1  5  ~/rajesh/loop.yaml
+-'  36  33  ~/rajesh/cond.yaml
+-'  1  0  ~/rajesh/cond.yaml
+-'  7  17  ~/selva/inventory
+-'  1  0  ~/selva/inventory
+-'  9  0  ~/karthick/test22345.yaml
+-'  1  0  ~/karthick/test22345.yaml
+-'  3  0  ~/roopesh/inventory
+-'  2  0  ~/roopesh/inventory
+-'  10  17  ~/joseph/inventory
+-'  28  12  ~/kraj/vars.yml
+-'  1  2  ~/kraj/vars.yml
+-'  2  2  ~/chandu/variable.yaml
+-'  1  0  ~/chandu/variable.yaml
+-'  1  0  ~/karthick/rebootself.yaml
 -'  38  0  ~/azhar/play1.yaml
 -'  1  0  ~/azhar/play1.yaml
 -'  1  0  ~/chandu/reboot.yaml
--'  37  24  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
--'  1  0  ~/azhar/inventory
--'  7  21  ~/kraj/creategroup.yaml
--'  1  9  ~/kraj/creategroup.yaml
--'  53  9  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
--'  1  0  ~/karthick/installhttpd.yaml
--'  4  2  ~/karthick/installgitwget.yaml
--'  1  0  ~/karthick/installgitwget.yaml
--'  1  0  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
--'  57  6  ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
--'  21  1  ~/venkat/firstplay.yaml
--'  19  6  ~/venkat/firstplay.yaml
--'  38  6  ~/joseph/playbook/ex09.yaml
--'  1  0  ~/joseph/playbook/ex09.yaml
--'  8  28  ~/joseph/playbook/ex08.yaml
--'  1  0  ~/joseph/playbook/ex08.yaml
--'  12  6  ~/joseph/playbook/ex07.yaml
--'  1  2  ~/sathish/Playbooks/Day2_Assignment/consolidated_Playbook.yaml
--'  39  6  ~/joseph/playbook/ex09.yaml
--'  3  17  ~/selva/web.yaml
--'  36  5  ~/selva/web.yaml
--'  8  19  ~/chandu/group.yaml
--'  1  30  ~/chandu/group.yaml
--'  2  1  ~/karthick/groupcreate.yaml
--'  16  19  ~/sadhana/deploy.yaml
--'  1  0  ~/sadhana/deploy.yaml
--'  1  2  ~/karthick/totalplayboo.yml
--'  45  0  ~/karthick/totalplayboo.yml
--'  1  0  ~/sadhana/deploy.yml
--'  9  19  ~/karthick/starthttpd.yaml
--'  1  0  ~/karthick/starthttpd.yaml
--'  9  0  ~/karthick/installhttpd.yaml
--'  2  12  ~/sathish/Playbooks/Day2_Assignment/inventory
--'  1  0  ~/sathish/Playbooks/Day2_Assignment/inventory
--'  11  0  ~/venkat/adhoc
--'  1  0  ~/venkat/adhoc
--'  2  0  ~/roopesh/inventory
--'  1  0  ~/roopesh/inventory
--'  1  0  ~/baskar/testplay.yaml
--'  11  7  ~/karthick/usercreate.yaml
--'  1  0  ~/karthick/usercreate.yaml
--'  16  21  ~/roopesh/web.yaml
--'  1  0  ~/roopesh/web.yaml
--'  3  14  ~/dharini/creategroup.yaml
--'  6  7  ~/dharini/creategroup.yaml
--'  4  0  ~/mano/inventory
--'  1  0  ~/mano/inventory
--'  8  19  ~/joseph/playbook/ex01.yaml
--'  1  0  ~/joseph/playbook/ex01.yaml
--'  7  7  ~/karthick/groupcreate.yaml
--'  5  8  ~/karthick/groupcreate.yaml
--'  1  0  ~/mano/web.yaml
--'  8  0  ~/karthick/groupcreate.yaml
--'  1  0  ~/karthick/groupcreate.yaml
--'  1  4  ~/rajesh/inventory
--'  16  16  ~/rajesh/web.yaml
--'  1  0  ~/rajesh/web.yaml
--'  2  12  ~/kraj/test.inventory
--'  1  4  ~/kraj/test.inventory
--'  1  63  ~/kraj/Assigment1
--'  3  12  ~/sadhana/inventory
--'  1  0  ~/sadhana/inventory
--'  12  0  ~/sadhana/inventory
--'  1  0  ~/index.html
--'  1  35  ~/venkat/index.html
--'  1  8  ~/azhar/index.html
--'  5  0  ~/chandu/index.html
--'  1  0  ~/chandu/index.html
--'  2  0  ~/azhar/index.html
--'  1  0  ~/baskar/index.html
--'  1  0  ~/baskar/sample.html
--'  1  31  ~/karthick/index.html
--'  1  31  ~/test.html
--'  37  0  ~/hpa/deploy.yaml
--'  1  10  ~/hpa/deploy.yaml
--'  26  27  ~/pod4.yaml
--'  1  0  ~/pod4.yaml
--'  14  0  ~/reverseproxy.conf
--'  1  0  ~/reverseproxy.conf
--'  13  13  ~/rb.yaml
--'  1  0  ~/rb.yaml
--'  9  96  ~/role.yaml
--'  1  0  ~/role.yaml
--'  5  19  ~/sa.yaml
--'  1  0  ~/sa.yaml
--'  18  30  ~/ingress/podv.yaml
--'  1  0  ~/ingress/podv.yaml
--'  11  15  ~/ingress/pvc2.yaml
--'  1  0  ~/ingress/pvc2.yaml
--'  11  15  ~/ingress/pvc1.yaml
--'  1  0  ~/ingress/pvc1.yaml
--'  10  13  ~/ingress/pv2.yaml
--'  1  0  ~/ingress/pv2.yaml
--'  14  28  ~/ingress/pv1.yaml
--'  1  0  ~/ingress/pv1.yaml
 
 # History of marks within files (newest to oldest):
 
-> ~/azhar/play1.yaml
-	"	38	0
-	^	1	3
-	.	1	2
-	+	37	19
-	+	1	2
+> ~/rajesh/site.yaml
+	"	6	21
+	^	6	22
+	.	6	6
+	+	7	0
+	+	5	9
+	+	6	6
 
-> ~/roopesh/playbook15.yaml
-	"	1	0
-	^	51	0
-	.	50	49
-	+	1	3
-	+	1	3
-	+	50	49
+> ~/joseph/q2.yaml
+	"	36	2
+	^	36	31
+	.	36	30
+	+	1	19
+	+	34	9
+	+	2	11
+	+	34	2
+	+	40	0
+	+	34	29
+	+	34	32
+	+	34	8
+	+	40	0
+	+	33	20
+	+	32	5
+	+	32	2
+	+	34	0
+	+	39	0
+	+	31	33
+	+	36	30
 
-> ~/karthick/totalplayboo.yml
-	"	1	0
-
-> ~/venkat/firstplay.yaml
-	"	29	5
-	^	29	6
-	.	29	6
-	+	19	0
-	+	14	6
-	+	3	18
-	+	19	22
-	+	24	0
-	+	21	1
-	+	24	19
-	+	22	11
-	+	29	8
-	+	27	4
-	+	28	6
-	+	29	6
-
-> ~/chandu/reboot.yaml
-	"	1	0
-
-> ~/sathish/Playbooks/Day2_Assignment/consolidated.yaml
-	"	37	24
-	^	37	25
-	.	38	0
-	+	1	8
-	+	57	0
-	+	1	25
-	+	51	8
-	+	52	8
-	+	53	8
-	+	37	55
-	+	37	33
-	+	37	33
-	+	37	28
-	+	37	21
-	+	37	25
-	+	38	0
-
-> ~/azhar/inventory
-	"	1	0
-
-> ~/kraj/creategroup.yaml
+> ~/rajesh/web/handlers/main.yml
 	"	7	21
 	^	7	22
 	.	7	0
-	+	1	2
 	+	7	0
 
-> ~/karthick/installhttpd.yaml
+> ~/rajesh/web/tasks/main.yml
+	"	21	33
+	^	21	34
+	.	21	0
+	+	21	0
+
+> ~/rajesh/web/vars/main.yml
+	"	5	31
+	^	5	32
+	.	5	31
+	+	6	17
+	+	5	31
+
+> ~/rajesh/web/defaults/main.yml
+	"	5	17
+	^	5	18
+	.	5	17
+	+	5	17
+
+> ~/joseph/group_vars/DEV
 	"	1	0
+	^	1	14
+	.	1	11
+	+	1	11
 
-> ~/karthick/installgitwget.yaml
-	"	4	2
-
-> ~/chandu/httpd.yaml
-	"	17	19
-	^	17	20
-	.	17	20
-	+	17	20
-
-> ~/joseph/playbook/ex09.yaml
-	"	38	6
-	^	38	29
-	.	38	28
-	+	39	0
-	+	1	24
-	+	38	28
-
-> ~/sathish/Playbooks/Day2_Assignment/consolidated_Playbook.yaml
-	"	12	0
-	^	12	0
-	.	11	0
-	+	97	0
-	+	93	2
-	+	11	0
-
-> ~/joseph/playbook/ex08.yaml
-	"	8	28
-	^	8	29
-	.	8	28
-	+	8	28
-
-> ~/joseph/playbook/ex07.yaml
-	"	12	6
-	^	12	20
-	.	12	0
-	+	20	0
-	+	12	0
-
-> ~/selva/index.html
-	"	1	14
-	^	1	15
-	.	1	14
-	+	1	14
-
-> ~/selva/web.yaml
-	"	3	17
-	^	3	18
-	.	3	17
-	+	3	12
-	+	13	20
-	+	17	0
-	+	11	19
-	+	26	0
-	+	23	8
-	+	24	2
-	+	25	3
-	+	26	33
-	+	31	17
-	+	30	16
-	+	36	30
-	+	38	0
-	+	37	2
-	+	3	11
-	+	5	0
-	+	6	0
-	+	7	1
-	+	8	2
-	+	9	3
-	+	11	0
-	+	12	1
-	+	13	2
-	+	14	3
-	+	15	3
-	+	16	3
-	+	18	0
-	+	19	1
-	+	20	2
-	+	21	3
-	+	23	0
-	+	24	1
-	+	25	2
-	+	26	3
-	+	28	0
-	+	29	1
-	+	30	2
-	+	31	3
-	+	33	0
-	+	34	1
-	+	35	2
-	+	36	3
-	+	6	1
-	+	7	2
-	+	8	3
-	+	9	4
-	+	11	1
-	+	12	2
-	+	13	3
-	+	14	4
-	+	15	4
-	+	16	4
-	+	18	1
-	+	19	2
-	+	20	3
-	+	21	4
-	+	23	1
-	+	24	2
-	+	25	3
-	+	26	4
-	+	28	1
-	+	29	2
-	+	30	3
-	+	31	4
-	+	33	1
-	+	34	2
-	+	35	3
-	+	36	4
-	+	3	17
-
-> ~/chandu/group.yaml
-	"	8	19
-	^	8	20
-	.	8	19
-	+	1	92
-	+	1	52
-	+	1	79
-	+	1	98
-	+	1	48
-	+	1	30
-	+	1	80
-	+	1	98
-	+	1	23
-	+	1	36
-	+	8	0
-	+	1	110
+> ~/rajesh/main.yaml
+	"	1	11
+	^	1	12
+	.	1	11
 	+	1	0
-	+	2	0
-	+	3	11
-	+	5	23
-	+	6	4
-	+	7	17
-	+	8	19
+	+	1	0
+	+	1	12
+	+	6	0
+	+	1	11
 
-> ~/karthick/usercreate.yaml
-	"	1	0
+> ~/rajesh/stuff.yaml
+	"	6	5
+	^	6	51
+	.	1	0
+	+	1	3
+	+	1	0
+	+	1	3
+	+	6	0
+	+	1	0
 
-> ~/karthick/clonerepo.yaml
-	"	11	0
-	^	11	0
-	.	10	0
-	+	9	24
-	+	5	26
-	+	6	8
-	+	7	14
-	+	8	38
+> ~/joseph/inventory
+	"	12	3
+	^	12	4
+	.	12	3
+	+	3	3
+	+	6	5
+	+	20	3
+	+	17	2
+	+	12	3
+
+> ~/venkat/weserver2OS.yaml
+	"	16	5
+	^	16	6
+	.	16	5
+	+	31	33
+	+	11	5
+	+	16	5
+
+> ~/karthick/testingassignment_groupvars.yaml
+	"	17	4
+	.	17	0
+	+	6	9
+	+	21	15
+	+	22	9
+	+	23	2
+	+	21	27
+	+	25	15
+	+	27	27
+	+	12	28
+	+	13	0
+	+	9	4
+	+	10	6
+	+	11	8
+	+	12	15
 	+	9	12
+	+	21	0
+	+	23	0
+	+	18	0
+	+	17	0
+	+	23	2
+	+	24	4
+	+	25	6
+	+	26	8
+	+	27	8
+	+	17	0
+
+> ~/azhar/assignemt.yaml
+	"	18	11
+	^	18	12
+	.	18	0
+	+	18	0
+
+> ~/joseph/group_vars/dev
+	"	1	0
+	^	1	12
+	.	1	12
+	+	1	12
+
+> ~/karthick/inventory
+	"	2	12
+	^	2	13
+	.	2	13
+	+	1	3
+	+	2	13
+
+> ~/chandu/twoconfs.yaml
+	"	63	21
+	^	63	22
+	.	47	29
+	+	6	16
+	+	63	0
+	+	37	0
+	+	40	17
+	+	41	17
+	+	44	26
+	+	47	29
+
+> ~/joseph/group_vars/QA
+	"	1	13
+	^	1	14
+	.	1	13
+	+	1	13
+
+> ~/selva/conditional1.yaml
+	"	16	11
+	^	16	12
+	.	16	11
 	+	10	0
+	+	5	1
+	+	11	0
+	+	7	4
+	+	15	0
+	+	12	6
+	+	13	18
+	+	15	42
+	+	11	28
+	+	6	22
+	+	16	77
+	+	19	13
+	+	19	3
+	+	18	17
+	+	19	16
+	+	19	5
+	+	20	17
+	+	19	13
+	+	16	11
+
+> ~/dharini/day3.yaml
+	"	8	41
+	^	8	42
+	.	8	41
+	+	10	0
+	+	10	3
+	+	10	0
+	+	10	0
+	+	8	18
+	+	9	4
+	+	2	17
+	+	8	6
+	+	7	0
+	+	6	16
+	+	8	41
+
+> ~/joseph/q1.yaml
+	"	32	47
+	^	32	48
+	.	32	47
+	+	64	2
+	+	31	18
+	+	33	0
+	+	32	2
+	+	31	53
+	+	31	10
+	+	31	2
+	+	32	47

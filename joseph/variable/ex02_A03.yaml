@@ -1,0 +1,25 @@
+- name: Update web servers
+  hosts: web
+  vars:
+    packagename: "httpd"
+    servicename: "httpd"
+  tasks:
+    - name: Install Apache in centos7
+      ansible.builtin.yum:
+        name: "{{ packagename }}"
+        state: latest
+    - name: Copy index.html
+      ansible.builtin.copy:
+        src: ~/joseph/index.html
+        dest: /var/www/html/index.html
+    - name: Starting a Apache Server
+      ansible.builtin.service:
+        name: "{{ servicename }}"
+        state: started
+    - name: Ansible register variable basic example
+      shell: "find *.txt"
+      args:
+        chdir: "/home/azureuser/joseph"
+      register: find_output
+    - debug:
+        var: find_output

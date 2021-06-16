@@ -1,0 +1,27 @@
+
+--- 
+- 
+  hosts: localhost
+  name: "Declaring the internal variable"
+  tasks: 
+    - 
+      name: "Installing the yum"
+      yum: 
+        name: "{{ packagename }}"
+        state: installed
+    - 
+      copy: 
+        dest: "{{ dest_path }}"
+        src: "{{ copypath }}"
+      name: "Copying the files"
+    - 
+      name: "Starting the servicename"
+      service: 
+        name: "{{ servicename }}"
+        state: started
+  vars: 
+    copypath: index.html
+    dest_path: /var/www/html
+    packagename: httpd
+    servicename: httpd
+

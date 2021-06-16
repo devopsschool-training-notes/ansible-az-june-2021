@@ -1,0 +1,46 @@
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Mano"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+    when: 
+      - ansible_os_family == "RedHat"
+      - ansible_distribution_major_version == "7"
+      - ansible_system == "Linux"
+  - name: My Name is Equals to Mano
+    debug:
+      msg: "My Name is Equals to Mano"
+    when: myname == "Mano"
+  - name: Ansible print when ubuntu
+    debug:
+      msg: "I am ubuntu"
+    when: ansible_os_family == "Debian"
+  - name: My Name is not Equals to Mano
+    debug:
+      msg: "My Name is not Equals to Mano"
+    when: myname != "Mano"
+  - name: Ansible register variable basic example
+    shell: "ls"
+    args:
+      chdir: "/home/azureuser/mano"
+    register: list_output
+  - debug:
+      var: list_output
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "The contents from /home/azureuser/mano are {{ list_output }}"

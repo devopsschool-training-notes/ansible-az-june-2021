@@ -1,0 +1,10 @@
+--- # Group Creation 
+- hosts: localhost
+  
+  vars: 
+     packagename : 'httpd'
+  tasks:
+      - name: install httpd 
+        yum:
+          name: "{{ packagename }}"
+          state: present 

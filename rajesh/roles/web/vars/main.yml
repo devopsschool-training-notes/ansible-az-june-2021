@@ -1,0 +1,6 @@
+---
+# vars file for web
+#
+#
+    myname: "Rajesh Kumar in var"
+    httpport: 8090

@@ -1,0 +1,39 @@
+- name: Excercise 2
+  hosts: DEV
+  vars:
+    packagename: "httpd"
+    servicename: "httpd"
+
+  tasks:
+  - name: Install Apache in RHEL
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Install Apache in Ubuntu
+    ansible.builtin.apt:
+      name: "{{ packagename }}"
+      state: latest
+    when: ( ansible_os_family == "Ubuntu" and ansible_system == "Linux")
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Template for httpd.conf
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - Restarting a Apache server
+  - debug:
+      msg:  "port is {{ httpport}}}"
+
+  handlers:
+  - name: Restarting a Apache server
+    ansible.builtin.service:
+      name: httpd
+      state: restarted

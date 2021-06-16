@@ -1,0 +1,36 @@
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+    when: 
+      - ansible_os_family == "RedHat"
+      - ansible_distribution_major_version == "7"
+      - ansible_system == "Linux"
+  - name: My Name is Equals to Rajesh Kumar
+    debug:
+      msg: "My Name is Equals to Rajesh Kumar"
+    when: myname == "Rajesh Kumar"
+  - name: Ansible print when ubuntu
+    debug:
+      msg: "I am ubuntu"
+    when: ansible_os_family == "Debian"
+  - name: My Name is not Equals to Rajesh Kumar
+    debug:
+      msg: "My Name is not Equals to Rajesh Kumar"
+    when: myname != "Rajesh Kumar"

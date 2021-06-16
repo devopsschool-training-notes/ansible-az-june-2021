@@ -1,0 +1,22 @@
+---
+- name: conditional check
+  hosts: localhost
+  tasks:
+    - name: testing the condtional check
+      yum: 
+        name: httpd
+        state: installed
+      when: ansible_os_family == "RedHat"
+      apt:
+        name: httpd
+        state: installed
+      when: ansible_os_family == "Debian"
+    - name: Listing out the directories
+      shell: "ls -d */"
+      args:
+        chdir: "/etc/"
+      register: file_type_output
+    - name: To display the directories
+      debug:
+        msg: "This is a directory /file in /etc/: {{ file_type_output.stdout_lines }}"
+    

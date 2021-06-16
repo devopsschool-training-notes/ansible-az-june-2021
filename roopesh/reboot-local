@@ -1,0 +1,8 @@
+---
+-
+  hosts: localhost
+  tasks:
+    - name: "Reboot a dummy machine"
+      reboot:
+        msg: test
+

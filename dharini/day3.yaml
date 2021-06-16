@@ -1,0 +1,18 @@
+---
+- hosts: localhost
+  tasks:
+  - name: install httpd in RedHat
+    yum:
+      name: httpd
+      state: latest
+    when: ( ansible_os_family == "RedHat" )
+  - name: install httpd in Debian
+    apt:
+      name: httpd
+      state: latest
+    when: ( ansible_os_family == "Debian" )
+  - name: Diaplaying contents of etc
+    shell: "ls -ltr /home/azureuser/dharini/"
+    register: find_output
+  - debug:
+      var: find_output

@@ -1,0 +1,17 @@
+---
+- name: conditional check
+  hosts: localhost
+  vars:
+    myname: "Karthick"
+  tasks:
+    - name: testing the condtional check
+      yum: 
+        name: "{{ item }}"
+        state: installed
+      with_nested:
+        - git
+        - ntp
+    - name: testing the debug script
+      debug:
+        msg: "It is working or not"
+      when: myname == "Karthick"

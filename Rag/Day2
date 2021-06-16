@@ -1,0 +1,41 @@
+------------------------------------------Day2-------------------------------------------------
+1. ---
+- name: Create group deploy
+  hosts: localhost
+
+  tasks:
+  - name: Create user in centos7
+    ansible.builtin.groupadd:
+      name: deploy
+      state: present
+
+2. ---
+- name: Create user deploy-user
+  hosts: localhost
+
+  tasks:
+  - name: Create deploy-user in centos7
+    ansible.builtin.user:
+      name: deploy-user
+          group: deploy
+      shell: /bin/bash
+
+
+3. ---
+- name: Install Apache
+  hosts: localhost
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+
+4. ---
+- name: Start Apache
+  hosts: localhost
+
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started

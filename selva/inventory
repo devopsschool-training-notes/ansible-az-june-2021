@@ -1,0 +1,7 @@
+[web]
+52.146.89.226
+
+[web:vars]
+ansible_user=azureuser
+ansible_ssh_pass=centos123
+ansible_become=yes

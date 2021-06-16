@@ -1,0 +1,17 @@
+---
+  - name: variable decalared in Playbooks
+    vars:
+     packagename: "httpd"
+  
+  tasks:
+  - name: Installing a apache service
+     yum:
+      name: "{{ packagename }}"
+      state: installed  
+
+  - name: start and enable the service named “httpd”
+     service:
+      name: "{{ packagename }}"
+      state: started
+
+

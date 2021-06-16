@@ -1,0 +1,29 @@
+- name: web server
+  hosts: localhost
+  vars: 
+    portnumber: 8090
+  tasks:
+- name:installing the httpd server
+  yum:
+  name :httpd
+  state:present
+- name: starting the httpd
+  service:
+  name:httpd
+  state:started
+- name :copying the file
+  copy:
+  src: index.html
+  dest:/var/www/html
+- name:template work
+  template:
+  src:httpd.conf.j2
+  dest:/etc/httpd/conf/httpd.conf
+- name:
+  notify:
+- restarting the apache server
+ handlers:
+- name: restarting the apache server
+    ansible.builtin.service:
+      name: httpd
+      state: restarted

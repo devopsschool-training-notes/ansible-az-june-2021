@@ -1,0 +1,33 @@
+- name: Excercise 1
+  hosts: web
+  vars:
+    packagename: "httpd"
+    servicename: "httpd"
+
+  tasks:
+  - name: Install Apache in RHEL
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Install Apache in Ubuntu
+    ansible.builtin.apt:
+      name: "{{ packagename }}"
+      state: latest
+    when: ( ansible_os_family == "Ubuntu" and ansible_system == "Linux")
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Find all files from /etc and printng
+    shell: "find *"
+    args:
+      chdir: "/etc"
+    register: find_output
+  - debug:
+      msg: "This is a directory /file in /etc:- {{ find_output.stdout_lines|list }}"
+

@@ -1,0 +1,13 @@
+---
+- name: Test variable substitution in names
+  hosts: localhost
+  connection: local
+  vars:
+    greeting: Hello
+  tasks:
+    - name: Sorry {{ ansible_user }}
+      debug:
+        msg: this won't work
+    - name: You say '{{ greeting }}'
+      debug:
+        var: ansible_user

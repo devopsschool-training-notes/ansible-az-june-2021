@@ -1,0 +1,30 @@
+---
+- name: declaring the template
+  hosts: localhost
+  vars:
+    portnumber: 8099
+  tasks:
+    - name: Installing the httpd
+      yum:
+        name: httpd
+        state: present
+    - name: starting the httpd
+      service:
+        name: httpd
+        state: started
+    - name: copying the index.html
+      copy:
+       src: "index.html"
+       dest: "/var/www/html"
+    - name: template work will be done here
+      template:
+        src: "httpd.conf.j2"
+        dest: "/etc/httpd/conf/httpd.conf"
+      notify:
+        - ReStarting a Apache Server
+  handlers:
+    - name: ReStarting a Apache Server
+      service:
+        name: httpd
+        state: restarted
+       

@@ -1,0 +1,15 @@
+--- # Using template module
+- hosts: localhost
+  
+  tasks:
+   - name: Template for index.html
+     template:
+       src: index.html.j2
+       dest: /var/www/html/index.html
+     notify: stop  httpd 
+  
+  handlers: 
+    - name: stop  httpd 
+      service:
+        name: httpd 
+        state: stopped 

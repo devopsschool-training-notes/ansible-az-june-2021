@@ -1,0 +1,13 @@
+--- # vars_prompt
+- hosts: localhost
+  
+  vars_prompt: 
+     - name: packagename
+       prompt: "Please input the package you would like to install"
+       private: no 
+  tasks:
+      - name: install httpd 
+        yum:
+          name: "{{ packagename }}"
+          state: present 
+

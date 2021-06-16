@@ -1,0 +1,27 @@
+---
+- name: testing group vars and template
+  hosts: dev
+  tasks:
+    - name: Testing the httpd installed or not
+      yum:
+        name: httpd
+        state: installed
+    - name: Start the service
+      service:
+        name: httpd
+        state: started
+    - name: copying the file
+      copy:
+        src: "index.html"
+        dest: "/var/www/html/index-2.html"
+    - name: template work will be done here
+      template: 
+        src: "httpd.conf.j2"
+        dest: "/etc/httpd/conf/httpd.conf"
+      notify: 
+        - Restart the service
+  handlers:
+    - name: Restart the service
+      service:
+        name: httpd
+        state: restarted

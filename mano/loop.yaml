@@ -1,0 +1,48 @@
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    listvar1:
+      - 'a'
+      - 'b'
+      - 'c'
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - git
+      - httpd
+      - ntp
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - command: echo {{ item }}
+    loop: [ 0, 2, 4, 6, 8, 10 ]
+  - command: echo {{ item }}
+    loop: [ 0, 2, 4, 6, 8, 10 ]
+    when: item > 5
+  - name: Remove users Chuck and Craig from the system.
+    user:
+      name: "{{ item }}"
+      state: absent
+      remove: yes
+    with_items:
+      - chuck
+      - craig
+  - shell: echo "nested test a={{ item[0] }} b={{ item[1] }} c={{ item[2] }}"
+    with_nested:
+      - [ 'red', 'blue', 'green' ]
+      - [ 1, 2, 3 ]
+      - [ 'up', 'down', 'strange']
+  - shell: echo "nested test a={{ item[0] }} b={{ item[1] }}"
+    with_nested:
+     - listvar1
+     - [ 1, 2, 3 ]

@@ -1,0 +1,31 @@
+---
+- name: Update web servers
+  hosts: web  
+  vars:
+    #myname: "Gokulnath"
+    #age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_files:
+    - "extern_vars.yaml"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      #var: myname
+      var: packagename
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "We have installed {{ packagename }}"

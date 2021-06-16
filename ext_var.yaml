@@ -1,0 +1,5 @@
+vars:
+    #myname: "Baskar"
+    #age: "18"
+    packagename: "httpd"
+    servicename: "httpd"

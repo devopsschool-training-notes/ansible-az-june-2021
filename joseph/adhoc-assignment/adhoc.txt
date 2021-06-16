@@ -1,0 +1,24 @@
+
+ansible web -i inventory -m group -a "name=deploy state=present"  -u centos --key-file=node1.pem -b
+ansible web -i inventory -m user -a "name=deploy-user group=deploy createhome=yes"  -u centos --key-file=node1.pem -b
+
+ansible web -i inventory -m yum -a "name=httpd state=installed" -u centos --key-file=node1.pem -b
+
+ansible web -i inventory -m service -a "name=httpd state=started"  -u centos --key-file=node1.pem -b
+
+ansible web -i inventory -m copy -a "src=index.html dest=/var/www/html/index.html"  -u centos --key-file=node1.pem -b
+
+ansible web -i inventory -m copy -a "src=second.html dest=/var/www/html/second.html"  -u centos --key-file=node1.pem -b
+
+
+ansible web -i inventory -m yum -a 'name=git state=present' -u centos --key-file=node1.pem -b
+
+ansible web -i inventory -m yum -a 'name=wget state=present' -u centos --key-file=node1.pem -b
+
+
+ansible web -i inventory -m git -a "repo=https://github.com/scmgalaxy/ansible-role-template.git dest=/src/" -u centos --key-file=node1.pem -b
+
+
+ansible web -i inventory -m shell -a "sleep 5 && reboot" -u centos --key-file=node1.pem -b
+
+ansible web -i inventory -m ping -u centos --key-file=node1.pem -b

@@ -1,0 +1,4 @@
+    packagename: "httpd"
+    servicename: "httpd"
+    copy_source: "index.html"
+    dest_source: "/var/www/html"

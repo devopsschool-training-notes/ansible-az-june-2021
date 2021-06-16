@@ -1,0 +1,29 @@
+---
+- name: template2
+  hosts: localhost
+  vars:
+    myname: "Azhar"
+    httpport: 8090
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: stopped a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: stopped
+  - name: Template for httpd.conf
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+

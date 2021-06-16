@@ -1,0 +1,21 @@
+---
+- name: "Declaring the variables"
+  hosts: localhost
+  vars:
+    packagename: "httpd"
+    servicename: "httpd"
+  tasks:
+    - name: Installing the httpd
+      yum:
+        name: "{{ packagename }}"
+        state: installed
+    - name: Copying the file
+      copy:
+        src: "index.html"
+        dest: "/var/www/html/"
+        state: present
+    - name: Starting the service
+      service:
+        name: "{{ servicename }}"
+ 
+  

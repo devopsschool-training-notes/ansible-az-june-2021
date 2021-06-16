@@ -1,0 +1,10 @@
+---
+- hosts: web
+  vars_prompt:
+    - name: "packagename"
+      prompt: "Which package do you want to install?"
+  tasks:
+  - name: install httpd
+    yum:
+      name: "{{ packagename }}"
+      state: latest

@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  tasks:
+  - name: find file
+    shell: "find *.txt"
+    args:
+      chdir: "/home/azureuser/dharini"
+    register: find_output
+  - debug:
+      var: find_output
+  - debug:
+      var: find_output.stdout_lines

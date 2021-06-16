@@ -1,0 +1,11 @@
+--- # Group Creation 
+- hosts: localhost
+  
+  vars_files: 
+      /home/azureuser/sathish/Playbooks/Variables/sat_var.yml
+
+  tasks:
+      - name: install httpd 
+        yum:
+          name: "{{ packagename }}"
+          state: present 
