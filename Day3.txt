@@ -1,0 +1,122 @@
+ - conditioning 
+ - looping
+
+ - template config work
+ - Handlers
+ 
+ - Multiple Playbook
+ - Roles
+
+------------------------FACT Variable------------------------
+- fact of remote host
+- SYSTEM - ENV of the host
+
+Manually - 
+	Module setup
+Wheneven u run playbook - fact variable gathter auto.
+
+============================================================
+Conditioning and Looping with Playbook
+============================================================
+WHEN OS = ubuntu
+	run APT module
+When OS = RHEL
+	run yum module
+WHEN OS = WIndows
+	run ps module
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+    when: 
+      - ansible_os_family == "RedHat"
+      - ansible_distribution_major_version == "7"
+      - ansible_system == "Linux"
+  - name: My Name is Equals to Rajesh Kumar
+    debug:
+      msg: "My Name is Equals to Rajesh Kumar"
+    when: myname == "Rajesh Kumar"
+  - name: Ansible print when ubuntu
+    debug:
+      msg: "I am ubuntu"
+    when: ansible_os_family == "Debian"
+  - name: My Name is not Equals to Rajesh Kumar
+    debug:
+      msg: "My Name is not Equals to Rajesh Kumar"
+    when: myname != "Rajesh Kumar"
+
+
+==========================================
+
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    listvar1:
+      - 'a'
+      - 'b'
+      - 'c'
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - git
+      - httpd
+      - ntp
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - command: echo {{ item }}
+    loop: [ 0, 2, 4, 6, 8, 10 ]
+  - command: echo {{ item }}
+    loop: [ 0, 2, 4, 6, 8, 10 ]
+    when: item > 5
+  - name: Remove users Chuck and Craig from the system.
+    user:
+      name: "{{ item }}"
+      state: absent
+      remove: yes
+    with_items:
+      - chuck
+      - craig
+  - shell: echo "nested test a={{ item[0] }} b={{ item[1] }} c={{ item[2] }}"
+    with_nested:
+      - [ 'red', 'blue', 'green' ]
+      - [ 1, 2, 3 ]
+      - [ 'up', 'down', 'strange']
+  - shell: echo "nested test a={{ item[0] }} b={{ item[1] }}"
+    with_nested:
+     - listvar1
+     - [ 1, 2, 3 ]
+
+
+
+
+
