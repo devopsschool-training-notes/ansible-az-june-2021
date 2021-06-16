@@ -115,6 +115,137 @@ WHEN OS = WIndows
     with_nested:
      - listvar1
      - [ 1, 2, 3 ]
+=============================================================================================
+ - template config work
+ - Handlers
+===========================================================================================
+Qs - 
+Decalaring vars in
+- playbook
+- inventory
+- commands
+---------------------
+- Using it in playbook Tasks
+
+Can we use these VARS in some of the files used in Playbook?
+     Intropolate
+======================================================
+template
+- the MUST BE .j2 ext.
+- You MUST use a module call "template"
+
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Template index.html
+    template:
+      src: index.html.j2
+      dest: /var/www/html/index-template.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+=================================
+When you Change APACHE STATIC HTML Content -> HTTPD restart is not required
+When you Change APACHE Conf -> HTTPD restart is not required
+
+Project 
+- HTTP should be run 90
+- No restart should be done on STATIC
+- Restart must be done at conf changes
+
+{{ httpport }}
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+    httpport: 8090
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: stopped a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: stopped
+  - name: Template for httpd.conf
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+
+======================================================================================
+Solution - Handlers
+
+- A section is plyabook similar to tasks section
+- it contains multiple task similar to tasks section
+- the Handler task would execute when you call from tasks's task
+- BUT one cond - ONLY when calling tasks's task is CHANGED == TRUE
+
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Rajesh Kumar"
+    httpport: 8090
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: Template for httpd.conf
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - ReStarting a Apache Server
+
+  handlers:
+  - name: ReStarting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+
+
+
 
 
 
