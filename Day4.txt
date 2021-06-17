@@ -1,0 +1,273 @@
+Qa - Using Ansible with Windows Server
+================================================
+ACS				ARS
+-------------------------------------------------
+LINUX				WINDOWS - ANY
+-------------------------------------------------
+Ansible
+	Windows Module
+
+	
+TOOL		HTTP PACKET		WINRM(ENABLED & RUNNING)
+- WINRM Package				HTTP - 5985
+					HTTPS - 5986
+				
+		Default(HTTPS)				
+				Pre
+					- DOTNET 4.X+
+					- PS 3.X+
+				-------------------
+				Module PS ----> PS
+				Module Py ----> PYTHON
+				Module JAVA ----> JRE
+----------------------------------------------------------------
+				Authentication & Auth
+https://devopsschool.com/tutorial/ansible/ansible-windows-control-setup.html	
+=======================================================================
+Which are the modules which i can use in Windows?
+https://docs.ansible.com/ansible/2.9/modules/list_of_windows_modules.html
+
+===========================================================================
+Working with Ansible Adhoc Commands with Windows
+Working with Ansible Playbook with Windows
+==========================================================
+
+How to configure ARS for Ansible?
+https://devopsschool.com/tutorial/ansible/ansible-windows-remote-setup.html
+ARS - 20.81.234.228
+$username = "rajesh"
+$password = "Ghs6834&dhks"
+
+How to setup Ansible Control server with Windows Support?
+https://devopsschool.com/tutorial/ansible/ansible-windows-control-setup.html
+
+============================================================
+
+Working with Ansible Adhoc Commands with Windows
+ansible all -i 20.81.234.228, -m win_ping -c winrm -u rajesh -e 'ansible_password=Ghs6834&dhks'
+ansible all -i 20.81.234.228, -m win_ping -c winrm -u rajesh -e 'ansible_password=Ghs6834&dhks ansible_winrm_server_cert_validation=ignore' 
+OR
+ansible all -i 20.81.234.228, -m win_ping -c winrm -u rajesh -e 'ansible_password=Ghs6834&dhks ansible_port=5985'
+
+Working with Ansible Playbook with Windows
+-----------------------------------------
+https://www.devopsschool.com/blog/ansible-error-while-executing-adhoc-commands-playbook-in-windows-remote/
+
+inventory
+--------------------------------
+
+[windows]
+20.81.234.228
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=rajesh
+ansible_password="Ghs6834&dhks"
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic
+
+
+ansible windows -i inventory -m win_ping
+
+
+
+[azureuser@master rajesh]$ ansible windows -i inventory -m win_ping
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+20.81.234.228 | SUCCESS => {
+    "changed": false,
+    "ping": "pong"
+}
+[azureuser@master rajesh]$
+
+Lab & Assignment
+https://www.devopsschool.com/blog/ansible-windows-adhoc-commands-lab-excercise-part-3/
+https://www.devopsschool.com/blog/ansible-windows-playbook-lab-excercise-part-4/
+
+
+
+
+  "13.233.129.94",
+  "15.206.69.216",
+  "13.233.236.137",
+  "13.127.146.63",
+  "13.234.231.33",
+  "65.1.147.247",
+  "65.0.127.255",
+  "3.108.66.58",
+  "52.66.213.212",
+  "13.127.209.109",
+  "13.233.83.102",
+  "13.235.254.200",
+  "65.1.131.130",
+  "52.66.201.46",
+  "13.127.99.212",
+  "3.108.190.135",
+  "13.234.231.163",
+  "15.207.85.57",
+
+Mano Selvamani	 "13.233.129.94",	 "dLcCV8?yAPCL;=4&GUYl$xtz?vXGr)fp",
+Yogadharini	  "15.206.69.216",	  "3?ct5J&8?t-gJ*wD@;u4E@je5HhzHZ&j",
+Ganesh NV	  "13.233.236.137",	  "tY@xPh9Bm9d&sZ(yZyezx@l=l9cVlW&8",
+Roopesh	  "13.127.146.63",	  "6&SggFan$d)g5t@MeqLzM$Cr%!tuUbMx",
+Arockia joseph pradeep	  "13.234.231.33",	  "2&SXL=d2umktVjct8I-nWVf&e.njOV-j",
+Baskar Manoharan	  "65.1.147.247",	  "$tZQRiy2qPQvVUisrfPE;*F83VB8*spG",
+Azharuddin Shaik	  "65.0.127.255",	  "v;*&Bx@vcQK&WDUSe&G$dYU7@8mMDl.T",
+Chandu Babu Mannava	  "3.108.66.58",	  "X?;gAzT?Q&2s-?outvRCPWA&TbLqwME;",
+Venkatesh.G	  "52.66.213.212",	  "*8D%cADsTCbzd-LofEn;W?!9lEUG4XX7",
+Karthick Selvaraj	  "13.127.209.109",	  "khfzZVo@9%3Pb9x!!I9lkiaWAWiv=Lzz",
+R K Sathish Kumar	  "13.233.83.102",	  "n%bmkNaexyUuGPCw6-*I@4g3Aqx4Vr7g",
+Raghavendra	  "13.235.254.200",	  "UAVlgvr.imJW2H(NC-zvfCC*tuMo=3FZ",
+Selvasankar L	  "65.1.131.130",	  "M)=4zW-OHbVu(cT2L2q*4t;(YTXs2yrQ",
+GOKULNATH PL	  "52.66.201.46",	  "rx9pelu2vO&5A$@9g;=b*har(PX43?dn",
+Navin Nandakumar	  "13.127.99.212",	  "pXd65vh&Q.sE-$r&5vXdZpF4HYdADYT&",
+G.K.Bhavaani Shankar	  "3.108.190.135",	  "%-fuMfuyS*!YxzYMGkQN)SrT$)E8rD)k",
+RAJAMURUGAN R	  "13.234.231.163",	  "EirctL&fQFUtj@*Pw*TM73ER7ipSJndu",
+Rajeshwaran K	  "15.207.85.57",	  "BOB5csZutSzvH2LkSXX)%prJFhGbWdCE",
+Sadhana Rajan		
+NIMALMADHAN PP		
+
+
+USER NAME - Administrator
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users\rajesh> (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+Exception calling "DownloadFile" with "2" argument(s): "The request was aborted: Could not create SSL/TLS secure
+channel."
+At line:1 char:1
++ (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (:) [], MethodInvocationException
+    + FullyQualifiedErrorId : WebException
+
+PS C:\Users\rajesh> [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+PS C:\Users\rajesh> (New-Object -TypeName System.Net.WebClient).DownloadFile($url, $file)
+PS C:\Users\rajesh>
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+------------------------
+
+[root@master files]# sudo pip install markupsafe
+Traceback (most recent call last):
+  File "/bin/pip", line 9, in <module>
+    load_entry_point('pip==21.1.2', 'console_scripts', 'pip')()
+  File "/usr/lib/python2.7/site-packages/pkg_resources.py", line 378, in load_entry_point
+    return get_distribution(dist).load_entry_point(group, name)
+  File "/usr/lib/python2.7/site-packages/pkg_resources.py", line 2566, in load_entry_point
+    return ep.load()
+  File "/usr/lib/python2.7/site-packages/pkg_resources.py", line 2260, in load
+    entry = __import__(self.module_name, globals(),globals(), ['__name__'])
+  File "/usr/lib/python2.7/site-packages/pip/__init__.py", line 1, in <module>
+    from typing import List, Optional
+ImportError: No module named typing
+[root@master files]# sudo pip install xmltodict
+Traceback (most recent call last):
+  File "/bin/pip", line 9, in <module>
+    load_entry_point('pip==21.1.2', 'console_scripts', 'pip')()
+  File "/usr/lib/python2.7/site-packages/pkg_resources.py", line 378, in load_entry_point
+    return get_distribution(dist).load_entry_point(group, name)
+  File "/usr/lib/python2.7/site-packages/pkg_resources.py", line 2566, in load_entry_point
+    return ep.load()
+  File "/usr/lib/python2.7/site-packages/pkg_resources.py", line 2260, in load
+    entry = __import__(self.module_name, globals(),globals(), ['__name__'])
+  File "/usr/lib/python2.7/site-packages/pip/__init__.py", line 1, in <module>
+    from typing import List, Optional
+ImportError: No module named typing
+
+
+
+
+
+[root@master ~]# ansible --version
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+
+
+
+https://stackoverflow.com/questions/67278017/pip-command-line-importerror-no-module-named-typing
+
+
+==========================================================================================================
+
+
+[root@master ~]# ansible all -i 20.81.234.228, -m win_ping
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+20.81.234.228 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 20.81.234.228 port 22: Connection timed out",
+    "unreachable": true
+}
+[root@master ~]#
+
+
+[root@master ~]# ansible all -i 20.81.234.228, -m win_ping
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+20.81.234.228 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "Failed to connect to the host via ssh: ssh: connect to host 20.81.234.228 port 22: Connection timed out",
+    "unreachable": true
+}
+
+
+[root@master ~]# ansible all -i 20.81.234.228, -m win_ping -c winrm -u rajesh
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+20.81.234.228 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "ssl: auth method ssl requires a password",
+    "unreachable": true
+}
+
+
+[root@master ~]# ansible all -i 20.81.234.228, -m win_ping -c winrm -u rajesh -e 'ansible_password=Ghs6834&dhks'
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+20.81.234.228 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "ssl: HTTPSConnectionPool(host='20.81.234.228', port=5986): Max retries exceeded with url: /wsman (Caused by SSLError(SSLError(1, u'[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed (_ssl.c:618)'),))",
+    "unreachable": true
+}
+
+
+[root@master ~]# ansible all -i 20.81.234.228, -m win_ping -c winrm -u rajesh -e 'ansible_password=Ghs6834&dhks ansible_port=5985'
+/usr/lib/python2.7/site-packages/ansible/parsing/vault/__init__.py:44: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.exceptions import InvalidSignature
+20.81.234.228 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "plaintext: the specified credentials were rejected by the server",
+    "unreachable": true
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
