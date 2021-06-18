@@ -127,12 +127,22 @@ Decalaring vars in
 ---------------------
 - Using it in playbook Tasks
 
-Can we use these VARS in some of the files used in Playbook?
-     Intropolate
-======================================================
-template
-- the MUST BE .j2 ext.
-- You MUST use a module call "template"
+
+Ansible Template and Handlers explained with Example
+
+We can declare variables in 
+- playbook
+- inventory
+- commands
+
+Which can be used & Intropolate only in playbook Tasks but not in the files used in playbook.
+
+Solution: Template
+Using Template module you can Intropolate vars mentioned in the files used in playbook.
+
+Rule for using template Module
+- A file must be .j2 ext
+- Must use a module call "template"
 
 
 ---
@@ -160,15 +170,14 @@ template
       state: started
 
 =================================
-When you Change APACHE STATIC HTML Content -> HTTPD restart is not required
-When you Change APACHE Conf -> HTTPD restart is not required
 
-Project 
+Project Requirement
+- When you Change APACHE STATIC HTML Content -> HTTPD restart is not required
+- When you Change APACHE Conf -> HTTPD restart is not required
 - HTTP should be run 90
 - No restart should be done on STATIC
 - Restart must be done at conf changes
 
-{{ httpport }}
 
 ---
 - name: Update web servers
@@ -204,12 +213,17 @@ Project
       state: started
 
 ======================================================================================
-Solution - Handlers
+Problems
+- No change in config file but STOP and START happening
 
+Solution 
+- Handlers
+
+What is Handlers?
 - A section is plyabook similar to tasks section
-- it contains multiple task similar to tasks section
-- the Handler task would execute when you call from tasks's task
-- BUT one cond - ONLY when calling tasks's task is CHANGED == TRUE
+- It contains multiple task similar to tasks section
+- The Handler task would execute when you call from tasks's task
+- BUT one condition - ONLY when calling tasks's task is CHANGED == TRUE
 
 ---
 - name: Update web servers
@@ -243,6 +257,112 @@ Solution - Handlers
     ansible.builtin.service:
       name: httpd
       state: restarted
+=====================================================================================
+=====================================================================================
+Managing 
+- Playbook(S)
+- Variable(S)
+- Template
+- file
+- Handlers
+==========================
+How to give a right strcuture?
+	- Easy to share - run - debug - documents
+	- Best practices
+
+==========================================
+https://www.devopsschool.com/blog/ansible-include-scnario-with-list-of-plays-or-tasks/
+
+Solutuion - Role
+---------------------------
+its a dire strcuture to Manage 
+- Playbook(S) - TASK(S)
+- Variable(S)
+- Template(S)
+- file(S)
+- Handlers(S)
+
+How to create a role?
+
+ansible-galaxy
+
+
+ansible-galaxy role init web
+
+
+
+├── web
+│   ├── defaults		# for default vars
+│   │   └── main.yml
+│   ├── files			# files used in tasks
+│   ├── handlers		# Handlers tasks
+│   │   └── main.yml
+│   ├── meta			META INFO OF ROLE
+│   │   └── main.yml
+│   ├── README.md
+│   ├── tasks			# for Tasks
+│   │   └── main.yml
+│   ├── templates		# Templates used in tasks	
+│   ├── tests
+│   │   ├── inventory
+│   │   └── test.yml
+│   └── vars			# for vars
+│       └── main.yml
+
+
+How to call role?
+=================================
+
+---
+- name: Calling a role
+  hosts: web
+  roles:
+    - web
+    - db
+
+ansible-playbook -i inventory site.yaml
+
+ 1118  java
+ 1119  ansible-galaxy install geerlingguy.java
+ 1120  ls
+ 1121  cd /home/azureuser/.ansible/roles
+ 1122  ls
+ 1123  tree
+ 1124  clear
+ 1125  ls
+ 1126  cd -
+ 1127  ls
+ 1128  vi site.yaml
+ 1129  ansible-playbook -i inventory site.yaml
+ 1130  java
+ 1131  history
+
+
+LAB - 15 mins
+
+Project - 1 HOUR https://www.devopsschool.com/blog/ansible-role-project-1/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
