@@ -1,0 +1,3 @@
+---
+# tasks file for projectrole
+- include: install.yaml

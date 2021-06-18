@@ -1,0 +1,5 @@
+---
+# defaults file for myapache
+ myname: "Rajesh Kumar"
+ httpport: 8090
+

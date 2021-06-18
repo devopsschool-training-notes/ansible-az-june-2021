@@ -1,0 +1,27 @@
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "sadhana"
+    httpport: 8090
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: Template for httpd.conf
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - ReStarting a Apache Server
+

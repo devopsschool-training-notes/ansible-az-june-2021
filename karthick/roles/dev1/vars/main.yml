@@ -1,0 +1,10 @@
+---
+# vars file for dev1
+packagename: "httpd"
+servicename: "httpd"
+portnumber: 8080
+shelloutput: "{{ dateoutput.stdout_lines}}"
+groupname: "deloitte"
+username: "deploy"
+uservaluegot: "{{ promptvars }}"
+rolevars: "RedHat"

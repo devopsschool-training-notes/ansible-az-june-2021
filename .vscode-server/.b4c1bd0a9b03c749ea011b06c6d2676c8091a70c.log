@@ -1,0 +1,225 @@
+
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+Extension host agent listening on 35567
+
+[03:34:34] Extension host agent started.
+[03:34:35] [127.0.0.1][ffaba05d][ManagementConnection] New connection established.
+[03:34:36] [127.0.0.1][1b1c8f24][ExtensionHostConnection] New connection established.
+[03:34:36] [127.0.0.1][1b1c8f24][ExtensionHostConnection] <27604> Launched Extension Host Process.
+[03:34:44] *
+[03:34:44] baseEnv {
+  XDG_SESSION_ID: '1465',
+  SELINUX_ROLE_REQUESTED: '',
+  SHELL: '/bin/bash',
+  SSH_CLIENT: '157.49.220.15 55968 22',
+  SELINUX_USE_CURRENT_RANGE: '',
+  USER: 'azureuser',
+  VSCODE_AGENT_FOLDER: '/home/azureuser/.vscode-server',
+  MAIL: '/var/spool/mail/azureuser',
+  PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin',
+  PWD: '/home/azureuser',
+  LANG: 'en_US.UTF-8',
+  SELINUX_LEVEL_REQUESTED: '',
+  SHLVL: '4',
+  HOME: '/home/azureuser',
+  LOGNAME: 'azureuser',
+  SSH_CONNECTION: '157.49.220.15 55968 10.0.0.4 22',
+  LESSOPEN: '||/usr/bin/lesspipe.sh %s',
+  XDG_RUNTIME_DIR: '/run/user/1000',
+  _: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node',
+  VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules',
+  VSCODE_CWD: '/home/azureuser',
+  HOSTNAME: 'master',
+  HISTSIZE: '1000',
+  HISTCONTROL: 'ignoredups',
+  VSCODE_LOG_NATIVE: 'false',
+  VSCODE_AMD_ENTRYPOINT: 'vs/server/remoteExtensionHostProcess',
+  VSCODE_PIPE_LOGGING: 'true',
+  VSCODE_VERBOSE_LOGGING: 'true',
+  VSCODE_EXTHOST_WILL_SEND_SOCKET: 'true',
+  VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+  VSCODE_LOG_STACK: 'false',
+  VSCODE_NLS_CONFIG: '{"locale":"en","availableLanguages":{}}',
+  BROWSER: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh'
+}
+[03:34:49] [127.0.0.1][adeb014a][ManagementConnection] New connection established.
+[03:34:49] [127.0.0.1][6b003041][ExtensionHostConnection] New connection established.
+[03:34:49] [127.0.0.1][6b003041][ExtensionHostConnection] <27823> Launched Extension Host Process.
+[03:34:52] Resolved variables received without matching request 36
+[03:34:52] Resolved variables received without matching request 37
+[03:34:52] Resolved variables received without matching request 38
+[03:34:52] Resolved variables received without matching request 39
+[03:34:55] Resolved variables received without matching request 40
+[03:34:55] Resolved variables received without matching request 41
+[03:34:55] Resolved variables received without matching request 42
+[03:34:55] Resolved variables received without matching request 43
+[03:34:55] Resolved variables received without matching request 44
+[03:34:55] Resolved variables received without matching request 45
+[03:34:55] Resolved variables received without matching request 46
+[03:34:55] Resolved variables received without matching request 47
+[03:34:55] Resolved variables received without matching request 48
+[03:34:55] Resolved variables received without matching request 49
+[03:34:55] Resolved variables received without matching request 50
+[03:34:55] Resolved variables received without matching request 51
+[03:34:55] Resolved variables received without matching request 52
+[03:34:55] Resolved variables received without matching request 53
+[03:34:55] Resolved variables received without matching request 54
+[03:34:55] Resolved variables received without matching request 55
+[03:34:55] Resolved variables received without matching request 56
+[03:34:55] Resolved variables received without matching request 57
+[03:34:55] Resolved variables received without matching request 58
+[03:34:55] Resolved variables received without matching request 59
+[03:34:55] Resolved variables received without matching request 60
+[03:34:55] Resolved variables received without matching request 61
+[03:34:55] *
+[03:34:55] baseEnv {
+  XDG_SESSION_ID: '1465',
+  SELINUX_ROLE_REQUESTED: '',
+  SHELL: '/bin/bash',
+  SSH_CLIENT: '157.49.220.15 55968 22',
+  SELINUX_USE_CURRENT_RANGE: '',
+  USER: 'azureuser',
+  VSCODE_AGENT_FOLDER: '/home/azureuser/.vscode-server',
+  MAIL: '/var/spool/mail/azureuser',
+  PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin',
+  PWD: '/home/azureuser',
+  LANG: 'en_US.UTF-8',
+  SELINUX_LEVEL_REQUESTED: '',
+  SHLVL: '4',
+  HOME: '/home/azureuser',
+  LOGNAME: 'azureuser',
+  SSH_CONNECTION: '157.49.220.15 55968 10.0.0.4 22',
+  LESSOPEN: '||/usr/bin/lesspipe.sh %s',
+  XDG_RUNTIME_DIR: '/run/user/1000',
+  _: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node',
+  VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules',
+  VSCODE_CWD: '/home/azureuser',
+  HOSTNAME: 'master',
+  HISTSIZE: '1000',
+  HISTCONTROL: 'ignoredups',
+  VSCODE_LOG_NATIVE: 'false',
+  VSCODE_AMD_ENTRYPOINT: 'vs/server/remoteExtensionHostProcess',
+  VSCODE_PIPE_LOGGING: 'true',
+  VSCODE_VERBOSE_LOGGING: 'true',
+  VSCODE_EXTHOST_WILL_SEND_SOCKET: 'true',
+  VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+  VSCODE_LOG_STACK: 'false',
+  VSCODE_NLS_CONFIG: '{"locale":"en","availableLanguages":{}}',
+  BROWSER: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh'
+}
+[03:34:56] Resolved variables received without matching request 62
+[03:34:56] Resolved variables received without matching request 63
+[03:34:56] Resolved variables received without matching request 64
+[03:34:56] Resolved variables received without matching request 65
+[03:34:56] Resolved variables received without matching request 66
+[03:34:56] Resolved variables received without matching request 67
+[03:34:56] Resolved variables received without matching request 68
+[03:34:56] *
+[03:34:56] baseEnv {
+  XDG_SESSION_ID: '1465',
+  SELINUX_ROLE_REQUESTED: '',
+  SHELL: '/bin/bash',
+  SSH_CLIENT: '157.49.220.15 55968 22',
+  SELINUX_USE_CURRENT_RANGE: '',
+  USER: 'azureuser',
+  VSCODE_AGENT_FOLDER: '/home/azureuser/.vscode-server',
+  MAIL: '/var/spool/mail/azureuser',
+  PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin',
+  PWD: '/home/azureuser',
+  LANG: 'en_US.UTF-8',
+  SELINUX_LEVEL_REQUESTED: '',
+  SHLVL: '4',
+  HOME: '/home/azureuser',
+  LOGNAME: 'azureuser',
+  SSH_CONNECTION: '157.49.220.15 55968 10.0.0.4 22',
+  LESSOPEN: '||/usr/bin/lesspipe.sh %s',
+  XDG_RUNTIME_DIR: '/run/user/1000',
+  _: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node',
+  VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules',
+  VSCODE_CWD: '/home/azureuser',
+  HOSTNAME: 'master',
+  HISTSIZE: '1000',
+  HISTCONTROL: 'ignoredups',
+  VSCODE_LOG_NATIVE: 'false',
+  VSCODE_AMD_ENTRYPOINT: 'vs/server/remoteExtensionHostProcess',
+  VSCODE_PIPE_LOGGING: 'true',
+  VSCODE_VERBOSE_LOGGING: 'true',
+  VSCODE_EXTHOST_WILL_SEND_SOCKET: 'true',
+  VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+  VSCODE_LOG_STACK: 'false',
+  VSCODE_NLS_CONFIG: '{"locale":"en","availableLanguages":{}}',
+  BROWSER: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh'
+}
+[03:34:57] Resolved variables received without matching request 69
+[03:34:57] Resolved variables received without matching request 70
+[03:34:57] Resolved variables received without matching request 71
+[03:34:58] Resolved variables received without matching request 72
+[03:34:58] Resolved variables received without matching request 73
+[03:34:58] Resolved variables received without matching request 74
+[03:34:59] Resolved variables received without matching request 75
+[05:58:12] Resolved variables received without matching request 76
+[05:58:12] Resolved variables received without matching request 77
+[05:58:12] Resolved variables received without matching request 78
+[05:58:12] Resolved variables received without matching request 79
+[05:58:12] Resolved variables received without matching request 80
+[05:58:12] Resolved variables received without matching request 81
+[05:58:12] Resolved variables received without matching request 82
+[05:58:13] Resolved variables received without matching request 83
+[05:58:13] *
+[05:58:13] baseEnv {
+  XDG_SESSION_ID: '1465',
+  SELINUX_ROLE_REQUESTED: '',
+  SHELL: '/bin/bash',
+  SSH_CLIENT: '157.49.220.15 55968 22',
+  SELINUX_USE_CURRENT_RANGE: '',
+  USER: 'azureuser',
+  VSCODE_AGENT_FOLDER: '/home/azureuser/.vscode-server',
+  MAIL: '/var/spool/mail/azureuser',
+  PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin',
+  PWD: '/home/azureuser',
+  LANG: 'en_US.UTF-8',
+  SELINUX_LEVEL_REQUESTED: '',
+  SHLVL: '4',
+  HOME: '/home/azureuser',
+  LOGNAME: 'azureuser',
+  SSH_CONNECTION: '157.49.220.15 55968 10.0.0.4 22',
+  LESSOPEN: '||/usr/bin/lesspipe.sh %s',
+  XDG_RUNTIME_DIR: '/run/user/1000',
+  _: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node',
+  VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules',
+  VSCODE_CWD: '/home/azureuser',
+  HOSTNAME: 'master',
+  HISTSIZE: '1000',
+  HISTCONTROL: 'ignoredups',
+  VSCODE_LOG_NATIVE: 'false',
+  VSCODE_AMD_ENTRYPOINT: 'vs/server/remoteExtensionHostProcess',
+  VSCODE_PIPE_LOGGING: 'true',
+  VSCODE_VERBOSE_LOGGING: 'true',
+  VSCODE_EXTHOST_WILL_SEND_SOCKET: 'true',
+  VSCODE_HANDLES_UNCAUGHT_ERRORS: 'true',
+  VSCODE_LOG_STACK: 'false',
+  VSCODE_NLS_CONFIG: '{"locale":"en","availableLanguages":{}}',
+  BROWSER: '/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh'
+}
+[05:58:13] Resolved variables received without matching request 84
+[05:58:13] Resolved variables received without matching request 85
+[05:58:15] Resolved variables received without matching request 86
+[05:58:15] Resolved variables received without matching request 87
+[05:58:15] Resolved variables received without matching request 88
+[05:58:15] Resolved variables received without matching request 89
+[05:58:15] Resolved variables received without matching request 90
+[17:34:28] [127.0.0.1][adeb014a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:34:29] [127.0.0.1][6b003041][ExtensionHostConnection] <27823> Extension Host Process exited with code: 0, signal: null.
+[17:34:32] [127.0.0.1][ffaba05d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[17:34:33] [127.0.0.1][1b1c8f24][ExtensionHostConnection] <27604> Extension Host Process exited with code: 0, signal: null.
+Last EH closed, waiting before shutting down
+[17:34:33] Last EH closed, waiting before shutting down
+Last EH closed, shutting down
+[17:39:33] Last EH closed, shutting down

@@ -1,0 +1,20 @@
+<html>
+<head>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<marquee behaviour="alternate"><H1> Welcome to {{ varName }} training - Joseph </H1></marquee>
+
+<H2>Variable Name:</h2> {{ varName}}
+<table>
+<tr><th>Filename</th></tr>
+{% for item in find_output.stdout_lines %}
+<tr><td> {{ item }} </td></tr>
+{% endfor %}
+</table>
+</body>
+</Html>

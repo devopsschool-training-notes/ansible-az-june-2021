@@ -1,0 +1,28 @@
+---
+- hosts: dev
+  vars:
+    httpport: 80
+  tasks:
+  - name: Installing httpd in dev
+    yum:
+      name: httpd
+      state: latest
+- hosts: QA
+  vars:
+    httpport: 8080
+  tasks:
+  - name: Installing httpd in QA
+    yum:
+      name: httpd
+      state: latest
+  - name: template
+    template:
+      src: httpd.conf.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - Restarting service
+  handlers:
+  - name: Restarting service
+    service:
+      name: httpd
+      state: restarted

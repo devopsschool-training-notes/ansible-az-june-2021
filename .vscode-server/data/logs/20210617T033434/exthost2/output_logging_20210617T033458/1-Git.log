@@ -1,0 +1,279 @@
+Looking for git in: git
+Using git 1.8.3.1 from git
+> git rev-parse --git-dir
+Open repository: /home/azureuser
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git check-ignore -v -z --stdin
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/others/playbook/ex09.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/playbook/ex09.yaml
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/others/variable/ex02_A03.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex02_A03.yaml
+> git show --textconv :joseph/others/variable/ex02_A02.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex02_A02.yaml
+> git show --textconv :joseph/others/variable/ex01_A03.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex01_A03.yaml
+> git show --textconv :joseph/others/variable/ex01_A02.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex01_A02.yaml
+> git show --textconv :joseph/others/variable/tasks_var.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/tasks_var.yaml
+> git show --textconv :joseph/others/variable/test.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/test.yaml
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/site.yaml
+> git ls-files --stage -- /home/azureuser/joseph/site.yaml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/others/variable/ex01_A02.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex01_A02.yaml
+> git show --textconv :joseph/others/variable/ex01_A03.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex01_A03.yaml
+> git show --textconv :joseph/others/variable/test.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/test.yaml
+> git show --textconv :joseph/site.yaml
+> git ls-files --stage -- /home/azureuser/joseph/site.yaml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/templates/index.j2
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/templates/index.j2
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/others/variable/vars.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/vars.yaml
+> git check-ignore -v -z --stdin
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git show --textconv :joseph/others/variable/vars.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/vars.yaml
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git show --textconv :joseph/others/variable/vars.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/vars.yaml
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/others/variable/tasks_var.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/tasks_var.yaml
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/defaults/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/defaults/main.yml
+> git show --textconv :joseph/others/variable/tasks_var.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/tasks_var.yaml
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git show --textconv :joseph/others/variable/tasks_var.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/tasks_var.yaml
+> git show --textconv :joseph/others/variable/ex02_A03.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex02_A03.yaml
+> git show --textconv :joseph/others/variable/vars.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/vars.yaml
+> git show --textconv :joseph/others/variable/test.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/test.yaml
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/defaults/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/defaults/main.yml
+> git show --textconv :joseph/site.yaml
+> git ls-files --stage -- /home/azureuser/joseph/site.yaml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/vars/vars.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/vars.yml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git show --textconv :joseph/roles/role/templates/index.j2
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/templates/index.j2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/site.yaml
+> git ls-files --stage -- /home/azureuser/joseph/site.yaml
+> git show --textconv :joseph/roles/role/defaults/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/defaults/main.yml
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git show --textconv :joseph/others/variable/ex01_A02.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex01_A02.yaml
+> git show --textconv :joseph/others/variable/ex01_A03.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex01_A03.yaml
+> git show --textconv :joseph/others/variable/ex02_A02.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex02_A02.yaml
+> git show --textconv :joseph/others/variable/ex02_A03.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/ex02_A03.yaml
+> git show --textconv :joseph/others/variable/tasks_var.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/tasks_var.yaml
+> git show --textconv :joseph/others/variable/test.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/test.yaml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git show --textconv :joseph/others/variable/test.yaml
+> git ls-files --stage -- /home/azureuser/joseph/others/variable/test.yaml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git show --textconv :joseph/roles/role/tasks/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/tasks/main.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/templates/index.j2
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/templates/index.j2
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/roles/role/README.md
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/README.md
+> git show --textconv :joseph/site.yaml
+> git ls-files --stage -- /home/azureuser/joseph/site.yaml
+> git show --textconv :joseph/roles/role/defaults/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/defaults/main.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git check-ignore -v -z --stdin
+> git show --textconv :joseph/others/inventory
+> git ls-files --stage -- /home/azureuser/joseph/others/inventory
+> git show --textconv :joseph/roles/role/vars/main.yml
+> git ls-files --stage -- /home/azureuser/joseph/roles/role/vars/main.yml
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git status -z -u
+> git symbolic-ref --short HEAD
+> git for-each-ref --format=%(refname)%00%(upstream:short)%00%(objectname) refs/heads/main refs/remotes/main
+> git for-each-ref --sort -committerdate --format %(refname) %(objectname) %(*objectname)
+> git remote --verbose
+> git config --get commit.template
+> git show --textconv :joseph/others/inventory
+> git ls-files --stage -- /home/azureuser/joseph/others/inventory

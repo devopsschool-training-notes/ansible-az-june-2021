@@ -1,0 +1,10 @@
+---
+- name: Calling a role
+  hosts: web
+  vars_prompt:
+  - name: "varName"
+    prompt: "Which version Do you want to install?"
+    private: no
+  roles:
+    - role
+    - gantsign.java

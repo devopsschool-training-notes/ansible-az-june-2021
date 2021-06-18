@@ -1,0 +1,54 @@
+  - name: Install Apache in RHEL
+    ansible.builtin.yum:
+      name: "{{ servername }}"
+      state: latest
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Find all files from ~/Joseph/role and register into variable
+    shell: "find *"
+    args:
+      chdir: "/home/azureuser/joseph/roles"
+    register: find_output
+  - name: Template for index.html
+    template:
+      src: /home/azureuser/joseph/roles/role/templates/index.j2
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servername }}"
+      state: started
+  - name: Template for httpd.conf
+    template:
+      src: /home/azureuser/joseph/roles/role/templates/httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+      - ReStarting a Apache Server
+  - name: Group Name deloitte
+    ansible.builtin.group:
+      name: deloitte
+      state: present
+  - name: user Name deploy
+    ansible.builtin.user:
+      name: deploy
+      group: deloitte
+      createhome: yes
+  - name: Installing packages git, ntp & vim
+    ansible.builtin.yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - git
+      - ntp
+      - vim
+    when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: varName
+  - name: include default step variables
+    include_vars: /home/azureuser/joseph/roles/role/vars/vars.yml
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ varName }}"
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: varName
+

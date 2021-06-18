@@ -2,7 +2,7 @@
 - name: Update web servers
   hosts: web
   vars:
-    myname: "Rajeshkumar"
+    myname: "Mano"
     age: "18"
     packagename: "httpd"
     servicename: "httpd"
@@ -40,7 +40,7 @@
   - name: Ansible register variable basic example
     shell: "find *.txt"
     args:
-      chdir: "/home/azureuser/rajesh"
+      chdir: "/home/azureuser/mano"
     register: find_output
   - debug:
       var: find_output

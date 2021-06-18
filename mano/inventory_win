@@ -1,0 +1,27 @@
+[web]
+52.146.89.226
+
+[web:vars]
+ansible_user=azureuser
+ansible_ssh_pass=centos123
+ansible_become=yes
+#mynameinv=Rajesh in inventory
+
+[db]
+15.207.87.1 
+
+[app]
+3.4.5.6
+5.6.7.8
+6.7.8.9
+
+[windows]
+13.233.129.94
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=administrator
+ansible_password="dLcCV8?yAPCL;=4&GUYl$xtz?vXGr)fp"
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic

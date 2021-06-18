@@ -1,0 +1,19 @@
+--- # registery test 
+- hosts: localhost
+
+  tasks: 
+
+     - name: shell script to capture the output to vars
+       shell:
+         cmd: ' date '
+       
+       register: output
+     
+     - local_action: 
+          module: copy 
+          content:  "{{ output }}" 
+          dest:  '/home/azureuser/sathish/output.j2'
+
+
+
+

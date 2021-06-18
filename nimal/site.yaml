@@ -1,0 +1,6 @@
+---
+- name: test project
+  hosts: all
+
+  roles:
+   - web

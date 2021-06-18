@@ -1,0 +1,6 @@
+---
+# handlers file for dev1
+   - name: Restart the httpd service
+     service: 
+       name: "{{ servicename }}"
+       state: restarted

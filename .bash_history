@@ -1,1000 +1,1000 @@
-vim variable.yaml
-vim var.yaml
-ansible-playbook --connection=local variable.yaml -- check
-ansible-playbook --connection=local variable.yaml --check
-ls
-vim var.yaml
-mv var.yaml vars.yaml
-ansible-playbook --connection=local variable.yaml --check
-ansible-playbook --connection=local variable.yaml 
-ansible-playbook --connection=local variable.yaml -b
-cp variable.yaml variable2.yaml 
-vim variable2.yaml 
-ansible-playbook --connection=local variable.yaml -b
-vim variable2.yaml 
-ansible-playbook --connection=local variable2.yaml -b
-vim variable2.yaml 
-ansible-playbook --connection=local variable2.yaml -b
-vim variable2.yaml 
-touch test.txt
-touch test1.txt
-touch test2.txt
-ansible-playbook --connection=local variable2.yaml -b
-vim variable2.yaml 
-ansible-playbook --connection=local variable2.yaml -b
-vim variable2.yaml 
-ansible-playbook --connection=local variable2.yaml -b
-vim variable2.yaml 
-ansible-playbook --connection=local variable2.yaml -b
-vim variable2.yaml 
-ansible-playbook  variable2.yaml --syntax-check
-vim variable2.yaml 
-ansible-playbook  variable2.yaml --syntax-check
-vim variable2.yaml 
-ansible-playbook  variable2.yaml --syntax-check
-ansible-playbook --connection=local variable2.yaml -b
-sudo su -
-cd rajesh/
-ls -lrt
-ansible-playbook var1.yaml
-ansible-playbook var1.yaml -b -k
-more var1.yaml
-cat inventory 
-vi inventory
-ls -lrt
-sudo su -
+cd mano/
+ls -lr
 cd ..
-cd karthick/
-vi test22345.yaml
-ansible-playbook test22
-ansible-playbook test22345.yaml 
-cat test22345.yaml
-clear
-cd joseph
+cd chandu/
+ls -lrt
+vi inventory
+ls-lrt
+ls -lr
+cd rajesh/
+;s
 ls
-cd
-cd joseph
-mkdir playbook
-cd playbook/
-vi ex01.yaml
-more ex01.yaml
-ansilble-playbook --syntax-check ex01.yaml 
-which ansible-playbook
-cd..
-cd
+ls -ltr
+cd azhar
 ls
-ls joseph/
-ansilble-playbook --syntax-check joseph/playbook/ex01.yaml 
-ansible-playbook -h
-ansible-playbook -
-ansible-playbook - name: Create a group
-  hosts: localhost
-  connection: local
-  tasks:
-  - name: Group Name deploy
-    ansible.builtin.group:
-      name: deploy
-ansible-playbook --syntax-check joseph/playbook/ex01.yaml 
-ansible-playbook --syntax-check joseph/playbook/ex01.yaml  localhost
-ansible-playbook localhost --syntax-check joseph/playbook/ex01.yaml
-ansible-playbook -h localhost --syntax-check joseph/playbook/ex01.yaml
-ansible-playbook --syntax-check joseph/playbook/ex01.yaml
-ansible-playbook --syntax-check joseph/playbook/ex01.yaml -i inventory
-ansible-playbook --syntax-check joseph/playbook/ex01.yaml -i ~/joseph/inventory
-ansible-playbook -c joseph/playbook/ex01.yaml -i ~/joseph/inventory
-ansible-playbook -C joseph/playbook/ex01.yaml -i ~/joseph/inventory
-ansible-playbook  joseph/playbook/ex01.yaml -i ~/joseph/inventory
-more /etc/group | grep deploy
-cd joseph/
-cd playbook/
-vi ex02.yaml 
-vi ex03.yaml
-vi ex04.yaml
-vi ex05.yaml
-vi ex06.yaml
-vi ex07.yaml
-ren
-rename
-mv ex07.yaml ex08.yaml
+vi inventory
+ansible windows -i inventory -m win_ping
+more inventory
+vi inventory
+ansible windows -i inventory -m win_ping
+more inventory
+vi inventory
+ansible windows -i inventory -m win_ping
+more inventory
+ping 65.0.127.255
+ansible -h
+ansible -a help
+ansible -a -help
+ansible -help -a
+ansible -help 
+ansible -a
+ansible --args
+ansible windows -i inventory -m win_file -a "path=C:\HPE\Azhar state=directory"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell: echo “I love India by Azhar” -a "executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell=echo “I love India by Azhar” -a "executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell: echo %I love India by Azhar% -a "executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell=echo %I love India by Azhar% -a "executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m "win_shell=echo %I love India by Azhar%" -a "executable=cmd register=readme.txt"
+ansible -h
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell -a echo "I love India by Azhar" -a "executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell -a "echo=I love India by Azhar" -a "executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" -m win_shell -a "echo=I love India by Azhar executable=cmd register=readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch" 
+ansible windows -i inventory -m win_file -a "path=C:\\HPE\readme.txt state=touch"
+ ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch"
+ ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch"
+ ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch become=yes"
+ ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch" -m win_copy -a "dest=C:"\HPE\readme.txt" content=I love India by Azhar"
+ ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch"  -m win_shell -a "echo=I love India by Azhar" -m win_copy -a "dest=C:"\HPE\readme.txt"
+
+ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch"  -m win_shell -a "echo=I love India by Azhar" -m win_copy -a "dest=C:"\HPE\readme.txt"
+ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch"  -m win_shell -a "echo=I love India by Azhar" 
+ansible windows -i inventory -m win_file -a "path=C:"\HPE\readme.txt" state=touch"  -m win_shell -a "echo=I love India by Azhar executable=cmd" 
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt state=touch"  
+ansible windows -i inventory -m win_file -a "path=C:HPE\readme.txt state=touch"  
+ansible windows -i inventory -m win_file -a "path=\HPE\readme.txt state=touch"  
+ansible windows -i inventory -m ansible.windows.win_file -a "path=\HPE\readme.txt state=touch"
+ping 65.1.147.247
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG'
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG' 'ansible_port=5985'
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG' ansible_port=5985
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F8
+ping 65.1.147.247
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG ansible_winrm_server_cert_validation=ignore' 
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG ansible_port=5985'
+ansible --version
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG ansible_port=5985'
+ping 65.1.147.247
+ansible all -i 65.1.147.247, -m win_ping -c winrm -u Administrator -e 'ansible_password=$tZQRiy2qPQvVUisrfPE;*F83VB8*spG ansible_port=5985'
 ls
-vi ex07.yaml
+cd rajesh
 ls
-vi ex09.yaml
-cd..
-cd
+sudo cp roles /home/azureuser/sadhana
+cd ..
 ls
-cd sadhana/
-ls
-more deploy.yaml 
-cd..
-cd
-cd navin
-ls
-cd
-cd joseph/
-cd playbook/
-vi ex09.yaml 
-ls
-pwd
-pwd ~
-echo ~
-cd
-ls
-mkdir /srv
-ls /srv
-cd /srv
-ls
-mkdir checkout
-cd..
-cd
-cd joseph/
-mkdir gitclone
-cd playbook/
-vi ex07.yaml 
-vi ex08.yaml 
-vi ex09.yaml 
-ansible-playbook --syntax-check joseph/playbook/ex09.yaml -i ~/joseph/inventory
-ansible-playbook --syntax-check ~/joseph/playbook/ex09.yaml -i ~/joseph/inventory
-ansible-playbook -C ~/joseph/playbook/ex01.yaml -i ~/joseph/inventory
-ansible-playbook -C ~/joseph/playbook/ex09.yaml -i ~/joseph/inventory
-ansible-playbook --syntax-check ~/joseph/playbook/ex08.yaml -i ~/joseph/inventory
-ansible-playbook -C ~/joseph/playbook/ex08.yaml -i ~/joseph/inventory
-ansible-playbook  ~/joseph/playbook/ex08.yaml -i ~/joseph/inventory
-cd
-ls
-cd joseph/
-cd gitclone/
-ls
-cd
 cd sadhana
 ls
-cd
-cd nvg
+cd roles
+tree
+cd myapache/
 ls
-more task1.yaml 
-cd
-cd baskar/
+tree
+vi tasks/main.yml
+vi defaults/main.yml 
 ls
-more web.yaml 
-cd
+cd files
 ls
-cd dharini/
-ls
-more creategroup.yaml 
-more addusertogroup.yaml 
-more installpackage.yaml 
-cd
-ls
-cd k8s
-ls
-more pod1.yaml 
-cd
-cd mano/
-ls
-cd Assigmnebt_day2
-cd Assigmnent_day2
-cd Assignment_day2
-cd Assignment_Day2
-ls -h
-ls --help
-ls -a
-ls -af
-ls -f
-more Assignment_Day2
-cd
-clear
-ansible --version
-ls
-ls navin
-ls sadhana
-cd rajesh/
-ls
-more tasks_var.yaml 
-more vars.yaml 
-more var1.yaml 
-cd
-find *.txt
-cd joseph
-echo > abc.txt
-more abc
-more abc.txt
-echo "hello">> abc.txt
-more abc.txt
-find *.txt
-touch -h
-touch --h
-mkdri variable
-mkdir variable
-cd vai
-cd variable/
-vi ex01_A02.yaml
-vi vars.yaml
-vi ex01_A03.yaml
-vi ex02_A02.yaml
-cd
-ls
-cd joseph/
-ls
-touch abc1.txt
-touch abc2.txt hello.txt
-ls
-cd variable/
-vi ex02_A03.yaml
-cd
-cd joseph/
-hostname
-ifconfig
-vi inventory 
-cd variable/
-ls
-ansible-playbook ~/joseph/variable/ex02_A03.yaml -i ~/joseph/inventory -u azureuser -k -b 
-vi ex02_A03.yaml
-clear
-ansible-playbook ~/joseph/variable/ex02_A03.yaml -i ~/joseph/inventory -u azureuser -k -b 
-vi ex02_A03.yaml
-clear
-ansible-playbook ~/joseph/variable/ex02_A03.yaml -i ~/joseph/inventory -u azureuser -k -b 
-cd \
-cd /
-ls
-cd ~
-ls
-cd /home
-ls
-cd azureuser/
-ls
-cd joseph/
-mkdir adhoc-assignment
-vi adhoc.txt
-ls
-cd variable/
-cd ..
-cd -
-ls -l
-cd
-cd navin/
-ls
-cd 
-cd joseph/
-ls
-cd vai
-cd variable/
-vi task_var.yaml
-vi test.yaml
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory -u azureuser -k -b 
-vi test.yaml
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory -u azureuser -k -b 
-vi test.yaml
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory -u azureuser -k -b 
-ls
-mv task_var.yaml tasks_var.yaml 
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory -u azureuser -k -b 
-vi test.yaml
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory -u azureuser -k -b 
-touch t1.txt
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory -u azureuser -k -b 
-cd..
-cd ..
-ls
-cd adhoc-assignment/
+pwd
+cp /home/azureuser/sadhana/index.html /home/azureuser/sadhana/roles/myapache/files
 ls
 cd ..
-mv ./adhoc.txt ./adhoc-assignment/
 ls
-cd adhoc-assignment/
+cd handlers/
+ls
+vi main.yml 
+cd ..
+cd meta
+vi main.yml 
 ls
 cd ..
-more index.html 
-cd /
 ls
-cd root/
-su -
-su root
-cd ~/joseph
+cd templates/
+cp /home/azureuser/sadhana/ httpd.conf.j2
+cp /home/azureuser/sadhana/httpd.conf.j2  /home/azureuser/sadhana/roles/myapache/templates/
 ls
-cd /
+cat tests/test.yml
+cd ..
+cat tests/test.yml 
+cd vars
+vi main.yml 
 ls
-cd var
+cd ..
 ls
-cd www
-ls
-cd html/
-ls
-more index.html
-cp ~/joseph/index.html .
-cp ~/joseph/index.html ./index.html
-su cp ~/joseph/index.html ./index.html
-sudo cp ~/joseph/index.html ./index.html
-ls
-more index.html
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-sudo cp ~/joseph/index.html ./index.htm
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-sudo /root
-ls
-cd
-cd /
-ls
-cd root
-sudo cd /root
-ls
-sudo cd root
-ls
-cd var/www
-ls
-cd html
-ls
-sudo cp ~/joseph/hello.html ./hello.html
-ls
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
-vi ~/joseph/index.html 
-sudo cp ~/joseph/index.html ./index.html
+powershell
+$url = "https://raw.githubusercontent.com/jborean93/ansible-windows/master/scripts/Upgrade-PowerShell.ps1"
+$file = "$env:temp\Upgrade-PowerShell.ps1"
+$username = "rajesh"
+$password = "Ghs6834&dhks"
+cd karthick/
+ls -lrt
+cd dev1
+cd roles/
+ls -lrt
+cd dev1
+ls -lrt
+cd tasks
+cat main.yml 
+cd ..
+cd vars/
+ls -lrt
+cat main.yml 
+cd ...
+cd ..
+cd templates/
+ls -lrt
+cat index.j2 
+cd ..
+cd vars
+ls -lrt
+cat main.yml 
+cat ../../../site.yml
+cat ../../../inventory 
+cd ..
+cd templates/
+cat index.j2 
+istory
 history
-cd
-cd rajes
-cd rajesh/
-more
-more inventory 
-cd
-cd joseph
-vi inventory 
-ansible-playbook ~/joseph/variable/test.yaml -i ~/joseph/inventory
-sudo cp ~/joseph/index.html ./index.html
-sudo cp ~/joseph/index.html /var/www/html/
-cd
-cd raj
-cd rajesh/
-ls
-tree
-cd group_vars/
-ls
-all
-more all
-more app
 cd ..
-/
-more var1.yaml
-tree
-pip list
-pip3 list
-cd
-pip
-pip list
-cd joseph/
-tree
-$pid
-hostname
-ls
-exit
-cd joseph/
-ls 
-cd variable/
-ls
-more ex01_A02.yaml 
-cd ../../navin/
-vi ex01
-vi ex01.yaml
-ansible-playbook --syntax-check ex01.yaml
-ls
-cd nvg
-touch task1.yaml
-ls
-vi task1.yaml
-catch inventory
+cat sit
+cat site.ya
+cat site.yml
+cd ..
+cat site.yml
+ip a
 cat inventory 
-vi inventory 
-sudo su -
+cd ..
+cd joseph/
+ls -lrt
+cat site.yaml
+cd roles/
+ls -lrt
+cd role/
+ls -lrt
+cd templates/
+ls -lrt
+cat index.j2 
+cat ../vars/main.yml 
+cd ..
+cd karthick/
+ls -lrt
+ansible --version
+env
+export PYTHONWARNINGS=
+ansible -version
+ansible --version
+cd selva/
 ls
-cd rajesh/
+cd roles/
 ls
-clear
+cd web/tasks/
 ls
-clear
+cat main.yml 
+pwd
+cd ../../../
 ls
-vi web.yaml
-which ansible-playbook
-ansible-playbook -h
-clear
-ansible-playbook --syntax-check web.yaml 
-ansible-playbook --syntax-check web.yaml -i inventory 
-ansible-playbook -h
-clear
+cat condition.yaml 
+cat condition1.yaml 
+cat conditional1.yaml 
+vim conditional1.yaml
+history 
+history | grep ansible-playbook
+ifconfig 
+ansible-playbook -i inventory web conditional1.yaml 
 ls
-vi inventory 
-sudo -s
-docker 
-cd roopesh
-ansible-playbook -i web 
-ansible-playbook -i inventory web 
-ansible localhost -m -h
-ansible localhost -m -setup 
-ansible localhost -m -setup | grep version
-cd
-ansible localhost -m -setup 
+cat inventory
+ansible-playbook -i inventory  conditional1.yaml 
+vim conditional1.yaml
+ansible-playbook -i inventory  conditional1.yaml --check
+ansible-playbook -i inventory  conditional1.yaml 
+cp conditional1.yaml roles/web/tasks/
+vim site.yaml
+cd roles/web/tasks/
+ls
+vim main.yml 
+cd -
+ansible-playbook -i inventory  site.yaml --check
+cat conditional1.yaml
+vim roles/web/tasks/conditional1.yaml 
+ansible-playbook -i inventory  site.yaml --check
+vim roles/web/tasks/conditional1.yaml 
+cd 
+cd karthick/
+ls
+cd roles/
+ls
+cd myapp/
+ls
+cd ..
+ls
+cd dev1/
+ls
+cd tasks/
+ls
+cat main.yml 
+pwd
+cd ../../../
+cd ..
+cd selva/
+vim inventory 
+ansible windows -i inventory -m win_ping
+cat ../rajesh/inventory 
+vim inventory 
+ansible windows -i inventory -m win_ping
+ls
+cd venkat
+ls
+ansible WindowsARS -i inventory -m ansible.windows.win_file -a "path=C:/HPE/readme.txt state=file"
+ansible WindowsARS -i inventory -m ansible.windows.win_file.in -a "path=C:/HPE/readme.txt state=file content= "i love India by Venkat""
+ansible WindowsARS -i inventory -m ansible.windows.win_file.in -a "path=C:/HPE/readme.txt state=file content=i love India by Venkat"
+ansible WindowsARS -i inventory -m ansible.windows.win_file.in -a "path=C:/HPE/readme.txt state=file"
+ansible WindowsARS -i inventory -m ansible.windows.win_file -a "path=C:/HPE/readme.txt state=file"
+ansible WindowsARS -i inventory -m ansible.windows.win_file -a "path=C:/HPE/readme.txt state=touch"
+ansible WindowsARS -i inventory -m ansible.builtin.lineinfile -a "path=C:/HPE/readme.txt line= Ansible file create test"
+ansible WindowsARS -i inventory -m ansible.builtin.lineinfile -a "path=C:/HPE/readme.txt line='Ansible file create test'"
+cd rajesh
+ls
+cd rajesh
+cd roles
+ls
+cd web
+ls
+cat tasks/main.yml
+cat defaults/main.yml
+cat files
+cat files/main.yml
+cd files
+ls
+cd ..
+ls
+treee
+tree
+cat handlers/main.yml 
+cat meta/main.yml
+tree
+cat vars/main.yml 
+ansible all -i 13.127.99.212, -m win_ping -c winrm -u Administrator -e 'ansible_password=pXd65vh&Q.sE-$r&5vXdZpF4HYdADYT& ansible_port=5985'
+ls
+cd sathish
+ls
+cd sathish_project/
+ls
+lls
+ls
+cd ..
+ls
+cd ..
 ls
 cd gokulnath/
 ls
-cat extern_vars.yaml 
-cat tests.html 
-cat var1.yaml 
-cat inventory 
+cat site.yaml 
 cd ..
 ls
 cd sathish
 ls
+ping 13.233.83.102
+vim inventory 
+more in
+more inventory 
+ls
+ansible windows -i inventory -m win_ping -c winrm -u administrator -e 'ansible_password=n%bmkNaexyUuGPCw6-*I@4g3Aqx4Vr7g  ansible_winrm_server_cert_validation=ignore' 
+ls
+vim inventory 
+ansible windows -i inventory -m win_ping 
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:\HPE\Sathish"
+ansible windows -i inventory -m ansible.windows.win_file "path=c:\HPE\Sathish"
+ansible-galaxy collection install ansible.windows
+cd /home/azureuser/.ansible/collections/ansible_collections/ansible/windows
+ls
+cd /home/azureuser/.ansible/collections/ansible_collections/ansible/windows
 cd ..
-cd rajesh
 ls
-cd group_vars/
+cd windows/
 ls
+cd docs/
+ls
+ansible-doc ansible.windows.win_file_module.rst
 cd ..
-more inventory
-cd ..
-ls
-cd rajesh
-ls
-cd group_vars/
-ls
-more all
-cat all
-cat app
-cat db
-cat web
-ls
-cd .
-ls
-cd .
-l
-cd ../host_vars/
-ls
-more 52.146.89.226 
 ls
 cd ..
 ls
-more var1.yaml 
-more vars.yaml 
-ls
-more web.yaml 
-more var1.yaml 
+cd ..
 ls
 cd ..
 ls
-pwd
-exit
-docker ps
+cd ..
+ls
+cd ..
+ls
+cd sathish
+ls
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:\HPE\Sathish"
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:\HPE\Sathish" -vv
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:\HPE"
+ansible windows -i inventory -m ansible.windows.win_file "path=c:\HPE"
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:\HPE\Sathish state=directory"
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:\HPE\Sathish\readme.txt state=file"
+ansible windows -i inventory -m ansible.windows.win_file -a "path=C:\HPE\Sathish  state=file"
+ansible windows -i inventory -m ansible.windows.win_file -a "path=C:\HPE\Sathish\readme.txt  state=file"
+ansible windows -i inventory -m ansible.windows.win_file -a "path=C:\HPE\readme.txt  state=file"
+ansible windows -i inventory -m ansible.windows.win_file path=C:\HPE\readme.txt  state=file
+ansible windows -i inventory -m ansible.windows.win_file 'path=C:\HPE\readme.txt  state=file'
+ansible windows -i inventory -m ansible.windows.win_file 'path='C:\HPE\readme.txt'  state=file'
+ansible windows -i inventory -m ansible.windows.win_file -a 'path='C:\HPE\readme.txt'  state=file'
+ansible windows -i inventory -m ansible.windows.win_file -a "path='C:\HPE\readme.txt'  state=file"
+ansible windows -i inventory -m win_file -a "path='C:\HPE\readme.txt'  state=file"
+ansible windows -i inventory -m win_file -a "path='C:\HPE\readme.txt'  state=file" -vvvv
+ls
+vim in
+vim inventory 
+ansible windows -i inventory -m win_file -a "path='C:\HPE\readme.txt'  state=touch" -v
+ansible windows -i inventory -m win_file -a "path=C:\HPE\readme.txt  state=touch" -v
+ansible windows -i inventory -m ansible.windows.win_file -a "path=c:/HPE/Sathish/readme.txt state=file"
+history
+ansible --version
+cd /usr/lib/python2.7/site-packages/ansible
+clear
+ls
+cd modules
+ls
+cd windows
+clear
+ls
+clear
+ls
+cd ..
+ls
+clear
+ls
+cd files
+ls
+clear
 sudo -s
+clear
+lcd
+ls
+cd
+clear
 ls
 cd rajesh/
 ls
 clear
 ls
-ansible-playbook -i inventory web.yaml
-ansible-playbook -i inventory web.yaml -vvvvvvv
+vi inventory
+clear
+ansible windows -i inventory -m win_ping
+clear
+ls
+ls /etc/ansible/
+ls /etc/ansible/roles/
+ansible-galaxy install andrewrothstein.java-oracle-jdk
+ls /etc/ansible/roles/
+ls
+ls .ansible/
+ls /roles
+ls roles/
+ls .ansible/roles/
+cd joseph/
+ansible-playbook site.yaml  -i inventory
+ansible-playbook site.yaml  -i  ~/joseph/others/inventory 
+ansible-galaxy install gantsign.java
+ansible-playbook site.yaml  -i  ~/joseph/others/inventory 
+ls
+ls others
+ansible-playbook site.yaml  -i  ~/joseph/others/inventory 
+ansible windows -i others/inventory -m ping
+ansible windows -i others/inventory -m win_ping
+ansible windows -i others/inventory -m win_file -a "path=c:\HPE state=directory"
+ansible windows -i others/inventory -m win_file -a "path=c:\HPE\readme.txt state=touch"
+ansible windows -i others/inventory -m win_file -a "path='c:\HPE\readme.txt' state=touch"
+ansible windows -i others/inventory -m win_file -a "path='c:HPE\readme.txt' state=touch"
+ansible windows -i others/inventory -m win_file -a "path='c:\\HPE\\\readme.txt' state=touch"
+ansible windows -i others/inventory -m win_copy -a "content=' love India by Joseph' dest=c:\HPE\readme.txt"
+ansible windows -i others/inventory -m win_copy -a "content=' love India by Joseph' dest=c:\\HPE\\\readme.txt"
+ansible windows -i others/inventory -m win_copy -a "content='I love India by Joseph' dest=c:\\HPE\\\readme.txt"
+ansible windows -i others/inventory -m win_feature -a "name=Web-Server state=present"
+ansible windows -i others/inventory -m win_feature -a "name=Web-Common-Http state=present"
+ansible windows -i others/inventory -m win_package -a "path='https://www.7-zip.org/a/7z1900-x64.exe' product_id='7-Zip' arguments='/S' state=present"
+cd joseph
+ls
+cd others/
+vi test123.txt
+ls
+ls
+cd navin
+ls
+cd /
+cd dharini
+cd ..
+cd .
+cd
+ls
+cd dharini/
+ls
+cd
+cd mano
+ls
+cd
+cd venkat
+la
+ls
+cd
+ls
+cd cd     centos123
 '
 
 
-clear
-ansible localhost -m setup
-clear
-ansible localhost -m setup | grep os
-ansible localhost -m setup 
-clear
-ls
-more web.yaml
-ansible localhost -m setup | grep nsible_os_family
-ansible localhost -m setup | grep os
-clear
-ansible localhost -m setup | grep version
-ansible localhost -m setup | greplinux
-ansible localhost -m setup | grep linux
-ansible localhost -m setup | grep -i linux
-clear
-ls
-vi cond.yaml
-ansible-playbook -i inventory cond.yaml.yaml 
-ansible-playbook -i inventory cond.yaml
-clear
-vi cond.yaml 
-ansible-playbook -i inventory cond.yaml
-clear
-ls
-more web.yaml
-sudo yum install ntp
-clear
-ls
-vi loop.yaml
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml
-ansible-playbook -i inventory loop.yaml
-clear
-vi loop.yaml
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml
-ansible-playbook -i inventory loop.yaml
-clear
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-clear
-vi loop.yaml 
-ansible-playbook -i inventory loop.yaml
-clear
-ls
-more inventory 
-clear
-ls
-more web.yaml
-clear
-ls
-vi index.html
-ls -pla
-clear
-ls
-sudo chown -R azureuser:azureuser .
-vi index.html
-more index.html 
-clear
-ls
-vi template.yaml
-ansible-playbook -i inventory template.yaml 
-cp index.html index.html.j2
-more index.html.j2
-clear
-ls
-vi template.yaml 
-ansible-playbook -i inventory template.yaml 
+
 ls
 cd rajesh
 ls
-sudo cp * /home/azureuser/sadhana
-cd ..
+tree
+cd baskar
+ansible-vault encrypt 
+vi decrypt 
+ansible-vault decrypt decrypt 
+mv decrypt decrypt.txt
+ansible-vault decrypt decrypt.txt
+vi decrypt.txt
+ansible-vault decrypt decrypt.txt
+cat decrypt.txt
 ls
-cd sadhana/
+cd venkat
+ls 
+cp inventory inventory_vault
 ls
-ansible-playbook --syntax-check loop.yaml
- ansible-playbook --syntax-check loop.yaml -i inventory
-ansible-playbook -C loop.yaml -i inventory -u azureuser -k -b
-ansible-playbook loop.yaml -i inventory -u azureuser -k -b 
-cat loop.yaml
+ansible-vault encrypt inventory_vault
+vi inventory_vault
+vi inventory
+ansible-vault decrypt  inventory_vault
+vi inventory_vault
+ansible-vault encrypt inventory_vault
+vi inventory_vault
+ansible-vault encrypt inventory_vault encrypt_string
+vi inventory_vault 
+ansible-vault encrypt_string inventory_vault
+ansible-vault view inventory
+ls -lr
+ls -lrt
+cd rajesh/
+ls -lr
+ls -lrt
+cp -rp text.txt web.yaml test.txt /home/azureuser/chandu/
+more inventory
+ls -lr
+cd chandu/
+ls -lrt
+cp -rp inventory inventory_backup
+vi inventory
+ansible-vault view inventory
+ ansible-vault decrypt inventory
+more test.txt 
+more text.txt 
+cd rajesh/
 ls
-cat cond.yaml
-cd rajesh
-ls
-cat temp2.yaml
-ls
-cd raj
-ls
-cd sathish
-ls
-cd Playbooks/
-ls
-mkdir template
-ls
-cd template/
-ls
-vim using_template.yml
-ls
-cd ..
-ls
-cd va
-cd Variables/
-ls
-cd ..
-ls
-cd Day2_Assignment/
-ls
-cd ..
-ls
-cd Variables/
-ls
-cd ..
-ls
-cd template/
-ls
-vim index.html.j2
-ls
-more using_template.yml 
-ansible-playbook using_template.yml
-vim t
-vim tem
-vim using_template.yml 
-ansible-playbook using_template.yml
-vim using_template.yml 
-ls
-ansible-playbook using_template.yml
-vim using_template.yml 
-ls
-ansible-playbook using_template.yml
-ansible-playbook using_template.yml -vv
-ansible-playbook using_template.yml -vvv
-service httpd st
-ls
-cd rajamurugan/
-ls
-cd ..
-ls ltr
-ls -ltr
-ls -ltr *
-date
-cat rajesh/inventory 
-cd selva/
 vim inventory 
 ls
-vim  condition.yaml
-ansible-playbook --connection=local condition.yaml 
-vim  condition.yaml
-ansible-playbook --connection=local condition.yaml 
-vim  condition.yaml
-ansible-playbook --connection=local condition.yaml 
-vim  condition.yaml
-cat variable.yaml 
-cat variable2.yaml 
-vim  condition.yaml
-ansible-playbook --connection=local condition.yaml 
-vim  condition.yaml
-pwd
+cd ../mano/
 ls
-cd shankar
+vim test_encrypt.txt
 ls
-cd ..
+1
+rm 1
 ls
-cd Rag
-cd ..
-cd mano
+ansible-vault -h
+ansible-vault encrypt_string test_encrypt.txt 
+cat test_encrypt.txt 
+vim test_encrypt.txt 
+vim test_dncrypt.txt 
+vim test_decrypt.txt 
+cat test_decrypt.txt 
+ansible-vault decrypt test_decrypt.txt
+vim test_decrypt.txt
+ansible-vault decrypt test_decrypt.txt
+ansible-vault encrypt_string
+vim test_decrypt.txt 
+ansible-vault decrypt test_decrypt.txt
+vim test_decrypt.txt 
+ansible-vault decrypt test_decrypt.txt
+vim test_decrypt.txt 
+ansible-vault decrypt test_decrypt.txt
 ls
-vi Assignment_Day2
-cd ..
-cd Rag
+rm test_*
+l
 ls
-touch Day2
-vi Day2
-ls
-cd ..
-cd shankar
-ls
-cd ..
-cd shankar
-ls
-cd ..
-cd Rag
-ls
-ls -lrt
-cd chandu/
-ls -lr
-cd ../
-ls -lr
-cd chandu/
-ls -lr
-vi loop.yaml
-ansible-playbook --syntax-check loop.yaml -i inventory
-vi loop.yaml
-ansible-playbook --syntax-check loop.yaml -i inventory
-vi loop.yaml
-ansible-playbook --syntax-check loop.yaml -i inventory
-ansible-playbook -C loop.yaml -i inventory -u azureuser -k -b
-cd ..
-ls -lr
-cd mano/
-ls -lrt
-more loop.yaml 
-ls -lrt
-cd ../
-pwd
-ls -lrt
-pwd
-cd chandu/
-vi handler.yaml
-ansible-playbook --syntax-check handler.yaml -i inventory
-ansible-playbook -C handler.yaml -i inventory -u azureuser -k -b
-vi handler.yaml 
-ansible-playbook --syntax-check handler.yaml -i inventory
-cd karthick/
-ls -lrt
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible-playbook condbased.yaml 
-vi condbased.yaml
-ansible localhost -m setup
-vi temp1.yaml
-cat temp1.yaml 
-cp -rp /etc/httpd/conf/httpd.conf httpd.conf.j2
-vi httpd.conf.j2
-ansible-playbook temp1.yaml 
-vi httpd.conf.j2
-cp -rp /etc/httpd/conf/httpd.conf httpd.conf.j2
-vi httpd.conf.j2
-vi temp1.yaml
-ansible-playbook temp1.yaml 
-ansible-playbook temp1.yaml -u azureuser -b
-cat /etc/httpd/conf/httpd.conf 
-ansible-playbook temp1.yaml 
-ansible-playbook temp1.yaml -u azureuser -b
-cat temp1.yaml 
-vi temp1.yaml
-ansible-playbook temp1.yaml -u azureuser -b
-vi temp1.yaml
-vi index.html 
-ansible-playbook temp1.yaml -u azureuser -b
-vi index.html 
-vi temp1.yaml
-ansible-playbook temp1.yaml -u azureuser -b
-pwd
-cd karthick/
-ls -lrt
-cp -rp condbased.yaml assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-ls -ld /etc/*
-vi assignmenttest.yaml
-ls -d */etc
-ls -d /etc/*
-ls -l | grep `^d' /etc/
-ls -d */
-vi assignmenttest.yaml
-ls -d */
-ansible-playbook assignmenttest.yaml
-ls -d */
-vi assignmenttest.yaml
-ls -d */
-ansible-playbook assignmenttest.yaml
-ls -lrt
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-ls -lrt |grep -i regist
-ls -lrt |grep -e regist
-cat listoffileswithregister_command.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-vi assignmenttest.yaml
-ansible-playbook assignmenttest.yaml
-mkdir group_vars
-cd group_vars
-cd ..
+ansible-vault encrypt_string
+vim decrypt.txt
+ansible-vault decrypt decrypt.txt
+vim decrypt.txt
+ansible-vault decrypt decrypt.txt
+ansible-vault view --vault-password-file decrypt.txt 
+ansible-vault decrypt --vault-password-file decrypt.txt 
+cat decrypt.txt 
+ansible-vault decrypt --vault-password-file decrypt.txt 
 cd ../raj
 cd ../rajesh/
-ls -lrt
-cd group_vars
-ls -lrt
-cat app
-cat web
 ls
-cd sathish
+ls -ltr
+cat test.txt 
+cd ../mano/
 ls
-cd Playbooks/
+vim decrypt.txt 
+cat decrypt.txt 
+vim decrypt.txt 
+ansible-vault decrypt decrypt.txt
+cat decrypt.txt 
+clear
 ls
-cd template/
+rm decrypt.txt 
 ls
-ansible-playbook using_template.yml 
-chown azureuser:azureuser
-chown azureuser:azureuser index.html.j2 
+clear
+ansible-vault encrypt
+vim decrpt.txt
+cat decrpt.txt 
+ansible-vault decrypt decrypt.txt
+vim decrpt.txt 
+ansible-vault decrypt decrypt.txt
+history
+clear
 ls
-ansible-playbook using_template.yml 
-cd /var/www/html
+vim decrpt.txt 
+ansible-vault decrypt decrypt.txt
+rm decrpt.txt 
+clear
+ansible-vault encrypt_string
+vim decrypt.text
+mv decrypt.text decrypt.txt 
+cat decrypt.txt 
+ansible-vault decrypt decrypt.txt
+cat decrypt.txt 
+python -v
+cd roopesh
 ls
-chown azueruser:azureuser index.html
-chown azueruser:centos123 index.html
-chown azureuser:azureuser index.html
-ls -l index.htm
-ls -l index.html
+ls inventory
+vi inventory
+ansible-playbook --version
+cat /etc/network/interfaces
+-h
+-help
+help
+ls-l
 ls
-chmod 777 index.html
-sudo chmod 777 index
-sudo chmod 777 index.htm
-sudo chmod 777 index.html
+ls -h
+ls -l
+ifconfig -a
+ip addr
+ip route
+wifi-setting
+nmcli -p
+nmcli -p device show
+nmcli -p
+hostname -l
+hostname -l | grep awk
+hostname -h
+hostname -V
+dnsdomainname
+cat /etc/ansible/ansible.cfg
+cd ./ansible
+cd
+cd ./ansible
 ls
-cd ..
+cd ansible
+clear
+git branch --all
+git checkout
+cd roopesh
+vi exceptions.py
 ls
-cd home/
+vi loop.py
 ls
-cd azureuser/
+vi index.html
+exit
 ls
-cd sa
-cd sathish
+vi index.html
+ls | grep index
+vi index.html
 ls
-cd Playbooks/
+mkdir nimal
+cp -arpv selva/* nimal/
+cd
+cd nimal/
+ls -ltr
+ansible-playbook -h
+ansible-vault create inventory 
+ansible-vault -h
+ansible-vault encrypt inventory 
+cat inventory 
+ansible-vault decrypt inventory 
+cd ../selva/
+ansible-vault encrypt inventory 
+cat inventory 
 ls
-cd template/
+ansible-playbook -i inventory web.yaml
+ansible-vault edit inventory 
+vim web.yaml 
+ansible-playbook -i inventory web.yaml
+ansible-playbook -h
+ansible-playbook -i inventory web.yaml --ask-vault-pass
+ansible-vault create selva
+cat selva 
+ansible-vault view selva
+cd joseph/
 ls
-ansible-playbook using_template.yml 
+ansible-vault
+ansible-vault -hg
+ansible-vault -h
+ls others
+more others/q1.yaml 
+more others/inventory 
+ansible-playbook others/q1.yaml -i others/inventory 
+cp others/inventory  others/invent1
+ls others/
+ansible-vault -h
+ansible-vault encrypt others/invent1
+more others/invent1
+ansible-playbook -h
+ansible-playbook others/q1.yaml -i others/invent1
+ansible-playbook others/q1.yaml -i others/invent1 --ask-vault-pass
+ansible-vault view others/invent1
+sudo -s
 ls
-vim using_template.yml 
-ansible-playbook using_template.yml -v
-ansible-playbook using_template.yml -vvv
-cd /var/www/html/
+clear
 ls
-more index
-more index.htm
-more index.html
-rm -rf index
-more index.html
+cd rajesh/
+clearl
+sclear
 ls
-vim sat.html
-touch sat.html
-vim sat.htmel
-vim sat.html
+clear
 ls
- apachectl -S
-cd ..
+more inventory
+clear
 ls
-pwd
-sudo chown -R www-data:${azureuser} html
-cd html
+clear
+ansible-vault
+clear
 ls
-sudo chown -R azureuser:azureuser 
-sudo chown -R azureuser:azureuser .
+ansible-playbook -i inventory web.yaml 
+cleart
+clear
 ls
-cd ..
+ansible-vault encrypt inventory
+more inventory 
+clear
 ls
-cd /home/azureuser/sa
-cd /home/azureuser/sathish/Playbooks/template/
+ansible-vault view inventory
+more inventory 
+clear
+ansible-vault edit inventory
+ansible-vault decrypt inventory
+more inventory 
+clear
 ls
-ansible-playbook using_template.yml 
-ls
-cd /var/www/html/
-ls
-cat index.htm
-cat index.html
-cd /home/azureuser/sathish/Playbooks/template/
-ls
-vim include_handlers.yml
-ls
-vim index.html.j2 
-vim inc_handlers.yml
-ansible-playbook inc_handlers.yml 
-vim inc_handlers.yml 
-vim index.html.j2 
-ansible-playbook inc_handlers.yml 
-ansible-playbook inc_handlers.yml  -v
-ansible-playbook inc_handlers.yml  -vvvv
-vim index.html.j2
-ansible-playbook inc_handlers.yml  -C -u azureuser -k centos123
-ansible-playbook inc_handlers.yml  -C 
-ansible-playbook inc_handlers.yml  -C  -vv
-ansible-playbook inc_handlers.yml -v
-systemctl status httpd.service
-vim index.html.j2
-vim in
-vim inc_handlers.yml 
-ansible-playbook inc_handlers.yml -C -cc
-ansible-playbook inc_handlers.yml -C -vv
-ansible-playbook inc_handlers.yml 
-vim index.html.j2 
-ansible-playbook inc_handlers.yml -u azureuser -k centos123 -b
-ansible-playbook inc_handlers.yml --become-user azureuser 
-cd /home/azureuser/
-ls
-cd rajesh
+ansible-vault encrypt inventory
+clear
 ls
 more inventory 
+clear
+ansible-playbook -i inventory web.yaml
+clear
+ansible-playbook -h
+clear
+ansible-playbook -i inventory web.yaml --ask-vault-pass
+clear
+ls
+ansible-vault -h
+clear
+ansible-vault encrypt_string
+clear
+ansible-vault encrypt_string
+vi text.txt          $ANSIBLE_VAULT;1.1;AES256
+clear
+vi text.txt
+more text.txt
+ansible-vault decrypt text.txt
+vi text.txt 
+ansible-vault decrypt text.txt
+vi text.txt 
+ansible-vault decrypt text.txt
+ansible-vault -h
+clear
+vi text.txt 
+ansible-vault encrypt_string 
+vi test.txt
+ansible-vault decrypt test.txt
+vi test.txt
+ansible-vault decrypt test.txt
+clear
+ls
+vi web.yaml 
+clear
+history | grep web 
+lear
+mclear
+more inventory 
+:q!
+clear
+ls
+ansible-playbook -i inventory web.yaml --ask-vault-pass --ask-vault-pass
+clear
+history
+clear
+ls
+ansible-vault
+ansible-vault create 
+ansible-vault create rrrr
+more rrrr 
+vi test.txt 
+clear
+ls
+ansible-vault view test.txt 
+more test.txt 
+clear
+ls
+pwd
+clear
+ls
+mkdir library
+cd library/
+vi userdata.py
 cd ..
-cd sa
-cd sathish
 ls
-cd Playbooks/
+vi web.yaml 
+clear
+history
+clear
+ansible-playbook -i inventory web.yaml --ask-vault-pass --ask-vault-pass
+clear
 ls
-cd template/
+more /tmp/userdata.txt 
+cd library/
 ls
-vim index.html.j2 
+vi test_module.py
+cd ..
 ls
-ansible-playbook inc_handlers.yml -h
-ls
-which OS-release
-cat /etc/os-release 
-ansible localhost -m setup | grep os
-ansible localhost -m setup | grep version
-cd /etc
-ls
-ls -l 
+vi web.yaml 
+ansible-playbook -i inventory web.yaml --ask-vault-pass --ask-vault-pass
 ls
 cd rajesh
 ls
-sudo cp * /home/azureuser/sadhana
+more inventory
+ansible-vault view inventory
+cd ..
+cd azhar
+ls
+ansible-vault
+ansible-vault view inventory
+more inventory
+ansible vault create
+ansible-vault create
+ansible-vault create --v
+ansible-vault create
+ansible-vault create -vvv
+ansible-vault create
+ansible-vault create -vvv
+sudo su -
+ansible-vault create rrr
+ansible-vault view rrr
+ansible-vault 
+ansible-vault encrypt encrypt_string
+cd ..
+cd rajesh
+ls
+more inventory
+ansible-vault view inventory
+ansible-vault view inventory -vvv
+ansible-vault view inventory
+cd ..
+cd azhar
+ls
+more rrr
+ansible-vault encrypt_string
+vi azhar.txt
+ansible-vault decrypt test.txt
+ansible-vault decrypt azhar.txt
+ansible-vault decrypt azhar.txt -vv
+ansible-vault decrypt azhar.txt
+ls
+more azhar.txt
+ansible-vault view azhar.txt
+ansible-vault view azhar.txt -vvv
+ansible-vault view azhar.txt
+ansible-vault view azhar.txt 
+ansible-vault encrypt_string
+vi venkatesh.txt
+ansible-vault view venkatesh.txt
+vi venkatesh.txt
+ansible-vault view venkatesh.txt
+ansible-vault encrypt inventory
+more inventory
+ansible-vault view inventory
+ansible-vault decrypt inventory
+more inventory
+ls
+host
+host -v
+ansible-vault -h
+ls
+ansible-vault rekey azhar.txt
+ansible-vault rekey azhar.txt -vvv
+more azhar.txt
+ansible-vault view azhar.txt 
+ansible-vault create test
+history
+history |grep create
+ansible-vault -h
+ansible-vault encrypt inventory
+more inventory
+ansible-vault edit inventory
+ansible-vault decrypt inventory
+pip3
+cd ~
+pip3 install
+ipadd
+ip addr
+ifconfig -a
+hostname -I | awk '{print $1}'
+curl ifconfig.me
+ifconfig.me
+curl ifconfig.me
+vi inventory1
+cd azhar
+pwd
+ls
 cd ..
 ls
-cd sadhanana
-cd sadhana
+cp inventory1 /home/azureuser/azhar
+cd rajesh
 ls
-cat HTTPD
-cat template.yaml
-cd dharini/
+more web.yaml
+vi inventory1
 ls
-cat installpackage.yaml 
-vi day3.yaml
-ansible-playbook --syntax-check day3.yaml
-vi day3.yaml
-ansible-playbook --syntax-check day3.yaml
-cat day3.yaml
-ansible -m setup|grep -i os
-ansible all -m setup|grep -i os
-ansible all -m setup
-ansible -m setup
- ansible all -m setup -i inventory
-cat inventory
+cd ..
+cd azhar
 ls
-vi inventory
- ansible all -m setup -i inventory|grep -i os
- ansible all -m setup -i inventory|grep -i os -k -b azureuser
- ansible all -m setup -i inventory|grep -i os -K -b azureuser
- ansible all -m setup -i inventory|grep -i os  -b azureuser
- ansible all -m setup -i inventory|grep -i os -u -b azureuser
- ansible all -m setup -i inventory|grep -i os -u azureuser
- ansible all -m setup -i inventory|grep -i os -u azureuser -b
-history
-history|grep -i setup
-ansible localhost -m -setup | grep version
-ansible -m  setup localhost| grep version
-cat day3.yaml 
-ansible -m  setup localhost| grep ansible_os_family
-cat /etc/*release
-yum list httpd
-cat day3.yaml 
-vi day3.yaml
-ansible-playbook -C day3.yaml
-vi day3.yaml
-ansible-playbook -C day3.yaml
-yum list git
-yum list wget
-yum list available
-yum list zip
-yum list unzi[
-yum list unzip
-vi day3.yaml
-ansible-playbook -C day3.yaml
-ansible-playbook day3.yaml
- yum list unzip
-vi day3.yaml
-ansible-playbook day3.yaml
-sudo su
+more inventory1
+vi inventory1
+more inventory1
+vi web.yaml
+ansible-playbook -C web.yaml
+ansible-playbook -i inventory -C web.yaml
+vi inventory1
+vi web.yaml
+ansible-playbook -i inventory -C web.yaml
+more inventory
+ansible-playbook -i inventory1 -C web.yaml
+vi inventory1
+vi web.yaml
+ansible-playbook -i inventory1 -C web.yaml
+sudo ansible-playbook -i inventory1 -C web.yaml -b
+vi inventory1
+vi web.yaml
+ansible-playbook -i inventory1 -C web.yaml
+ansible-vault encrypt inventory1
+ansible-vault -h
+ansible-vault 
+ansible-playbook
+ansible-playbook -h
+ansible-playbook -i inventory1 -C web.yaml --ask-vault-pass
+vi web.yaml
+ansible-playbook -i inventory1 -C web.yaml --ask-vault-pass
+vi web.yaml
+ansible-playbook -i inventory1 -C web.yaml --ask-vault-pass
+more index.html
+more web.yamls
+more web.yaml
+ansible-vault 
+ansible-vault encrypt_string
+vi web.yaml
+ansible-playbook -i inventory1 -C web.yaml --ask-vault-pass --ask-vault-pass
+vi web.yaml
+ansible-playbook -i inventory1 -C web.yaml --ask-vault-pass --ask-vault-pass
+ansible-playbook -i inventory1 -C web.yaml --ask-vault-pass 
+cd ..
+ls rajesh
+cd library
+cd rajesh
+ls
+cd rajesh
+cd library
+ls
+more userdata.py
+pwd
+cd /home/azureuser/azhar
+mkdir library
+cd library
+vi userdata.py
+cd ..
+more web.yaml
+ansible-playbook -i inventory web.yaml --ask-vault-pass --ask-vault-pass
+ansible-playbook -i inventory web.yaml --ask-vault-pass  - userdata: name=azhar age=28
+  - test_module:
+      appkey: fe8f2030bd325e2f9c85a96ab20aaa9f
+ansible-playbook -i inventory web.yaml --ask-vault-pass 
+cd /home/azureuser/rajesh/library
+ls
+cd ..
+cd azhar
+vi web.yaml
+ansible-playbook -i inventory web.yaml --ask-vault-pass 
+vi web.yaml
+ansible-playbook -i inventory web.yaml --ask-vault-pass 
+/home/azureuser/rajesh/
+cd /home/azureuser/rajesh/
+ls
+more web.yaml
+cd /home/azureuser/rajesh/library
+ls
+more userdata.py
+ansible-playbook -i inventory web.yaml --ask-vault-pass -vvv
+cd /home/azureuser/azhar
+ ansible-playbook -i inventory web.yaml --ask-vault-pass -vvv
+more web.yaml
+vi web.yaml
+ ansible-playbook -i inventory web.yaml --ask-vault-pass 
+cd /home/azureuser/rajesh/library
+ls
+more touch.bash
+cd /home/azureuser/azhar
+cd /home/azureuser/azhar/library
+vi touch.bash
+cd /home/azureuser/rajesh/library
+more test_module.py
+cd /home/azureuser/azhar/library
+ls
+vi test_module.py
+cd ..
+vi web.yaml
+ ansible-playbook -i inventory web.yaml --ask-vault-pass 
+ ansible-playbook -i inventory web.yaml --ask-vault-pass -vvv
+more web.yaml
+vi web.yaml
+ ansible-playbook -i inventory web.yaml --ask-vault-pass 
+vi web.yaml
+ ansible-playbook -i inventory web.yaml --ask-vault-pass 
+cd karthick/
+ls -lrt
+vi testmoudle.sh
+vi testmodule.yaml
+ansible-playbook testmoudle.sh 
+ansible-playbook testmodule.yaml 
+vi testmodule.yaml
+mv testmoudle.sh touch.sh
+vi testmodule.yaml
+ansible-playbook testmodule.yaml 
+mkdir library
+mv touch.sh library/
+ansible-playbook testmodule.yaml 
+cat library/touch.sh 
+vi library/weather.py
+vi testmodulepy.yml
+ansible-playbook testmodulepy.yml 
+vi testmodulepy.yml
+ansible-playbook testmodulepy.yml 
+vi testmodulepy.yml
+ansible-playbook testmodulepy.yml 
+vi library/userdata.py
+vi userdata.yaml
+ansible-playbook user
+ansible-playbook userdata.yaml 
+vi userdata.yaml 
+ansible-playbook userdata.yaml 
+vi userdata.yaml 
+ansible-playbook userdata.yaml 
+cat library/userdata.py 
+cat /tmp/userdata.txt 
+rm -rf /tmp/userdata.txt
+sudo rm -rf /tmp/userdata.txt
+ansible-playbook userdata.yaml 
+cat /tmp/userdata.txt
+vi userdata.yaml 
+ansible-playbook userdata.yaml 
+cat /tmp/userdata.txt 

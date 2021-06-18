@@ -1,0 +1,9 @@
+---
+- name: Calling the role dev1
+  hosts: dev
+  roles:
+    - myapp
+    - geerlingguy.java
+  vars_prompt:
+    - name: promptvars
+      prompt: type redhat

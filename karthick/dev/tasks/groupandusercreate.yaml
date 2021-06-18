@@ -1,0 +1,9 @@
+- name: Create user and group
+  group: 
+    name: deloitte
+    state: present
+- name: create user
+  user: 
+    name: deploy
+    state: present
+    group: deloitte

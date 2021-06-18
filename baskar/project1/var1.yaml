@@ -1,0 +1,57 @@
+---
+- name: Update web servers
+  hosts: web
+  vars:
+    myname: "Baskar"
+    age: "18"
+    packagename: "httpd"
+    servicename: "httpd"
+  vars_files:
+    - "vars.yaml"
+  vars_prompt:
+    - name: "version"
+      prompt: "Which version Do you want to install?"
+      private: no
+
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: "{{ packagename }}"
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: "{{ servicename }}"
+      state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - name: include default step variables
+    include_vars: tasks_var.yaml
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      msg: "My Name is {{ myname }} and My age is {{ age }}"
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: version
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: "/home/azureuser/baskar"
+    register: find_output
+  - debug:
+      var: find_output
+  - debug:
+      var: find_output.stdout_lines
+  - debug:
+      var: find_output.stdout_lines[0]
+
+
+
+
+
+
+

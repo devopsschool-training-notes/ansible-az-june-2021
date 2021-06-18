@@ -1,0 +1,34 @@
+---
+- name: Update web servers
+  hosts: localhost
+  vars:
+    myname: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          62663736623961383563393439373039653433393064343235373431666133633664336236613339
+          3633323937313065366432373963613136393265643935390a333531656332366538313330376334
+          39663261306638636334313364383565623866626230613937353866626165613338623539613539
+          6664386635306566620a316439653633396436623363386339653438366364666331383537663834
+          65633765626565323764386665356432646562373663356438666663366339623139
+  tasks:
+  - name: Install Apache in centos7
+    ansible.builtin.yum:
+      name: httpd
+      state: latest
+  - name: Copy index.html
+    ansible.builtin.copy:
+      src: index.html
+      dest: /var/www/html/index.html
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+  - name: Print return information from the previous task
+    debug:
+      var: myname
+  - userdata: name=azhar age=28
+  - test_module:
+      appkey: fe8f2030bd325e2f9c85a96ab20aaa9f
+      treshold: 2
+    register: output
+  - debug:
+      var: output.decision

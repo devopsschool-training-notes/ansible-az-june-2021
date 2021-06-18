@@ -1,0 +1,4 @@
+--- # calling a role 
+- hosts: localhost
+  roles: 
+    - sathish_project

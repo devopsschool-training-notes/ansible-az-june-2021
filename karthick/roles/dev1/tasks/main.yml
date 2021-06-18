@@ -1,0 +1,40 @@
+---
+# tasks file for dev1
+- name: Installing the httpd
+  yum:
+    name: "{{ packagename }}"
+    state: installed
+  when: ansible_os_family == "RedHat"
+- name: copying the index.j2
+  copy:
+    src: "index.html"
+    dest: "/var/www/html/index-2.html"
+- name: copying the conf file for port change
+  template: 
+    src: "httpd.j2"
+    dest: "/etc/httpd/conf/httpd.conf"
+  notify:
+    - Restart the httpd service
+- name: run the shell script
+  shell: "date"
+  register: dateoutput
+- name: copying the output of shell to index3 html
+  template: 
+    src: "index.j2"
+    dest: "/var/www/html/index-3.html"
+- name: create group 
+  group: 
+    name: "{{ groupname }}"
+    state: present
+- name: create user
+  user:
+    name: "{{ username }}"
+    group: "{{ groupname }}"
+- name: Installing the packages using loop
+  yum:
+    name: "{{ item }}"
+    state: installed
+  loop: 
+      - git
+      - vim
+      - ntp

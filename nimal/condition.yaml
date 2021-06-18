@@ -1,0 +1,12 @@
+---
+- name: testing conditions
+  hosts: localhost
+  vars:
+   name: "selva"
+  tasks:
+  - name: test first condition
+    shell: "ls -al"
+    arg:
+     chdir: "/home/azureuser/selva"
+    when: ( name == "selva")
+... 

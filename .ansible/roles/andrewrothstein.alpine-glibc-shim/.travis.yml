@@ -1,0 +1,33 @@
+---
+dist: xenial
+sudo: required
+
+services:
+  - docker
+
+language: python
+python: 3.5
+
+branches:
+  except:
+    - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+
+env:
+  - OS=alpine_3.6
+  - OS=alpine_3.7
+  - OS=alpine_3.8
+  - OS=alpine_edge
+    
+before_install:
+  - pip install ansible-galaxy-local-deps dcb==0.0.16
+  - ansible-galaxy-local-deps-write
+
+script:
+  - >-
+    dcb
+    --upstreamgroup andrewrothstein
+    --upstreamapp docker-ansible-role
+    --pull ${OS}
+    --write ${OS}
+    --build ${OS}
+    --push ${OS}

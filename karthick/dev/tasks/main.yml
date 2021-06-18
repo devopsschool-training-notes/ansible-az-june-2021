@@ -1,2 +1,26 @@
 ---
 # tasks file for dev
+    - name: Testing the httpd installed or not
+      yum:
+        name: "{{ packagename }}"
+        state: installed
+    - name: Start the service
+      service:
+        name: "{{ packagename }}"
+        state: started
+    - name: copying the file
+      copy:
+        src: "index.html"
+        dest: "/var/www/html/index-2.html"
+    - name: template work will be done here
+      template:
+        src: "httpd.conf.j2"
+        dest: "/etc/httpd/conf/httpd.conf"
+      notify:
+        - Restart the service
+    - name: including the shellscript
+      include: shellscript.yaml
+    - name: including the groupandusercreate.yaml 
+      include: groupandusercreate.yaml
+    - name: including the installmethodusingloop.yaml
+      include: installmethodusingloop.yaml 

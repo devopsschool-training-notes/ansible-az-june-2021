@@ -1,0 +1,29 @@
+---
+- name: create group & user 
+  hosts : localhost
+
+  tasks:
+  - name: create a group "deploy"
+    ansible.builtin.group:
+      name: deploy
+      
+  - name: create a user called “deploy-user”
+    ansible.builtin.user:
+      name: deploy-user
+      groups: deploy
+      shell: /bin/bash password
+          
+  - name: Installing a apache service
+    yum:
+      name: httpd
+      state: installed
+
+  - name: start and enable the service named “httpd”
+    service:
+      name: httpd
+      state: started
+
+  - name: Copy a file called “index.html” 
+    copy:
+      src: index.html
+      dest: /var/www/html/index.html

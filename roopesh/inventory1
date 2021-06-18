@@ -1,0 +1,10 @@
+[windows]
+13.127.146.63
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=Administrator
+ansible_password="6&SggFan$d)g5t@MeqLzM$Cr%!tuUbMx"
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic

@@ -1,0 +1,56 @@
+---
+# tasks file for sathish_project
+   - name: install apache
+     ansible.builtin.yum: 
+       name: "{{ packagename }}"
+       state: present 
+     when: ( ansible_os_family == "RedHat" )
+   
+   - name: move index.j2 via template
+     template: 
+        src: index.html.j2
+        dest: /var/www/html
+
+   - name: move httpd.conf via template and notify handler to restart http
+     template: 
+        src: httpd.conf.j2
+        dest: /etc/httpd/conf/httpd.conf
+     notify:
+        - restart_sat
+
+   - name: shell script to capture the output to vars and NOT SURE HOW TO  write to index.html 
+     shell: 
+      cmd: 'date '
+     register: output
+   - local_action:
+      module: copy
+      content: "{{ output }}"
+      dest: '/home/azureuser/sathish/sathish_project/templates/output.j2'         
+
+   - name: tasks to create group
+     ansible.builtin.group: 
+        name: deloitte
+        state: present 
+        gid: 2000  
+   
+   - name: tasks to create user 
+     ansible.builtin.user:
+        name: deploy
+        state: present 
+
+   - name: install git,ntp and vim 
+     ansible.builtin.yum:
+        name: "{{ item}}"
+        state: present
+     with_items:
+        - git
+        - ntp
+        - vim
+  
+   - name: include geerlingguy role to install java
+     vars:
+       java_packages: java-1.8.0-openjdk
+     include_role: 
+        name: 'geerlingguy.java'
+        tasks_from: '/home/azureuser/.ansible/roles/geerlingguy.java/tasks/setup-RedHat.yml'
+      

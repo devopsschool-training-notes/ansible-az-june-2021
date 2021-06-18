@@ -12,7 +12,9 @@
       state: latest
     when: ( ansible_os_family == "Debian" )
   - name: Diaplaying contents of etc
-    shell: "ls -ltr /home/azureuser/dharini/"
+    shell: "ls -ltr"
+    args:
+      chdir: "/home/azureuser/dharini/"
     register: find_output
   - debug:
-      var: find_output
+      msg: "This is a directory or files in /etc/ {{ find_output.stdout_lines }}"

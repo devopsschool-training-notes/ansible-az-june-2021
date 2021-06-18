@@ -1,0 +1,5 @@
+--- 
+- hosts: localhost
+  tasks:
+    - userdata: name=Karthick age=99
+

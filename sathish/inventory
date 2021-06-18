@@ -1,2 +1,13 @@
 [web]
 52.66.210.6
+
+[windows]
+13.233.83.102
+
+[windows:vars]
+ansible_connection=winrm
+ansible_user=administrator
+ansible_password="n%bmkNaexyUuGPCw6-*I@4g3Aqx4Vr7g"
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic

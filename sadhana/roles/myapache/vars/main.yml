@@ -1,0 +1,5 @@
+---
+# vars file for myapache
+myname: "Rajesh Kumar in var"
+httpport: 8090
+

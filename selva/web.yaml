@@ -1,6 +1,6 @@
 ---
 - name: update
-  hosts: localhost
+  hosts: all
 
   tasks:
   - name: add group

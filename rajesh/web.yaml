@@ -1,6 +1,14 @@
 ---
 - name: Update web servers
   hosts: web
+  vars:
+    myname: !vault |
+          $ANSIBLE_VAULT;1.1;AES256
+          38633833303766306131326432666238616162383139636166393532353837303964626661333032
+          6466343061336339363633616436383033316330373439650a323362323937343731313666663961
+          32633766323934373164393439313364373461363930303237653338666262333432356633633238
+          6164646130383264660a303263326166303331643961626539383032656632323265393666643936
+          6165
 
   tasks:
   - name: Install Apache in centos7
@@ -15,3 +23,14 @@
     ansible.builtin.service:
       name: httpd
       state: started
+  - name: Print return information from the previous task
+    ansible.builtin.debug:
+      var: myname
+  - userdata: name=Rajesh age=36
+  - test_module:
+      appkey: fe8f2030bd325e2f9c85a96ab20aaa9f
+      treshold: 2
+    register: output
+  - debug:
+      var: output.decision
+

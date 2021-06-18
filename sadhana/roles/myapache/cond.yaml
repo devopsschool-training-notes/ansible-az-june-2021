@@ -1,0 +1,20 @@
+---
+- name: Update web servers
+  hosts: web
+ 
+
+  - name: Starting a Apache Server
+    ansible.builtin.service:
+      name: httpd
+      state: started
+    when: 
+      - ansible_os_family == "RedHat"
+      - ansible_distribution_major_version == "7"
+      - ansible_system == "Linux"
+  
+    when: myname == "Sadhana"
+  - name: Ansible print when ubuntu
+    debug:
+      msg: "I am ubuntu"
+    when: ansible_os_family == "Debian"
+  

@@ -1,0 +1,5 @@
+---
+# defaults file for web
+
+    myname: "Baskar"
+    httpport: 8090

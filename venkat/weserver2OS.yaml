@@ -9,8 +9,8 @@
       name: httpd
       state: latest
       when: ( ansible_os_family == "RedHat" and ansible_system == "Linux")
-  -name: Install Apache in Ubuntu
-  ansible.builtin.APT:
+  - name: Install Apache in Ubuntu
+    ansible.builtin.apt:
       name: httpd
       state: latest
       when: ( ansible_os_family == "Ubuntu" and ansible_system == "Linux")
@@ -26,6 +26,6 @@
       - ansible_os_family == "RedHat"
       - ansible_distribution_major_version == "7"
       - ansible_system == "Linux"
-          - ansible_os_family == "Ubuntu"
+      - ansible_os_family == "Ubuntu"
       - ansible_distribution_major_version == "16.04 LTS"
       - ansible_system == "Linux"

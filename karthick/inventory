@@ -1,5 +1,8 @@
 [dev]
 52.146.89.226
 
+[dev:vars]
+inventoryvars="RedHat"
+
 [db]
 2.2.2.2

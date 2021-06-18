@@ -1,0 +1,13 @@
+---
+# tasks file for dev
+#     - name: Testing the httpd installed or not
+#           yum:
+#                   name: httpd
+#                           state: installed
+#
+      - name: Shell script
+        shell: "date"
+        register: date_output
+      - name: printing the output
+        debug: 
+          var: date_output.stdout_lines

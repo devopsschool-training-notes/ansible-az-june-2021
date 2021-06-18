@@ -1,0 +1,5 @@
+---
+# defaults file for role
+servername: "httpd"
+httpport: 8080
+varName: "Ansible 123"

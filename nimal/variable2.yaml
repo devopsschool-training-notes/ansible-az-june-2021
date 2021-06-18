@@ -1,0 +1,26 @@
+---
+- name: Testing variable
+  hosts: localhost
+  vars_prompt:
+  - name: "package"
+    prompt: "Enter the package name:"
+    private: no
+  vars_files:
+   - "vars.yaml"
+  tasks:
+  - name: Install httpd
+    yum:
+     name: "{{package}}"
+     state: present
+
+  - name: restart httpd
+    service:
+     name: "{{service1}}"
+     state: started
+  - name: Ansible register variable basic example
+    shell: "find *.txt"
+    args:
+      chdir: "/home/azureuser/selva"
+    register: test
+  - debug:
+     var: test  

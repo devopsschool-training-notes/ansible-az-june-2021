@@ -1,2 +1,13 @@
 [ARS]
 52.66.131.158
+
+[WindowsARS]
+52.66.213.212
+
+[WindowsARS:vars]
+ansible_connection=winrm
+ansible_user=administrator
+ansible_password="*8D%cADsTCbzd-LofEn;W?!9lEUG4XX7"
+ansible_winrm_scheme=https
+ansible_winrm_server_cert_validation=ignore
+ansible_winrm_transport=basic

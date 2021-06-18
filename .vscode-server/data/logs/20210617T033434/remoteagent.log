@@ -1,0 +1,86 @@
+[2021-06-17 03:34:34.262] [remoteagent] [info] 
+
+*
+* Visual Studio Code Server
+*
+* Reminder: You may only use this software with Visual Studio family products,
+* as described in the license https://aka.ms/vscode-remote/license
+*
+
+
+[2021-06-17 03:34:34.262] [remoteagent] [info] Extension host agent started.
+[2021-06-17 03:34:35.579] [remoteagent] [info] [127.0.0.1][ffaba05d][ManagementConnection] New connection established.
+[2021-06-17 03:34:36.257] [remoteagent] [info] [127.0.0.1][1b1c8f24][ExtensionHostConnection] New connection established.
+[2021-06-17 03:34:36.763] [remoteagent] [info] [127.0.0.1][1b1c8f24][ExtensionHostConnection] <27604> Launched Extension Host Process.
+[2021-06-17 03:34:44.037] [remoteagent] [info] *
+[2021-06-17 03:34:44.042] [remoteagent] [info] baseEnv {"XDG_SESSION_ID":"1465","SELINUX_ROLE_REQUESTED":"","SHELL":"/bin/bash","SSH_CLIENT":"157.49.220.15 55968 22","SELINUX_USE_CURRENT_RANGE":"","USER":"azureuser","VSCODE_AGENT_FOLDER":"/home/azureuser/.vscode-server","MAIL":"/var/spool/mail/azureuser","PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin","PWD":"/home/azureuser","LANG":"en_US.UTF-8","SELINUX_LEVEL_REQUESTED":"","SHLVL":"4","HOME":"/home/azureuser","LOGNAME":"azureuser","SSH_CONNECTION":"157.49.220.15 55968 10.0.0.4 22","LESSOPEN":"||/usr/bin/lesspipe.sh %s","XDG_RUNTIME_DIR":"/run/user/1000","_":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node","VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules","VSCODE_CWD":"/home/azureuser","HOSTNAME":"master","HISTSIZE":"1000","HISTCONTROL":"ignoredups","VSCODE_LOG_NATIVE":"false","VSCODE_AMD_ENTRYPOINT":"vs/server/remoteExtensionHostProcess","VSCODE_PIPE_LOGGING":"true","VSCODE_VERBOSE_LOGGING":"true","VSCODE_EXTHOST_WILL_SEND_SOCKET":"true","VSCODE_HANDLES_UNCAUGHT_ERRORS":"true","VSCODE_LOG_STACK":"false","VSCODE_NLS_CONFIG":"{\"locale\":\"en\",\"availableLanguages\":{}}","BROWSER":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh"}
+[2021-06-17 03:34:49.046] [remoteagent] [info] [127.0.0.1][adeb014a][ManagementConnection] New connection established.
+[2021-06-17 03:34:49.612] [remoteagent] [info] [127.0.0.1][6b003041][ExtensionHostConnection] New connection established.
+[2021-06-17 03:34:49.617] [remoteagent] [info] [127.0.0.1][6b003041][ExtensionHostConnection] <27823> Launched Extension Host Process.
+[2021-06-17 03:34:52.602] [remoteagent] [warning] Resolved variables received without matching request 36
+[2021-06-17 03:34:52.602] [remoteagent] [warning] Resolved variables received without matching request 37
+[2021-06-17 03:34:52.602] [remoteagent] [warning] Resolved variables received without matching request 38
+[2021-06-17 03:34:52.602] [remoteagent] [warning] Resolved variables received without matching request 39
+[2021-06-17 03:34:55.252] [remoteagent] [warning] Resolved variables received without matching request 40
+[2021-06-17 03:34:55.253] [remoteagent] [warning] Resolved variables received without matching request 41
+[2021-06-17 03:34:55.253] [remoteagent] [warning] Resolved variables received without matching request 42
+[2021-06-17 03:34:55.267] [remoteagent] [warning] Resolved variables received without matching request 43
+[2021-06-17 03:34:55.284] [remoteagent] [warning] Resolved variables received without matching request 44
+[2021-06-17 03:34:55.290] [remoteagent] [warning] Resolved variables received without matching request 45
+[2021-06-17 03:34:55.290] [remoteagent] [warning] Resolved variables received without matching request 46
+[2021-06-17 03:34:55.290] [remoteagent] [warning] Resolved variables received without matching request 47
+[2021-06-17 03:34:55.290] [remoteagent] [warning] Resolved variables received without matching request 48
+[2021-06-17 03:34:55.291] [remoteagent] [warning] Resolved variables received without matching request 49
+[2021-06-17 03:34:55.291] [remoteagent] [warning] Resolved variables received without matching request 50
+[2021-06-17 03:34:55.291] [remoteagent] [warning] Resolved variables received without matching request 51
+[2021-06-17 03:34:55.291] [remoteagent] [warning] Resolved variables received without matching request 52
+[2021-06-17 03:34:55.292] [remoteagent] [warning] Resolved variables received without matching request 53
+[2021-06-17 03:34:55.292] [remoteagent] [warning] Resolved variables received without matching request 54
+[2021-06-17 03:34:55.292] [remoteagent] [warning] Resolved variables received without matching request 55
+[2021-06-17 03:34:55.292] [remoteagent] [warning] Resolved variables received without matching request 56
+[2021-06-17 03:34:55.292] [remoteagent] [warning] Resolved variables received without matching request 57
+[2021-06-17 03:34:55.293] [remoteagent] [warning] Resolved variables received without matching request 58
+[2021-06-17 03:34:55.293] [remoteagent] [warning] Resolved variables received without matching request 59
+[2021-06-17 03:34:55.293] [remoteagent] [warning] Resolved variables received without matching request 60
+[2021-06-17 03:34:55.532] [remoteagent] [warning] Resolved variables received without matching request 61
+[2021-06-17 03:34:55.611] [remoteagent] [info] *
+[2021-06-17 03:34:55.613] [remoteagent] [info] baseEnv {"XDG_SESSION_ID":"1465","SELINUX_ROLE_REQUESTED":"","SHELL":"/bin/bash","SSH_CLIENT":"157.49.220.15 55968 22","SELINUX_USE_CURRENT_RANGE":"","USER":"azureuser","VSCODE_AGENT_FOLDER":"/home/azureuser/.vscode-server","MAIL":"/var/spool/mail/azureuser","PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin","PWD":"/home/azureuser","LANG":"en_US.UTF-8","SELINUX_LEVEL_REQUESTED":"","SHLVL":"4","HOME":"/home/azureuser","LOGNAME":"azureuser","SSH_CONNECTION":"157.49.220.15 55968 10.0.0.4 22","LESSOPEN":"||/usr/bin/lesspipe.sh %s","XDG_RUNTIME_DIR":"/run/user/1000","_":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node","VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules","VSCODE_CWD":"/home/azureuser","HOSTNAME":"master","HISTSIZE":"1000","HISTCONTROL":"ignoredups","VSCODE_LOG_NATIVE":"false","VSCODE_AMD_ENTRYPOINT":"vs/server/remoteExtensionHostProcess","VSCODE_PIPE_LOGGING":"true","VSCODE_VERBOSE_LOGGING":"true","VSCODE_EXTHOST_WILL_SEND_SOCKET":"true","VSCODE_HANDLES_UNCAUGHT_ERRORS":"true","VSCODE_LOG_STACK":"false","VSCODE_NLS_CONFIG":"{\"locale\":\"en\",\"availableLanguages\":{}}","BROWSER":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh"}
+[2021-06-17 03:34:56.310] [remoteagent] [warning] Resolved variables received without matching request 62
+[2021-06-17 03:34:56.313] [remoteagent] [warning] Resolved variables received without matching request 63
+[2021-06-17 03:34:56.315] [remoteagent] [warning] Resolved variables received without matching request 64
+[2021-06-17 03:34:56.316] [remoteagent] [warning] Resolved variables received without matching request 65
+[2021-06-17 03:34:56.321] [remoteagent] [warning] Resolved variables received without matching request 66
+[2021-06-17 03:34:56.472] [remoteagent] [warning] Resolved variables received without matching request 67
+[2021-06-17 03:34:56.597] [remoteagent] [warning] Resolved variables received without matching request 68
+[2021-06-17 03:34:56.692] [remoteagent] [info] *
+[2021-06-17 03:34:56.693] [remoteagent] [info] baseEnv {"XDG_SESSION_ID":"1465","SELINUX_ROLE_REQUESTED":"","SHELL":"/bin/bash","SSH_CLIENT":"157.49.220.15 55968 22","SELINUX_USE_CURRENT_RANGE":"","USER":"azureuser","VSCODE_AGENT_FOLDER":"/home/azureuser/.vscode-server","MAIL":"/var/spool/mail/azureuser","PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin","PWD":"/home/azureuser","LANG":"en_US.UTF-8","SELINUX_LEVEL_REQUESTED":"","SHLVL":"4","HOME":"/home/azureuser","LOGNAME":"azureuser","SSH_CONNECTION":"157.49.220.15 55968 10.0.0.4 22","LESSOPEN":"||/usr/bin/lesspipe.sh %s","XDG_RUNTIME_DIR":"/run/user/1000","_":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node","VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules","VSCODE_CWD":"/home/azureuser","HOSTNAME":"master","HISTSIZE":"1000","HISTCONTROL":"ignoredups","VSCODE_LOG_NATIVE":"false","VSCODE_AMD_ENTRYPOINT":"vs/server/remoteExtensionHostProcess","VSCODE_PIPE_LOGGING":"true","VSCODE_VERBOSE_LOGGING":"true","VSCODE_EXTHOST_WILL_SEND_SOCKET":"true","VSCODE_HANDLES_UNCAUGHT_ERRORS":"true","VSCODE_LOG_STACK":"false","VSCODE_NLS_CONFIG":"{\"locale\":\"en\",\"availableLanguages\":{}}","BROWSER":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh"}
+[2021-06-17 03:34:57.291] [remoteagent] [warning] Resolved variables received without matching request 69
+[2021-06-17 03:34:57.296] [remoteagent] [warning] Resolved variables received without matching request 70
+[2021-06-17 03:34:57.933] [remoteagent] [warning] Resolved variables received without matching request 71
+[2021-06-17 03:34:58.097] [remoteagent] [warning] Resolved variables received without matching request 72
+[2021-06-17 03:34:58.424] [remoteagent] [warning] Resolved variables received without matching request 73
+[2021-06-17 03:34:58.851] [remoteagent] [warning] Resolved variables received without matching request 74
+[2021-06-17 03:34:59.290] [remoteagent] [warning] Resolved variables received without matching request 75
+[2021-06-17 05:58:12.347] [remoteagent] [warning] Resolved variables received without matching request 76
+[2021-06-17 05:58:12.354] [remoteagent] [warning] Resolved variables received without matching request 77
+[2021-06-17 05:58:12.354] [remoteagent] [warning] Resolved variables received without matching request 78
+[2021-06-17 05:58:12.364] [remoteagent] [warning] Resolved variables received without matching request 79
+[2021-06-17 05:58:12.468] [remoteagent] [warning] Resolved variables received without matching request 80
+[2021-06-17 05:58:12.504] [remoteagent] [warning] Resolved variables received without matching request 81
+[2021-06-17 05:58:12.769] [remoteagent] [warning] Resolved variables received without matching request 82
+[2021-06-17 05:58:13.066] [remoteagent] [warning] Resolved variables received without matching request 83
+[2021-06-17 05:58:13.212] [remoteagent] [info] *
+[2021-06-17 05:58:13.220] [remoteagent] [info] baseEnv {"XDG_SESSION_ID":"1465","SELINUX_ROLE_REQUESTED":"","SHELL":"/bin/bash","SSH_CLIENT":"157.49.220.15 55968 22","SELINUX_USE_CURRENT_RANGE":"","USER":"azureuser","VSCODE_AGENT_FOLDER":"/home/azureuser/.vscode-server","MAIL":"/var/spool/mail/azureuser","PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/azureuser/.local/bin:/home/azureuser/bin","PWD":"/home/azureuser","LANG":"en_US.UTF-8","SELINUX_LEVEL_REQUESTED":"","SHLVL":"4","HOME":"/home/azureuser","LOGNAME":"azureuser","SSH_CONNECTION":"157.49.220.15 55968 10.0.0.4 22","LESSOPEN":"||/usr/bin/lesspipe.sh %s","XDG_RUNTIME_DIR":"/run/user/1000","_":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/node","VSCODE_INJECT_NODE_MODULE_LOOKUP_PATH":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/remote/node_modules","VSCODE_CWD":"/home/azureuser","HOSTNAME":"master","HISTSIZE":"1000","HISTCONTROL":"ignoredups","VSCODE_LOG_NATIVE":"false","VSCODE_AMD_ENTRYPOINT":"vs/server/remoteExtensionHostProcess","VSCODE_PIPE_LOGGING":"true","VSCODE_VERBOSE_LOGGING":"true","VSCODE_EXTHOST_WILL_SEND_SOCKET":"true","VSCODE_HANDLES_UNCAUGHT_ERRORS":"true","VSCODE_LOG_STACK":"false","VSCODE_NLS_CONFIG":"{\"locale\":\"en\",\"availableLanguages\":{}}","BROWSER":"/home/azureuser/.vscode-server/bin/b4c1bd0a9b03c749ea011b06c6d2676c8091a70c/bin/helpers/browser.sh"}
+[2021-06-17 05:58:13.359] [remoteagent] [warning] Resolved variables received without matching request 84
+[2021-06-17 05:58:13.649] [remoteagent] [warning] Resolved variables received without matching request 85
+[2021-06-17 05:58:15.109] [remoteagent] [warning] Resolved variables received without matching request 86
+[2021-06-17 05:58:15.110] [remoteagent] [warning] Resolved variables received without matching request 87
+[2021-06-17 05:58:15.110] [remoteagent] [warning] Resolved variables received without matching request 88
+[2021-06-17 05:58:15.383] [remoteagent] [warning] Resolved variables received without matching request 89
+[2021-06-17 05:58:15.620] [remoteagent] [warning] Resolved variables received without matching request 90
+[2021-06-17 17:34:28.362] [remoteagent] [info] [127.0.0.1][adeb014a][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-06-17 17:34:29.396] [remoteagent] [info] [127.0.0.1][6b003041][ExtensionHostConnection] <27823> Extension Host Process exited with code: 0, signal: null.
+[2021-06-17 17:34:32.124] [remoteagent] [info] [127.0.0.1][ffaba05d][ManagementConnection] The client has disconnected gracefully, so the connection will be disposed.
+[2021-06-17 17:34:33.647] [remoteagent] [info] [127.0.0.1][1b1c8f24][ExtensionHostConnection] <27604> Extension Host Process exited with code: 0, signal: null.
+[2021-06-17 17:34:33.647] [remoteagent] [info] Last EH closed, waiting before shutting down
+[2021-06-17 17:39:33.647] [remoteagent] [info] Last EH closed, shutting down

@@ -1,0 +1,6 @@
+---
+# handlers file for sathish_project
+- name: restart_sat
+  ansible.builtin.service:
+    name: httpd
+    state: restarted 

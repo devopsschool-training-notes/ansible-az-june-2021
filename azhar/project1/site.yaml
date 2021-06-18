@@ -1,0 +1,5 @@
+---
+- name: Calling a role
+  hosts: localhost
+  roles:
+    - projectrole

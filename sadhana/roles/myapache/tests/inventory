@@ -1,0 +1,16 @@
+[web]
+52.146.89.226
+
+[web:vars]
+ansible_user=azureuser
+ansible_ssh_pass=centos123
+ansible_become=yes
+#mynameinv=Rajesh in inventory
+
+[db]
+15.207.87.1 
+
+[app]
+3.4.5.6
+5.6.7.8
+6.7.8.9

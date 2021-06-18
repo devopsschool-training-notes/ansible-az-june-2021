@@ -1,0 +1,6 @@
+---
+- name: Calling a role
+  hosts: localhost
+  roles:
+    - web
+    - geerlingguy.java
