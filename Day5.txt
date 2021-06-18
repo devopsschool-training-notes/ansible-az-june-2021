@@ -1,0 +1,71 @@
+Ansible Vault
+Python Fundamental
+How to develop an Ansible Module using
+	- Python
+	- Bash Scripting
+----------------------------------------------
+PRB -> How can we secure and transfer Secured Assets in Ansible CMD?
+------------
+Solution - Ansible vault
+- Tool
+	To encrypt a secret files based on password
+	AES
+	Installed by default
+		
+	Encrypt file|String
+	DeCrypt
+
+
+ inventory
+ 1019  more inventory
+ 1020  clear
+ 1021  ls
+ 1022  ansible-vault view inventory
+ 1023  more inventory
+ 1024  clear
+ 1025  ansible-vault edit inventory
+ 1026  ansible-vault decrypt inventory
+ 1027  more inventory
+ 1028  clear
+ 1029  ls
+ 1030  ansible-vault encrypt inventory
+ 1031  clear
+ 1032  ls
+ 1033  more inventory
+ 1034  clear
+ 1035  ansible-playbook -i inventory web.yaml
+ 1036  clear
+ 1037  ansible-playbook -h
+ 1038  clear
+ 1039  ansible-playbook -i inventory web.yaml --ask-vault-pass
+ 1040  clear
+ 1041  ls
+ 1042  ansible-vault -h
+ 1043  clear
+ 1044  ansible-vault encrypt_string
+ 1045  clear
+ 1046  ansible-vault encrypt_string
+ 1047  vi text.txt          $ANSIBLE_VAULT;1.1;AES256
+
+ 1056  ansible-vault -h
+ 1057  clear
+ 1058  vi text.txt
+ 1059  ansible-vault encrypt_string
+ 1060  vi test.txt
+ 1061  ansible-vault decrypt test.txt
+ 1062  vi test.txt
+ 1063  ansible-vault decrypt test.txt
+ 1064  clear
+ 1065  ls
+ 1066  vi web.yaml
+ 1067  clear
+ 1068  history | grep web
+ 1069  lear
+ 1070  mclear
+ 1071  more inventory
+ 1072  :q!
+ 1073  clear
+ 1074  ls
+ 1075  ansible-playbook -i inventory web.yaml --ask-vault-pass --ask-vault-pass
+ 1076  clear
+ 1077  history
